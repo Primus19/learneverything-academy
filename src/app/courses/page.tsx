@@ -159,7 +159,7 @@ export default function CoursesPage() {
             <div>
               <h3 className="text-white text-lg font-bold mb-4">Tech Academy</h3>
               <p className="text-gray-400">
-                Professional training for DevOps and Cloud Engineering careers.
+                Professional training for technology careers in DevOps, Cloud, Security, and Data.
               </p>
             </div>
             
@@ -174,6 +174,16 @@ export default function CoursesPage() {
                 <li>
                   <a href="/courses/cloud-engineering" className="text-gray-400 hover:text-white">
                     Cloud Engineering
+                  </a>
+                </li>
+                <li>
+                  <a href="/courses/soc" className="text-gray-400 hover:text-white">
+                    Security Operations Center (SOC)
+                  </a>
+                </li>
+                <li>
+                  <a href="/courses/risk-management" className="text-gray-400 hover:text-white">
+                    Risk Management
                   </a>
                 </li>
               </ul>
