@@ -10,7 +10,7 @@ frontend:
     build:
       commands:
         - npm run build
-        - npx next export
+        # Next export is removed as it's deprecated and handled by next.config.js output: 'export'
   artifacts:
     baseDirectory: frontend/out
     files:
