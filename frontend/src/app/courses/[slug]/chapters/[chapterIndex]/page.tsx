@@ -8,17 +8,6 @@ import ChapterViewer from '@/components/courses/ChapterViewer'
 import { getChapterContent } from '@/lib/markdown/loader'
 import '@/app/markdown.css' // Import markdown styles
 
-// Add generateStaticParams for static export
-export async function generateStaticParams() {
-  // This is a placeholder that will be replaced with actual data during build
-  return [
-    { slug: 'cloud-engineering', chapterIndex: '0' },
-    { slug: 'cloud-engineering', chapterIndex: '1' },
-    { slug: 'devops', chapterIndex: '0' },
-    { slug: 'devops', chapterIndex: '1' }
-  ]
-}
-
 export default function ChapterPage() {
   const params = useParams()
   const slug = params?.slug as string

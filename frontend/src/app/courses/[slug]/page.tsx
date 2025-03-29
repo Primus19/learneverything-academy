@@ -9,15 +9,6 @@ import Link from 'next/link'
 import { getCourseBySlug } from '@/lib/markdown/loader'
 import '@/app/markdown.css' // Import markdown styles
 
-// Add generateStaticParams for static export
-export async function generateStaticParams() {
-  // This is a placeholder that will be replaced with actual data during build
-  return [
-    { slug: 'cloud-engineering' },
-    { slug: 'devops' }
-  ]
-}
-
 export default function CoursePage() {
   const params = useParams()
   const slug = params?.slug as string
