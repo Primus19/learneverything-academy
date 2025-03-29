@@ -1,10 +1,11 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Add any other configuration options your project needs
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-};
+  trailingSlash: true,
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
