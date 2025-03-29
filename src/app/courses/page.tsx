@@ -1,234 +1,266 @@
-'use client'
+import React from 'react';
+import { Metadata } from 'next';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
+import ProgressTracking from '@/components/features/progress_tracking';
+import CommunityEngagement from '@/components/features/community_engagement';
+import AdvancedSearch from '@/components/features/advanced_search';
+import CareerAdvancement from '@/components/features/career_advancement';
 
-import React, { useEffect, useState } from 'react'
-import Navbar from '@/components/layout/Navbar'
-import CourseCard from '@/components/courses/CourseCard'
-import { getAvailableCourses } from '@/lib/markdown/loader'
+export const metadata: Metadata = {
+  title: 'LearnEverything Academy | Courses',
+  description: 'Explore our comprehensive courses in DevOps, Cloud Engineering, Security Operations, Risk Management, Data Analytics, Big Data, Data Engineering, and Ethical Hacking.',
+};
 
 export default function CoursesPage() {
-  const [courses, setCourses] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    async function loadCourses() {
-      try {
-        const availableCourses = await getAvailableCourses()
-        setCourses(availableCourses)
-      } catch (error) {
-        console.error('Error loading courses:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    
-    loadCourses()
-  }, [])
-
   return (
-    <main className="min-h-screen bg-gray-900">
-      <Navbar />
-      
-      {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Advance Your Tech Career
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-xl text-gray-300 sm:text-2xl md:mt-5 md:max-w-3xl">
-            Comprehensive courses designed by industry experts to help you master in-demand skills.
-          </p>
-          <div className="mt-10 max-w-md mx-auto sm:flex sm:justify-center md:mt-12">
-            <div className="rounded-md shadow">
-              <a
-                href="#courses"
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
-              >
-                Browse Courses
-              </a>
+    <div className="container mx-auto py-8 px-4 md:px-6">
+      <div className="flex flex-col items-center text-center mb-12">
+        <h1 className="text-4xl font-bold tracking-tight mb-4">Our Courses</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl">
+          Comprehensive, hands-on courses designed to help you master the most in-demand skills in technology.
+        </p>
+      </div>
+
+      <AdvancedSearch />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <Link href="/courses/devops" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/devops.jpg"
+                alt="DevOps"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-              <a
-                href="/register"
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
-              >
-                Sign Up Free
-              </a>
+            <CardHeader>
+              <CardTitle>DevOps</CardTitle>
+              <CardDescription>
+                Master the tools and practices that enable continuous software delivery and infrastructure automation.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/cloud-engineering" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/cloud-engineering.jpg"
+                alt="Cloud Engineering"
+                fill
+                className="object-cover"
+              />
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Courses Section */}
-      <section id="courses" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-white">
-              Our Courses
-            </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-300">
-              Explore our comprehensive curriculum designed to help you succeed in today's tech industry.
-            </p>
-          </div>
-          
-          {loading ? (
-            <div className="flex justify-center">
-              <div className="text-white">Loading courses...</div>
+            <CardHeader>
+              <CardTitle>Cloud Engineering</CardTitle>
+              <CardDescription>
+                Learn to design, build, and manage cloud infrastructure on major platforms like AWS, Azure, and GCP.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/soc" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/soc.jpg"
+                alt="Security Operations Center"
+                fill
+                className="object-cover"
+              />
             </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {courses.map((course, index) => (
-                <CourseCard
-                  key={index}
-                  title={course.title}
-                  description={course.description}
-                  image={course.image}
-                  slug={course.slug}
-                  price="$199.99"
-                  level={course.level}
-                  duration={course.duration}
-                />
-              ))}
+            <CardHeader>
+              <CardTitle>Security Operations Center (SOC)</CardTitle>
+              <CardDescription>
+                Develop the skills needed to detect, analyze, and respond to cybersecurity incidents effectively.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/risk-management" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/risk-management.jpg"
+                alt="Risk Management"
+                fill
+                className="object-cover"
+              />
             </div>
-          )}
-        </div>
-      </section>
-      
-      {/* Features Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-white">
-              Why Choose Our Courses
-            </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-300">
-              Our courses are designed to provide practical skills that employers demand.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Industry-Relevant Content</h3>
-              <p className="text-gray-300">
-                Curriculum developed by industry experts focusing on the most in-demand skills and technologies.
-              </p>
+            <CardHeader>
+              <CardTitle>Risk Management</CardTitle>
+              <CardDescription>
+                Learn to identify, assess, and mitigate risks in IT and business environments.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/data-analytics" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/data-analytics.jpg"
+                alt="Data Analytics"
+                fill
+                className="object-cover"
+              />
             </div>
-            
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Hands-On Projects</h3>
-              <p className="text-gray-300">
-                Apply your knowledge with real-world projects that simulate actual work environments.
-              </p>
+            <CardHeader>
+              <CardTitle>Data Analytics</CardTitle>
+              <CardDescription>
+                Master the techniques and tools to analyze data and extract valuable insights for decision-making.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/big-data" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/big-data.jpg"
+                alt="Big Data"
+                fill
+                className="object-cover"
+              />
             </div>
-            
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Downloadable Resources</h3>
-              <p className="text-gray-300">
-                Access to complete code examples, cheat sheets, and reference materials.
-              </p>
+            <CardHeader>
+              <CardTitle>Big Data</CardTitle>
+              <CardDescription>
+                Learn to process, analyze, and derive insights from large-scale data using modern technologies.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/data-engineering" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/data-engineering.jpg"
+                alt="Data Engineering"
+                fill
+                className="object-cover"
+              />
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-600">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Ready to advance your career?
-          </h2>
-          <p className="mt-3 max-w-md mx-auto text-xl text-white opacity-90">
-            Join thousands of professionals who have transformed their careers with our courses.
-          </p>
-          <div className="mt-8 max-w-md mx-auto sm:flex sm:justify-center">
-            <div className="rounded-md shadow">
-              <a
-                href="/register"
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
-              >
-                Get Started Today
-              </a>
+            <CardHeader>
+              <CardTitle>Data Engineering</CardTitle>
+              <CardDescription>
+                Develop skills to build robust data pipelines and infrastructure for data-driven applications.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/courses/ethical-hacking" className="group">
+          <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/ethical-hacking.jpg"
+                alt="Ethical Hacking"
+                fill
+                className="object-cover"
+              />
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Footer */}
-      <footer className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Tech Academy</h3>
-              <p className="text-gray-400">
-                Professional training for technology careers in DevOps, Cloud, Security, and Data.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Courses</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/courses/devops" className="text-gray-400 hover:text-white">
-                    DevOps Engineering
-                  </a>
-                </li>
-                <li>
-                  <a href="/courses/cloud-engineering" className="text-gray-400 hover:text-white">
-                    Cloud Engineering
-                  </a>
-                </li>
-                <li>
-                  <a href="/courses/soc" className="text-gray-400 hover:text-white">
-                    Security Operations Center (SOC)
-                  </a>
-                </li>
-                <li>
-                  <a href="/courses/risk-management" className="text-gray-400 hover:text-white">
-                    Risk Management
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Resources</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/resume-templates" className="text-gray-400 hover:text-white">
-                    Resume Samples
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className="text-gray-400 hover:text-white">
-                    About Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/privacy" className="text-gray-400 hover:text-white">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="text-gray-400 hover:text-white">
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <p className="text-gray-400">
-              &copy; {new Date().getFullYear()} Tech Academy. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-    </main>
-  )
+            <CardHeader>
+              <CardTitle>Ethical Hacking</CardTitle>
+              <CardDescription>
+                Learn to identify and exploit vulnerabilities in systems and applications to improve security.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">6 Chapters</div>
+                <Button variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                  Start Learning
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+      </div>
+
+      <div className="mt-16 space-y-12">
+        <ProgressTracking userId="user123" userName="John Doe" />
+        
+        <Tabs defaultValue="community" className="w-full">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="community">Community</TabsTrigger>
+            <TabsTrigger value="career">Career Advancement</TabsTrigger>
+          </TabsList>
+          <TabsContent value="community" className="mt-6">
+            <CommunityEngagement userId="user123" userName="John Doe" />
+          </TabsContent>
+          <TabsContent value="career" className="mt-6">
+            <CareerAdvancement userId="user123" userName="John Doe" />
+          </TabsContent>
+        </Tabs>
+      </div>
+    </div>
+  );
 }

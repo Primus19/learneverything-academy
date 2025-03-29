@@ -7,19 +7,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Security Operations Center (SOC) | LearnEverything Academy',
-  description: 'Learn the fundamentals of security operations, threat detection, incident response, and SOC management.',
+  title: 'Data Engineering | LearnEverything Academy',
+  description: 'Master data engineering principles, ETL processes, and data pipeline development.',
 };
 
-export default async function SOCCoursePage() {
-  const chapters = await getChapters('soc');
+export default async function DataEngineeringCoursePage() {
+  const chapters = await getChapters('data_engineering');
 
   return (
     <div className="container mx-auto py-8 px-4 md:px-6">
       <div className="flex flex-col items-center text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Security Operations Center (SOC)</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">Data Engineering</h1>
         <p className="text-xl text-muted-foreground max-w-3xl">
-          Develop the skills needed to detect, analyze, and respond to cybersecurity incidents effectively.
+          Learn to design, build, and maintain data pipelines and infrastructure for efficient data processing.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default async function SOCCoursePage() {
           <CardHeader>
             <CardTitle>Course Overview</CardTitle>
             <CardDescription>
-              What you'll learn in this comprehensive SOC course
+              What you'll learn in this comprehensive Data Engineering course
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4">
@@ -38,9 +38,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Security Monitoring Fundamentals</h3>
+                  <h3 className="font-medium">Data Engineering Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
-                    Learn the core principles of security monitoring and the role of a SOC
+                    Understand the core principles and responsibilities of data engineering
                   </p>
                 </div>
               </div>
@@ -49,9 +49,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Threat Detection Techniques</h3>
+                  <h3 className="font-medium">ETL/ELT Processes</h3>
                   <p className="text-sm text-muted-foreground">
-                    Master methods for identifying and analyzing security threats
+                    Master data extraction, transformation, and loading techniques
                   </p>
                 </div>
               </div>
@@ -60,9 +60,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Incident Response Procedures</h3>
+                  <h3 className="font-medium">Data Pipeline Development</h3>
                   <p className="text-sm text-muted-foreground">
-                    Develop effective incident response plans and procedures
+                    Design and implement efficient data pipelines for various use cases
                   </p>
                 </div>
               </div>
@@ -71,9 +71,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">SOC Tools and Technologies</h3>
+                  <h3 className="font-medium">Data Modeling</h3>
                   <p className="text-sm text-muted-foreground">
-                    Hands-on experience with SIEM, EDR, and other essential SOC tools
+                    Learn effective data modeling techniques for different data stores
                   </p>
                 </div>
               </div>
@@ -82,9 +82,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Threat Intelligence Integration</h3>
+                  <h3 className="font-medium">Data Governance</h3>
                   <p className="text-sm text-muted-foreground">
-                    Learn to leverage threat intelligence to enhance security operations
+                    Implement data quality, security, and governance best practices
                   </p>
                 </div>
               </div>
@@ -93,9 +93,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">SOC Automation and Orchestration</h3>
+                  <h3 className="font-medium">Cloud Data Engineering</h3>
                   <p className="text-sm text-muted-foreground">
-                    Implement automation to improve SOC efficiency and effectiveness
+                    Work with cloud-based data engineering tools and services
                   </p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default async function SOCCoursePage() {
               <CardContent>
                 <div className="flex justify-end">
                   <Button asChild>
-                    <Link href={`/courses/soc/chapters/${index}`}>
+                    <Link href={`/courses/data-engineering/chapters/${index}`}>
                       Start Chapter
                     </Link>
                   </Button>
@@ -142,9 +142,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Basic Networking Knowledge</h3>
+                  <h3 className="font-medium">Programming Skills</h3>
                   <p className="text-sm text-muted-foreground">
-                    Understanding of TCP/IP, network protocols, and basic network architecture
+                    Proficiency in Python or another programming language
                   </p>
                 </div>
               </div>
@@ -153,9 +153,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Cybersecurity Fundamentals</h3>
+                  <h3 className="font-medium">Database Knowledge</h3>
                   <p className="text-sm text-muted-foreground">
-                    Familiarity with basic security concepts and terminology
+                    Understanding of SQL and database concepts
                   </p>
                 </div>
               </div>
@@ -164,9 +164,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Operating System Basics</h3>
+                  <h3 className="font-medium">Cloud Computing Basics</h3>
                   <p className="text-sm text-muted-foreground">
-                    Working knowledge of Windows and Linux operating systems
+                    Familiarity with cloud platforms (AWS, Azure, or GCP)
                   </p>
                 </div>
               </div>
@@ -175,9 +175,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Basic Scripting Skills</h3>
+                  <h3 className="font-medium">Linux Command Line</h3>
                   <p className="text-sm text-muted-foreground">
-                    Familiarity with scripting languages like Python or PowerShell is helpful but not required
+                    Basic understanding of Linux and command line operations
                   </p>
                 </div>
               </div>
@@ -197,21 +197,21 @@ export default async function SOCCoursePage() {
           <CardContent className="grid gap-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-medium mb-2">Security Analysts</h3>
+                <h3 className="font-medium mb-2">Software Engineers</h3>
                 <p className="text-sm text-muted-foreground">
-                  Entry-level and mid-level security analysts looking to specialize in SOC operations
+                  Developers looking to specialize in data engineering
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-medium mb-2">IT Professionals</h3>
+                <h3 className="font-medium mb-2">Data Analysts</h3>
                 <p className="text-sm text-muted-foreground">
-                  IT professionals transitioning to cybersecurity roles
+                  Analysts who want to build more robust data pipelines
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-medium mb-2">Security Engineers</h3>
+                <h3 className="font-medium mb-2">Database Administrators</h3>
                 <p className="text-sm text-muted-foreground">
-                  Engineers looking to understand security monitoring and incident response
+                  DBAs transitioning to modern data engineering roles
                 </p>
               </div>
             </div>

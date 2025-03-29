@@ -7,19 +7,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Security Operations Center (SOC) | LearnEverything Academy',
-  description: 'Learn the fundamentals of security operations, threat detection, incident response, and SOC management.',
+  title: 'Ethical Hacking | LearnEverything Academy',
+  description: 'Master ethical hacking techniques, penetration testing, and security assessment methodologies.',
 };
 
-export default async function SOCCoursePage() {
-  const chapters = await getChapters('soc');
+export default async function EthicalHackingCoursePage() {
+  const chapters = await getChapters('ethical_hacking');
 
   return (
     <div className="container mx-auto py-8 px-4 md:px-6">
       <div className="flex flex-col items-center text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Security Operations Center (SOC)</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">Ethical Hacking</h1>
         <p className="text-xl text-muted-foreground max-w-3xl">
-          Develop the skills needed to detect, analyze, and respond to cybersecurity incidents effectively.
+          Learn to identify and exploit security vulnerabilities ethically to help organizations improve their security posture.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default async function SOCCoursePage() {
           <CardHeader>
             <CardTitle>Course Overview</CardTitle>
             <CardDescription>
-              What you'll learn in this comprehensive SOC course
+              What you'll learn in this comprehensive Ethical Hacking course
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4">
@@ -38,9 +38,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Security Monitoring Fundamentals</h3>
+                  <h3 className="font-medium">Ethical Hacking Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
-                    Learn the core principles of security monitoring and the role of a SOC
+                    Understand the core principles, methodologies, and legal aspects of ethical hacking
                   </p>
                 </div>
               </div>
@@ -49,9 +49,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Threat Detection Techniques</h3>
+                  <h3 className="font-medium">Network Penetration Testing</h3>
                   <p className="text-sm text-muted-foreground">
-                    Master methods for identifying and analyzing security threats
+                    Master techniques for identifying and exploiting network vulnerabilities
                   </p>
                 </div>
               </div>
@@ -60,9 +60,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Incident Response Procedures</h3>
+                  <h3 className="font-medium">Web Application Security</h3>
                   <p className="text-sm text-muted-foreground">
-                    Develop effective incident response plans and procedures
+                    Learn to identify and exploit common web application vulnerabilities
                   </p>
                 </div>
               </div>
@@ -71,9 +71,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">SOC Tools and Technologies</h3>
+                  <h3 className="font-medium">Mobile Application Security</h3>
                   <p className="text-sm text-muted-foreground">
-                    Hands-on experience with SIEM, EDR, and other essential SOC tools
+                    Discover techniques for testing and securing mobile applications
                   </p>
                 </div>
               </div>
@@ -82,9 +82,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Threat Intelligence Integration</h3>
+                  <h3 className="font-medium">Social Engineering</h3>
                   <p className="text-sm text-muted-foreground">
-                    Learn to leverage threat intelligence to enhance security operations
+                    Understand human-focused attacks and how to defend against them
                   </p>
                 </div>
               </div>
@@ -93,9 +93,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">SOC Automation and Orchestration</h3>
+                  <h3 className="font-medium">Cloud Security Testing</h3>
                   <p className="text-sm text-muted-foreground">
-                    Implement automation to improve SOC efficiency and effectiveness
+                    Apply ethical hacking techniques to cloud environments
                   </p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default async function SOCCoursePage() {
               <CardContent>
                 <div className="flex justify-end">
                   <Button asChild>
-                    <Link href={`/courses/soc/chapters/${index}`}>
+                    <Link href={`/courses/ethical-hacking/chapters/${index}`}>
                       Start Chapter
                     </Link>
                   </Button>
@@ -142,9 +142,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Basic Networking Knowledge</h3>
+                  <h3 className="font-medium">Networking Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
-                    Understanding of TCP/IP, network protocols, and basic network architecture
+                    Strong understanding of TCP/IP, network protocols, and architecture
                   </p>
                 </div>
               </div>
@@ -153,9 +153,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Cybersecurity Fundamentals</h3>
+                  <h3 className="font-medium">Operating Systems</h3>
                   <p className="text-sm text-muted-foreground">
-                    Familiarity with basic security concepts and terminology
+                    Familiarity with Windows, Linux, and command line interfaces
                   </p>
                 </div>
               </div>
@@ -164,9 +164,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Operating System Basics</h3>
+                  <h3 className="font-medium">Basic Programming</h3>
                   <p className="text-sm text-muted-foreground">
-                    Working knowledge of Windows and Linux operating systems
+                    Knowledge of scripting languages like Python, Bash, or PowerShell
                   </p>
                 </div>
               </div>
@@ -175,9 +175,9 @@ export default async function SOCCoursePage() {
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Basic Scripting Skills</h3>
+                  <h3 className="font-medium">Web Technologies</h3>
                   <p className="text-sm text-muted-foreground">
-                    Familiarity with scripting languages like Python or PowerShell is helpful but not required
+                    Understanding of HTTP, HTML, JavaScript, and web applications
                   </p>
                 </div>
               </div>
@@ -197,21 +197,21 @@ export default async function SOCCoursePage() {
           <CardContent className="grid gap-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-medium mb-2">Security Analysts</h3>
+                <h3 className="font-medium mb-2">Security Professionals</h3>
                 <p className="text-sm text-muted-foreground">
-                  Entry-level and mid-level security analysts looking to specialize in SOC operations
+                  IT security specialists looking to enhance their offensive security skills
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-medium mb-2">IT Professionals</h3>
+                <h3 className="font-medium mb-2">Network Administrators</h3>
                 <p className="text-sm text-muted-foreground">
-                  IT professionals transitioning to cybersecurity roles
+                  Admins who want to better understand and secure their networks
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-medium mb-2">Security Engineers</h3>
+                <h3 className="font-medium mb-2">Aspiring Penetration Testers</h3>
                 <p className="text-sm text-muted-foreground">
-                  Engineers looking to understand security monitoring and incident response
+                  Those looking to start a career in ethical hacking and penetration testing
                 </p>
               </div>
             </div>

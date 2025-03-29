@@ -8,11 +8,11 @@ import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Chapters | LearnEverything Academy',
-  description: 'Learn about Risk Management concepts and practices',
+  description: 'Learn about Data Engineering concepts and practices',
 };
 
 export default async function ChapterPage({ params }: { params: { chapterIndex: string } }) {
-  const chapters = await getChapters('risk_management');
+  const chapters = await getChapters('data_engineering');
   const chapterIndex = parseInt(params.chapterIndex);
   const chapter = chapters[chapterIndex];
 
@@ -28,8 +28,8 @@ export default async function ChapterPage({ params }: { params: { chapterIndex: 
   return (
     <div className="container mx-auto py-8 px-4 md:px-6">
       <div className="mb-8">
-        <Link href="/courses/risk-management" className="text-primary hover:underline">
-          ← Back to Risk Management Course
+        <Link href="/courses/data-engineering" className="text-primary hover:underline">
+          ← Back to Data Engineering Course
         </Link>
       </div>
 
@@ -41,7 +41,7 @@ export default async function ChapterPage({ params }: { params: { chapterIndex: 
       <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-between">
         {hasPrevChapter ? (
           <Button variant="outline" asChild>
-            <Link href={`/courses/risk-management/chapters/${prevChapterIndex}`}>
+            <Link href={`/courses/data-engineering/chapters/${prevChapterIndex}`}>
               ← Previous Chapter
             </Link>
           </Button>
@@ -50,13 +50,13 @@ export default async function ChapterPage({ params }: { params: { chapterIndex: 
         )}
         {hasNextChapter ? (
           <Button asChild>
-            <Link href={`/courses/risk-management/chapters/${nextChapterIndex}`}>
+            <Link href={`/courses/data-engineering/chapters/${nextChapterIndex}`}>
               Next Chapter →
             </Link>
           </Button>
         ) : (
           <Button asChild>
-            <Link href="/courses/risk-management">
+            <Link href="/courses/data-engineering">
               Complete Course
             </Link>
           </Button>

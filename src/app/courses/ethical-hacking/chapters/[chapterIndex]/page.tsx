@@ -8,11 +8,11 @@ import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Chapters | LearnEverything Academy',
-  description: 'Learn about Risk Management concepts and practices',
+  description: 'Learn about Ethical Hacking concepts and techniques',
 };
 
 export default async function ChapterPage({ params }: { params: { chapterIndex: string } }) {
-  const chapters = await getChapters('risk_management');
+  const chapters = await getChapters('ethical_hacking');
   const chapterIndex = parseInt(params.chapterIndex);
   const chapter = chapters[chapterIndex];
 
@@ -28,8 +28,8 @@ export default async function ChapterPage({ params }: { params: { chapterIndex: 
   return (
     <div className="container mx-auto py-8 px-4 md:px-6">
       <div className="mb-8">
-        <Link href="/courses/risk-management" className="text-primary hover:underline">
-          ← Back to Risk Management Course
+        <Link href="/courses/ethical-hacking" className="text-primary hover:underline">
+          ← Back to Ethical Hacking Course
         </Link>
       </div>
 
@@ -41,7 +41,7 @@ export default async function ChapterPage({ params }: { params: { chapterIndex: 
       <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-between">
         {hasPrevChapter ? (
           <Button variant="outline" asChild>
-            <Link href={`/courses/risk-management/chapters/${prevChapterIndex}`}>
+            <Link href={`/courses/ethical-hacking/chapters/${prevChapterIndex}`}>
               ← Previous Chapter
             </Link>
           </Button>
@@ -50,13 +50,13 @@ export default async function ChapterPage({ params }: { params: { chapterIndex: 
         )}
         {hasNextChapter ? (
           <Button asChild>
-            <Link href={`/courses/risk-management/chapters/${nextChapterIndex}`}>
+            <Link href={`/courses/ethical-hacking/chapters/${nextChapterIndex}`}>
               Next Chapter →
             </Link>
           </Button>
         ) : (
           <Button asChild>
-            <Link href="/courses/risk-management">
+            <Link href="/courses/ethical-hacking">
               Complete Course
             </Link>
           </Button>
