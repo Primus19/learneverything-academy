@@ -86,3 +86,132 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Enhanced dark theme styles */
+:root {
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #1e293b;
+  --card-foreground: #e2e8f0;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #334155;
+  --secondary-foreground: #e2e8f0;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #e2e8f0;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #334155;
+  --input: #334155;
+  --ring: #3b82f6;
+  --radius: 0.5rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Enhanced contrast for better readability */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+p, li {
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+/* Refined color scheme */
+.bg-gray-900 {
+  background-color: var(--background);
+}
+
+.bg-gray-800 {
+  background-color: var(--card);
+}
+
+.bg-gray-700 {
+  background-color: var(--secondary);
+}
+
+.text-blue-400 {
+  color: var(--primary);
+}
+
+.text-blue-300:hover {
+  color: #60a5fa;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.bg-blue-700:hover {
+  background-color: #1d4ed8;
+}
+
+/* Enhanced card styling */
+.rounded-lg {
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Improved button styling */
+button, 
+.rounded-md {
+  border-radius: var(--radius);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Improved navigation */
+nav {
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Improved form elements */
+input, textarea, select {
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground);
+}
+
+/* Improved transitions */
+.transition-colors {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Improved focus states */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Improved scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}

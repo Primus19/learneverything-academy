@@ -1,14 +1,20 @@
 'use client'
-import { useState } from 'react'
+
+import React from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { Menu, X } from 'lucide-react'
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const pathname = usePathname()
 
-  const toggleDropdown = (dropdown: string) => {
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown)
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const isActive = (path: string) => {
+    return pathname === path || pathname?.startsWith(path + '/')
   }
 
   return (
@@ -18,62 +24,74 @@ export default function Navbar() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="text-white font-bold text-xl">
-                Tech Academy
+                Learn Everything Academy
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link
+                href="/"
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium h-16 ${
+                  isActive('/') 
+                    ? 'border-blue-500 text-white' 
+                    : 'border-transparent text-gray-300 hover:border-gray-300 hover:text-white'
+                }`}
+              >
                 Home
               </Link>
-              
-              {/* Courses Dropdown */}
-              <div className="relative">
-                <button 
-                  onClick={() => toggleDropdown('courses')}
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
-                >
-                  Courses
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                
-                {openDropdown === 'courses' && (
-                  <div className="absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
-                    <div className="py-1" role="menu" aria-orientation="vertical">
-                      <Link href="/courses/devops" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
-                        DevOps Engineering
-                      </Link>
-                      <Link href="/courses/cloud-engineering" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
-                        Cloud Engineering
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              <Link href="/resume-templates" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link
+                href="/courses"
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium h-16 ${
+                  isActive('/courses') 
+                    ? 'border-blue-500 text-white' 
+                    : 'border-transparent text-gray-300 hover:border-gray-300 hover:text-white'
+                }`}
+              >
+                Courses
+              </Link>
+              <Link
+                href="/resume-templates"
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium h-16 ${
+                  isActive('/resume-templates') 
+                    ? 'border-blue-500 text-white' 
+                    : 'border-transparent text-gray-300 hover:border-gray-300 hover:text-white'
+                }`}
+              >
                 Resume Templates
               </Link>
-              
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link
+                href="/about"
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium h-16 ${
+                  isActive('/about') 
+                    ? 'border-blue-500 text-white' 
+                    : 'border-transparent text-gray-300 hover:border-gray-300 hover:text-white'
+                }`}
+              >
                 About
               </Link>
             </div>
           </div>
-          
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Link href="/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-              Login
-            </Link>
-            <Link href="/register" className="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
-              Register
-            </Link>
+            <div className="flex space-x-4">
+              <Link
+                href="/login"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/register"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Sign up
+              </Link>
+            </div>
           </div>
-          
-          <div className="flex items-center sm:hidden">
+          <div className="-mr-2 flex items-center sm:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
+              <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -87,44 +105,61 @@ export default function Navbar() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="sm:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+          <div className="pt-2 pb-3 space-y-1">
+            <Link
+              href="/"
+              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                isActive('/') 
+                  ? 'bg-gray-800 border-blue-500 text-white' 
+                  : 'border-transparent text-gray-300 hover:bg-gray-700 hover:border-gray-300 hover:text-white'
+              }`}
+            >
               Home
             </Link>
-            
-            <button
-              onClick={() => toggleDropdown('mobile-courses')}
-              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left flex items-center"
+            <Link
+              href="/courses"
+              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                isActive('/courses') 
+                  ? 'bg-gray-800 border-blue-500 text-white' 
+                  : 'border-transparent text-gray-300 hover:bg-gray-700 hover:border-gray-300 hover:text-white'
+              }`}
             >
               Courses
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </button>
-            
-            {openDropdown === 'mobile-courses' && (
-              <div className="pl-4">
-                <Link href="/courses/devops" className="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  DevOps Engineering
-                </Link>
-                <Link href="/courses/cloud-engineering" className="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Cloud Engineering
-                </Link>
-              </div>
-            )}
-            
-            <Link href="/resume-templates" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            </Link>
+            <Link
+              href="/resume-templates"
+              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                isActive('/resume-templates') 
+                  ? 'bg-gray-800 border-blue-500 text-white' 
+                  : 'border-transparent text-gray-300 hover:bg-gray-700 hover:border-gray-300 hover:text-white'
+              }`}
+            >
               Resume Templates
             </Link>
-            
-            <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            <Link
+              href="/about"
+              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                isActive('/about') 
+                  ? 'bg-gray-800 border-blue-500 text-white' 
+                  : 'border-transparent text-gray-300 hover:bg-gray-700 hover:border-gray-300 hover:text-white'
+              }`}
+            >
               About
             </Link>
-            
-            <div className="pt-4 pb-3 border-t border-gray-700">
-              <Link href="/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                Login
+          </div>
+          <div className="pt-4 pb-3 border-t border-gray-700">
+            <div className="flex items-center px-4 space-x-3">
+              <Link
+                href="/login"
+                className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
+              >
+                Log in
               </Link>
-              <Link href="/register" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
-                Register
+              <Link
+                href="/register"
+                className="block bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-base font-medium transition-colors"
+              >
+                Sign up
               </Link>
             </div>
           </div>
@@ -133,3 +168,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
+export default Navbar

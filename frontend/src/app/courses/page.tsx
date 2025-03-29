@@ -1,59 +1,99 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '@/components/layout/Navbar'
 import CourseCard from '@/components/courses/CourseCard'
-
-const courses = [
-  {
-    title: 'DevOps Engineering Masterclass',
-    description: 'Master DevOps practices with hands-on projects covering CI/CD pipelines, containerization, infrastructure as code, and monitoring. Learn to implement industry-standard tools like Jenkins, Docker, Kubernetes, Terraform, and more.',
-    image: '',
-    slug: 'devops',
-    price: '$199.99',
-    level: 'Intermediate to Advanced',
-    duration: '40+ hours'
-  },
-  {
-    title: 'AWS Cloud Engineering Professional',
-    description: 'Become an AWS Cloud expert with comprehensive training on cloud architecture, deployment, security, and optimization. Build scalable, resilient cloud infrastructure using AWS services and best practices.',
-    image: '',
-    slug: 'cloud-engineering',
-    price: '$199.99',
-    level: 'Intermediate to Advanced',
-    duration: '35+ hours'
-  }
-]
+import { getAvailableCourses } from '@/lib/markdown/loader'
 
 export default function CoursesPage() {
+  const [courses, setCourses] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadCourses() {
+      try {
+        const availableCourses = await getAvailableCourses()
+        setCourses(availableCourses)
+      } catch (error) {
+        console.error('Error loading courses:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    
+    loadCourses()
+  }, [])
+
   return (
     <main className="min-h-screen bg-gray-900">
       <Navbar />
       
-      {/* Courses Header */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Available Courses
+      {/* Hero Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
+            Advance Your Tech Career
           </h1>
-          <p className="mt-3 text-xl text-gray-300">
-            Browse our comprehensive training programs designed for tech professionals.
+          <p className="mt-3 max-w-md mx-auto text-xl text-gray-300 sm:text-2xl md:mt-5 md:max-w-3xl">
+            Comprehensive courses designed by industry experts to help you master in-demand skills.
           </p>
-        </div>
-      </section>
-      
-      {/* Courses List */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
-            {courses.map((course, index) => (
-              <CourseCard key={index} {...course} />
-            ))}
+          <div className="mt-10 max-w-md mx-auto sm:flex sm:justify-center md:mt-12">
+            <div className="rounded-md shadow">
+              <a
+                href="#courses"
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+              >
+                Browse Courses
+              </a>
+            </div>
+            <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+              <a
+                href="/register"
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+              >
+                Sign Up Free
+              </a>
+            </div>
           </div>
         </div>
       </section>
       
-      {/* Why Choose Our Courses */}
+      {/* Courses Section */}
+      <section id="courses" className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-white">
+              Our Courses
+            </h2>
+            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-300">
+              Explore our comprehensive curriculum designed to help you succeed in today's tech industry.
+            </p>
+          </div>
+          
+          {loading ? (
+            <div className="flex justify-center">
+              <div className="text-white">Loading courses...</div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {courses.map((course, index) => (
+                <CourseCard
+                  key={index}
+                  title={course.title}
+                  description={course.description}
+                  image={course.image}
+                  slug={course.slug}
+                  price="$199.99"
+                  level={course.level}
+                  duration={course.duration}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+      
+      {/* Features Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -143,7 +183,7 @@ export default function CoursesPage() {
               <h3 className="text-white text-lg font-bold mb-4">Resources</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/resume-samples" className="text-gray-400 hover:text-white">
+                  <a href="/resume-templates" className="text-gray-400 hover:text-white">
                     Resume Samples
                   </a>
                 </li>
