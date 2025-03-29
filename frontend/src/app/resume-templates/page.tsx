@@ -26,7 +26,7 @@ export default function ResumePage() {
             "Mid-Level DevOps Engineer",
             "Senior DevOps Engineer / Architect"
           ]}
-          onClick={() => console.log('DevOps resume pack clicked')}
+          
         />
         
         <ResumeTemplateCard 
@@ -38,7 +38,7 @@ export default function ResumePage() {
             "Mid-Level AWS Cloud Engineer",
             "Senior AWS Cloud Architect"
           ]}
-          onClick={() => console.log('AWS resume pack clicked')}
+          
         />
         
         <ResumeTemplateCard 
@@ -50,7 +50,7 @@ export default function ResumePage() {
             "Mid-Level SOC Analyst",
             "Senior SOC Analyst / Security Operations Manager"
           ]}
-          onClick={() => console.log('SOC resume pack clicked')}
+          
         />
       </div>
       
