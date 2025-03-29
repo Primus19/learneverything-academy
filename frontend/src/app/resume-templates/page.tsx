@@ -1,11 +1,7 @@
-import React from 'react';
-import { Metadata } from 'next';
-import ResumeTemplateCard from '@/components/resume/ResumeTemplateCard';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Resume Templates | Tech Academy',
-  description: 'Professional resume templates for DevOps Engineers, AWS Cloud Engineers, and SOC Analysts',
-};
+import React from 'react';
+import ResumeTemplateCard from '@/components/resume/ResumeTemplateCard';
 
 export default function ResumePage() {
   // Dummy handler as an example - replace with actual logic as needed
