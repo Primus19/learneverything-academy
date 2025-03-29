@@ -7,7 +7,7 @@ interface ResumeTemplateCardProps {
   description: string;
   price: string;
   roles: string[];
-  onClick: () => void;
+  onClick?: () => void; // Make optional
 }
 
 const ResumeTemplateCard: React.FC<ResumeTemplateCardProps> = ({
