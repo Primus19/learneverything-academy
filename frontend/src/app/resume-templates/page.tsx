@@ -8,6 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default function ResumePage() {
+  // Dummy handler as an example - replace with actual logic as needed
+  const handleCardClick = (templateName: string) => {
+    console.log(`Clicked on template: ${templateName}`);
+  };
+
   return (
     <div className="container mx-auto py-12">
       <h1 className="text-3xl font-bold mb-6">Professional Resume Templates</h1>
@@ -26,7 +31,7 @@ export default function ResumePage() {
             "Mid-Level DevOps Engineer",
             "Senior DevOps Engineer / Architect"
           ]}
-          
+          onClick={() => handleCardClick('DevOps Engineer Resume Pack')}
         />
         
         <ResumeTemplateCard 
@@ -38,7 +43,7 @@ export default function ResumePage() {
             "Mid-Level AWS Cloud Engineer",
             "Senior AWS Cloud Architect"
           ]}
-          
+          onClick={() => handleCardClick('AWS Cloud Engineer Resume Pack')}
         />
         
         <ResumeTemplateCard 
@@ -50,7 +55,7 @@ export default function ResumePage() {
             "Mid-Level SOC Analyst",
             "Senior SOC Analyst / Security Operations Manager"
           ]}
-          
+          onClick={() => handleCardClick('SOC Analyst Resume Pack')}
         />
       </div>
       
