@@ -1,10 +1,11 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove static export configuration
+  output: 'export',
   images: {
-    domains: ['localhost'],
+    unoptimized: true,
   },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
