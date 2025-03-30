@@ -15,7 +15,7 @@ export const metadata = {
   description: 'Learn about Big Data concepts and technologies',
 };
 
-export default async function ChapterPage({ params } }) {
+export default async function ChapterPage({ params }) {
   const chapters = await getChapters('big_data');
   const chapterIndex = parseInt(params.chapterIndex);
   const chapter = chapters[chapterIndex];
