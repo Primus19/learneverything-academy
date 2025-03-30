@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ResumeTemplateCard from "../../components/resume/ResumeTemplateCard";
+import ResumeTemplateCard from "../../components/resume/ResumeTemplateCard.jsx";
 
 export default function ResumePage() {
   // Dummy handler example - replace with actual logic

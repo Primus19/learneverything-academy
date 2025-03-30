@@ -1,13 +1,14 @@
 "use client"
 
-import * as React from "react"
+import * from "react"
 import * from "recharts"
 
-import { cn } from "../../lib/utils"
+import { cn } from "../../lib/utils.jsx"
 
 // Format
 const THEMES = { light: "", dark: ".dark" }
 
+export type ChartConfig = {
   [k in string] & (
     | { color?; theme? }
     | { color?; theme }

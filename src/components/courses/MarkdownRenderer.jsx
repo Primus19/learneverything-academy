@@ -4,8 +4,8 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
-import Image from "next/image"
-import Link from 'next/link'
+import Image from "next/image.jsx"
+import Link from "next/link.jsx"
 
 
 

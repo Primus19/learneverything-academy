@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
-import * as RadixMenubar from "@radix-ui/react-menubar"
+import * from "react"
+import * from "@radix-ui/react-menubar.jsx"
 import { Check, ChevronRight, Circle } from "lucide-react"
 
-import { cn } from "../../lib/utils"
+import { cn } from "../../lib/utils.jsx"
 
 const MenubarMenu = MenubarPrimitive.Menu
 

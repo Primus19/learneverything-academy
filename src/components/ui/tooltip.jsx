@@ -1,9 +1,9 @@
 "use client"
 
-import * as React from "react"
-import * as RadixTooltip from "@radix-ui/react-tooltip"
+import * from "react"
+import * from "@radix-ui/react-tooltip.jsx"
 
-import { cn } from "../../lib/utils"
+import { cn } from "../../lib/utils.jsx"
 
 const TooltipProvider = TooltipPrimitive.Provider
 

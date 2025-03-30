@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
-import * as RadixLabel from "@radix-ui/react-label"
-import { Slot } from "@radix-ui/react-slot"
+import * from "react"
+import * from "@radix-ui/react-label.jsx"
+import { Slot } from "@radix-ui/react-slot.jsx"
 import {
   Controller,
   ControllerProps,
@@ -12,8 +12,8 @@ import {
   useFormContext,
 } from "react-hook-form"
 
-import { cn } from "../../lib/utils"
-import { Label } from "../../components/ui/label"
+import { cn } from "../../lib/utils.jsx"
+import { Label } from "../../components/ui/label.jsx"
 
 const Form = FormProvider
 

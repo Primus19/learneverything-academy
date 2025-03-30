@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
-import * as RadixDialog from "@radix-ui/react-dialog"
+import * from "react"
+import * from "@radix-ui/react-dialog.jsx"
 import { X } from "lucide-react"
 
-import { cn } from "../../lib/utils"
+import { cn } from "../../lib/utils.jsx"
 
 const Dialog = DialogPrimitive.Root
 

@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import Navbar from "../../components/layout/Navbar"
+import Navbar from "../../components/layout/Navbar.jsx"
 import { CreditCard, Lock, CheckCircle } from 'lucide-react'
-import Link from 'next/link'
+import Link from "next/link.jsx"
 
 export default function Checkout() {
   const [formData, setFormData] = useState({

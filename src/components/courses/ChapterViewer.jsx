@@ -1,13 +1,13 @@
 'use client'
 
 import React from 'react'
-import MarkdownRenderer from "../../components/courses/MarkdownRenderer"
+import MarkdownRenderer from "../../components/courses/MarkdownRenderer.jsx"
 import { ArrowLeft, ArrowRight, BookOpen, Clock, Calendar } from 'lucide-react'
-import Link from 'next/link'
+import Link from "next/link.jsx"
 
 
 
-const ChapterViewer = ({
+const ChapterViewer.FC = ({
   courseSlug,
   chapterIndex,
   title,

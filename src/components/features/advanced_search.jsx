@@ -2,17 +2,17 @@
 
 import React, { useState, useEffect } from 'react'
 // Using direct imports instead of destructured imports
-import Card from "../ui/card-direct/Card"
-import CardContent from "../ui/card-direct/CardContent"
-import CardDescription from "../ui/card-direct/CardDescription"
-import CardFooter from "../ui/card-direct/CardFooter"
-import CardHeader from "../ui/card-direct/CardHeader"
-import CardTitle from "../ui/card-direct/CardTitle"
-import { Input } from "../ui/input"
-import { Button } from "../ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
-import { Badge } from "../ui/badge"
-import { ScrollArea } from "../ui/scroll-area"
+import Card from "../ui/card-direct/Card.jsx"
+import CardContent from "../ui/card-direct/CardContent.jsx"
+import CardDescription from "../ui/card-direct/CardDescription.jsx"
+import CardFooter from "../ui/card-direct/CardFooter.jsx"
+import CardHeader from "../ui/card-direct/CardHeader.jsx"
+import CardTitle from "../ui/card-direct/CardTitle.jsx"
+import { Input } from "../ui/input.jsx"
+import { Button } from "../ui/button.jsx"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs.jsx"
+import { Badge } from "../ui/badge.jsx"
+import { ScrollArea } from "../ui/scroll-area.jsx"
 import { Search, Filter, SlidersHorizontal, Clock, BookOpen, Tag, BarChart, Briefcase, ChevronDown, ChevronUp, Check } from 'lucide-react'
 
 // Search Results List Component - Moved before the main component to fix build error

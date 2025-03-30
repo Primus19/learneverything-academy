@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import Navbar from "../../components/layout/Navbar"
-import Link from 'next/link'
+import Navbar from "../../components/layout/Navbar.jsx"
+import Link from "next/link.jsx"
 import { User, Settings, Book, FileText, CreditCard, LogOut } from 'lucide-react'
 
 export default function Dashboard() {

@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
-import * as RadixCheckbox from "@radix-ui/react-checkbox"
+import * from "react"
+import * from "@radix-ui/react-checkbox.jsx"
 import { Check } from "lucide-react"
 
-import { cn } from "../../lib/utils"
+import { cn } from "../../lib/utils.jsx"
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,

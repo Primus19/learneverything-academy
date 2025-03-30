@@ -1,4 +1,4 @@
-import { getAvailableCourses } from "../../../lib/markdown/loader"
+import { getAvailableCourses } from "../../../lib/markdown/loader.jsx"
 
 // Add generateStaticParams for static export
 export async function generateStaticParams() {

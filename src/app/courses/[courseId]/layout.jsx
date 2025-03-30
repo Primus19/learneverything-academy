@@ -1,15 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
-import { Button } from "../../../components/ui/button";
-import Card from "../../../components/ui/card-direct/Card"
-import CardContent from "../../../components/ui/card-direct/CardContent"
-import CardDescription from "../../../components/ui/card-direct/CardDescription"
-import CardFooter from "../../../components/ui/card-direct/CardFooter"
-import CardHeader from "../../../components/ui/card-direct/CardHeader"
-import CardTitle from "../../../components/ui/card-direct/CardTitle";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
-import InteractiveLearningTools from "../../../components/features/interactive_learning_tools";
-import ProgressTracking from "../../../components/features/progress_tracking";
+import Link from "next/link.jsx";
+import { Button } from "../../../components/ui/button.jsx";
+import Card from "../../../components/ui/card-direct/Card.jsx"
+import CardContent from "../../../components/ui/card-direct/CardContent.jsx"
+import CardDescription from "../../../components/ui/card-direct/CardDescription.jsx"
+import CardFooter from "../../../components/ui/card-direct/CardFooter.jsx"
+import CardHeader from "../../../components/ui/card-direct/CardHeader.jsx"
+import CardTitle from "../../../components/ui/card-direct/CardTitle.jsx";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs.jsx";
+import InteractiveLearningTools from "../../../components/features/interactive_learning_tools.jsx";
+import ProgressTracking from "../../../components/features/progress_tracking.jsx";
 
 export default function CourseLayout({
   children,
