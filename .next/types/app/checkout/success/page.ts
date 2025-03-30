@@ -1,8 +1,8 @@
-// File: /home/ubuntu/fixed_project/src/app/checkout/success/page.jsx
-import * as entry from '../../../../../src/app/checkout/success/page.js'
+// File: /home/ubuntu/simplified_project/app/checkout/success/page.jsx
+import * as entry from '../../../../../app/checkout/success/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../../src/app/checkout/success/page.js')
+type TEntry = typeof import('../../../../../app/checkout/success/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{
