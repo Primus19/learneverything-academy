@@ -1,25 +1,18 @@
-# LearnEverything Academy - Amplify Build Configuration
-
-# This file configures the build settings for AWS Amplify
-# No build process is needed for this static HTML site
-
 version: 1
 frontend:
   phases:
-    # No build commands needed - this is a pure static HTML site
     preBuild:
       commands:
-        - echo "No build process required for static HTML site"
+        - npm install --legacy-peer-deps
     build:
       commands:
-        - echo "Static HTML site - no build step needed"
-    postBuild:
-      commands:
-        - echo "Build completed successfully"
+        - npm run build
+        - mkdir -p out
+        - cp -r .next/* out/
   artifacts:
-    # Specify the files to be deployed
-    baseDirectory: /
+    baseDirectory: out
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
+      - node_modules/**/*
