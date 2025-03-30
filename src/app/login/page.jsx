@@ -9,7 +9,7 @@ export default function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    rememberMe
+    rememberMe: false
   })
   const [errors, setErrors] = useState({
     email: '',
@@ -17,11 +17,11 @@ export default function Login() {
     general: ''
   })
 
-  const handleChange = (e.ChangeEvent) => {
+  const handleChange = (e) => {
     const { name, value, type, checked } = e.target
     setFormData({
       ...formData,
-      [name] === 'checkbox' ? checked 
+      [name]: type === 'checkbox' ? checked : value
     })
   }
 
@@ -50,7 +50,7 @@ export default function Login() {
     return valid
   }
 
-  const handleSubmit = (e.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (validateForm()) {
       // For demo purposes, simulate successful login
@@ -88,7 +88,7 @@ export default function Login() {
               </div>
             )}
             
-            
+            <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Email address
               </label>
@@ -107,7 +107,7 @@ export default function Login() {
               </div>
             </div>
 
-            
+            <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                 Password
               </label>
@@ -159,7 +159,7 @@ export default function Login() {
               </div>
             </div>
 
-            
+            <div>
               <button
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover-blue-700 focus-none focus-2 focus-offset-2 focus-blue-500"
@@ -180,7 +180,7 @@ export default function Login() {
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
-              
+              <div>
                 <button
                   type="button"
                   className="w-full inline-flex justify-center py-2 px-4 border border-gray-600 rounded-md shadow-sm bg-gray-700 text-sm font-medium text-gray-300 hover-gray-600"
@@ -192,7 +192,7 @@ export default function Login() {
                 </button>
               </div>
 
-              
+              <div>
                 <button
                   type="button"
                   className="w-full inline-flex justify-center py-2 px-4 border border-gray-600 rounded-md shadow-sm bg-gray-700 text-sm font-medium text-gray-300 hover-gray-600"

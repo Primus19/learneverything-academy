@@ -21,11 +21,11 @@ export default function Register() {
     confirmPassword: ''
   })
 
-  const handleChange = (e.ChangeEvent) => {
+  const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({
       ...formData,
-      [name]
+      [name]: value
     })
   }
 
@@ -74,7 +74,7 @@ export default function Register() {
     return valid
   }
 
-  const handleSubmit = (e.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (validateForm()) {
       // Submit form data to backend
@@ -105,7 +105,7 @@ export default function Register() {
         <div className="bg-gray-800 py-8 px-4 shadow sm-lg sm-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-6 sm-cols-2">
-              
+              <div>
                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-300">
                   First name
                 </label>
@@ -124,7 +124,7 @@ export default function Register() {
                 </div>
               </div>
 
-              
+              <div>
                 <label htmlFor="lastName" className="block text-sm font-medium text-gray-300">
                   Last name
                 </label>
@@ -144,7 +144,7 @@ export default function Register() {
               </div>
             </div>
 
-            
+            <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Email address
               </label>
@@ -163,7 +163,7 @@ export default function Register() {
               </div>
             </div>
 
-            
+            <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                 Password
               </label>
@@ -193,7 +193,7 @@ export default function Register() {
               </div>
             </div>
 
-            
+            <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300">
                 Confirm password
               </label>
@@ -243,7 +243,7 @@ export default function Register() {
               </label>
             </div>
 
-            
+            <div>
               <button
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover-blue-700 focus-none focus-2 focus-offset-2 focus-blue-500"

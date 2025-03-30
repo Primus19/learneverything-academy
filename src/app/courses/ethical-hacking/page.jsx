@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
@@ -28,10 +27,10 @@ export default async function EthicalHackingCoursePage() {
       </div>
 
       <div className="grid gap-8 mb-12">
-        
-          
-            Course Overview</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Course Overview</CardTitle>
+            <CardDescription>
               What you'll learn in this comprehensive Ethical Hacking course
             </CardDescription>
           </CardHeader>
@@ -41,7 +40,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Ethical Hacking Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Understand the core principles, methodologies, and legal aspects of ethical hacking
@@ -52,7 +51,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Network Penetration Testing</h3>
                   <p className="text-sm text-muted-foreground">
                     Master techniques for identifying and exploiting network vulnerabilities
@@ -63,7 +62,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Web Application Security</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn to identify and exploit common web application vulnerabilities
@@ -74,7 +73,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Mobile Application Security</h3>
                   <p className="text-sm text-muted-foreground">
                     Discover techniques for testing and securing mobile applications
@@ -85,7 +84,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Social Engineering</h3>
                   <p className="text-sm text-muted-foreground">
                     Understand human-focused attacks and how to defend against them
@@ -96,7 +95,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Cloud Security Testing</h3>
                   <p className="text-sm text-muted-foreground">
                     Apply ethical hacking techniques to cloud environments
@@ -113,13 +112,13 @@ export default async function EthicalHackingCoursePage() {
         <div className="grid gap-4">
           {chapters.map((chapter, index) => (
             <Card key={index} className="overflow-hidden">
-              
-                Chapter {index + 1}</CardTitle>
-                {chapter.description}</CardDescription>
+              <CardHeader>
+                <CardTitle>Chapter {index + 1}</CardTitle>
+                <CardDescription>{chapter.description}</CardDescription>
               </CardHeader>
-              
+              <CardContent>
                 <div className="flex justify-end">
-                  
+                  <Button asChild>
                     <Link href={`/courses/ethical-hacking/chapters/${index}`}>
                       Start Chapter
                     </Link>
@@ -132,10 +131,10 @@ export default async function EthicalHackingCoursePage() {
       </div>
 
       <div className="mb-12">
-        
-          
-            Prerequisites</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Prerequisites</CardTitle>
+            <CardDescription>
               Recommended knowledge before starting this course
             </CardDescription>
           </CardHeader>
@@ -145,7 +144,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Networking Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Strong understanding of TCP/IP, network protocols, and architecture
@@ -156,7 +155,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Operating Systems</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with Windows, Linux, and command line interfaces
@@ -167,7 +166,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Programming</h3>
                   <p className="text-sm text-muted-foreground">
                     Knowledge of scripting languages like Python, Bash, or PowerShell
@@ -178,7 +177,7 @@ export default async function EthicalHackingCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Web Technologies</h3>
                   <p className="text-sm text-muted-foreground">
                     Understanding of HTTP, HTML, JavaScript, and web applications
@@ -190,11 +189,11 @@ export default async function EthicalHackingCoursePage() {
         </Card>
       </div>
 
-      
-        
-          
-            Who Should Take This Course</CardTitle>
-            
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Who Should Take This Course</CardTitle>
+            <CardDescription>
               This course is ideal for the following roles and career paths
             </CardDescription>
           </CardHeader>

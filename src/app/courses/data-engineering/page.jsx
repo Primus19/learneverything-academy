@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
@@ -28,10 +27,10 @@ export default async function DataEngineeringCoursePage() {
       </div>
 
       <div className="grid gap-8 mb-12">
-        
-          
-            Course Overview</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Course Overview</CardTitle>
+            <CardDescription>
               What you'll learn in this comprehensive Data Engineering course
             </CardDescription>
           </CardHeader>
@@ -41,7 +40,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Engineering Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Understand the core principles and responsibilities of data engineering
@@ -52,7 +51,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">ETL/ELT Processes</h3>
                   <p className="text-sm text-muted-foreground">
                     Master data extraction, transformation, and loading techniques
@@ -63,7 +62,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Pipeline Development</h3>
                   <p className="text-sm text-muted-foreground">
                     Design and implement efficient data pipelines for various use cases
@@ -74,7 +73,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Modeling</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn effective data modeling techniques for different data stores
@@ -85,7 +84,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Governance</h3>
                   <p className="text-sm text-muted-foreground">
                     Implement data quality, security, and governance best practices
@@ -96,7 +95,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Cloud Data Engineering</h3>
                   <p className="text-sm text-muted-foreground">
                     Work with cloud-based data engineering tools and services
@@ -113,13 +112,13 @@ export default async function DataEngineeringCoursePage() {
         <div className="grid gap-4">
           {chapters.map((chapter, index) => (
             <Card key={index} className="overflow-hidden">
-              
-                Chapter {index + 1}</CardTitle>
-                {chapter.description}</CardDescription>
+              <CardHeader>
+                <CardTitle>Chapter {index + 1}</CardTitle>
+                <CardDescription>{chapter.description}</CardDescription>
               </CardHeader>
-              
+              <CardContent>
                 <div className="flex justify-end">
-                  
+                  <Button asChild>
                     <Link href={`/courses/data-engineering/chapters/${index}`}>
                       Start Chapter
                     </Link>
@@ -132,10 +131,10 @@ export default async function DataEngineeringCoursePage() {
       </div>
 
       <div className="mb-12">
-        
-          
-            Prerequisites</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Prerequisites</CardTitle>
+            <CardDescription>
               Recommended knowledge before starting this course
             </CardDescription>
           </CardHeader>
@@ -145,7 +144,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Programming Skills</h3>
                   <p className="text-sm text-muted-foreground">
                     Proficiency in Python or another programming language
@@ -156,7 +155,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Database Knowledge</h3>
                   <p className="text-sm text-muted-foreground">
                     Understanding of SQL and database concepts
@@ -167,7 +166,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Cloud Computing Basics</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with cloud platforms (AWS, Azure, or GCP)
@@ -178,7 +177,7 @@ export default async function DataEngineeringCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Linux Command Line</h3>
                   <p className="text-sm text-muted-foreground">
                     Basic understanding of Linux and command line operations
@@ -190,11 +189,11 @@ export default async function DataEngineeringCoursePage() {
         </Card>
       </div>
 
-      
-        
-          
-            Who Should Take This Course</CardTitle>
-            
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Who Should Take This Course</CardTitle>
+            <CardDescription>
               This course is ideal for the following roles and career paths
             </CardDescription>
           </CardHeader>

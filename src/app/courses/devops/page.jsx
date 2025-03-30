@@ -147,7 +147,7 @@ export default function DevOpsCourse() {
                 <div className="h-12 w-12 rounded-full bg-gray-600 flex items-center justify-center text-white font-bold mr-4">
                   {courseData.instructor.split(' ').map(n => n[0]).join('')}
                 </div>
-                
+                <div>
                   <p className="text-white font-medium">{courseData.instructor}</p>
                   <p className="text-gray-400">{courseData.instructorTitle}</p>
                 </div>
@@ -272,39 +272,39 @@ export default function DevOpsCourse() {
             <div className="bg-gray-800 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <Download className="h-6 w-6 text-blue-400 mr-3" />
-                <h3 className="text-lg font-medium text-white">Code Examples</h3>
+                <h3 className="text-lg font-medium text-white">CI/CD Pipeline Templates</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Complete code examples for all projects and exercises covered in the course.
+                Ready-to-use Jenkins pipeline templates for various project types.
               </p>
               <button className="text-blue-400 hover-blue-300 font-medium">
-                Preview Examples
+                Preview Templates
               </button>
             </div>
             
             <div className="bg-gray-800 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <Download className="h-6 w-6 text-blue-400 mr-3" />
-                <h3 className="text-lg font-medium text-white">Cheat Sheets</h3>
+                <h3 className="text-lg font-medium text-white">Docker & Kubernetes Configs</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Quick reference guides for Docker, Kubernetes, Terraform, and other tools.
+                Sample configuration files for containerization and orchestration.
               </p>
               <button className="text-blue-400 hover-blue-300 font-medium">
-                Preview Cheat Sheets
+                Preview Configs
               </button>
             </div>
             
             <div className="bg-gray-800 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <Download className="h-6 w-6 text-blue-400 mr-3" />
-                <h3 className="text-lg font-medium text-white">Project Files</h3>
+                <h3 className="text-lg font-medium text-white">Infrastructure Code</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Starter and completed project files for hands-on exercises.
+                Terraform and Ansible code for infrastructure automation.
               </p>
               <button className="text-blue-400 hover-blue-300 font-medium">
-                Preview Projects
+                Preview Code
               </button>
             </div>
           </div>
@@ -315,7 +315,7 @@ export default function DevOpsCourse() {
       <section className="py-16 px-4 sm-6 lg-8 bg-blue-600">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-white sm-4xl">
-            Ready to become a DevOps expert?
+            Ready to master DevOps engineering?
           </h2>
           <p className="mt-3 max-w-md mx-auto text-xl text-white opacity-90">
             Join thousands of professionals who have transformed their careers with our courses.
@@ -334,22 +334,22 @@ export default function DevOpsCourse() {
       <footer className="bg-gray-900 py-12 px-4 sm-6 lg-8 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md-cols-4 gap-8">
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Tech Academy</h3>
               <p className="text-gray-400">
                 Professional training for DevOps and Cloud Engineering careers.
               </p>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Courses</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/courses/devops" className="text-gray-400 hover-white">
                     DevOps Engineering
                   </a>
                 </li>
-                
+                <li>
                   <a href="/courses/cloud-engineering" className="text-gray-400 hover-white">
                     Cloud Engineering
                   </a>
@@ -357,15 +357,15 @@ export default function DevOpsCourse() {
               </ul>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Resources</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/resume-samples" className="text-gray-400 hover-white">
                     Resume Samples
                   </a>
                 </li>
-                
+                <li>
                   <a href="/about" className="text-gray-400 hover-white">
                     About Us
                   </a>
@@ -373,15 +373,15 @@ export default function DevOpsCourse() {
               </ul>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Legal</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/privacy" className="text-gray-400 hover-white">
                     Privacy Policy
                   </a>
                 </li>
-                
+                <li>
                   <a href="/terms" className="text-gray-400 hover-white">
                     Terms of Service
                   </a>

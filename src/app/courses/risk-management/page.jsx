@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
@@ -28,10 +27,10 @@ export default async function RiskManagementCoursePage() {
       </div>
 
       <div className="grid gap-8 mb-12">
-        
-          
-            Course Overview</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Course Overview</CardTitle>
+            <CardDescription>
               What you'll learn in this comprehensive Risk Management course
             </CardDescription>
           </CardHeader>
@@ -41,7 +40,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Risk Management Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Understand the core principles and frameworks of risk management
@@ -52,7 +51,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Risk Identification Techniques</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn methods to identify and categorize various types of risks
@@ -63,7 +62,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Risk Assessment and Analysis</h3>
                   <p className="text-sm text-muted-foreground">
                     Master qualitative and quantitative risk assessment methodologies
@@ -74,7 +73,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Risk Mitigation Strategies</h3>
                   <p className="text-sm text-muted-foreground">
                     Develop effective risk response plans and mitigation strategies
@@ -85,7 +84,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Enterprise Risk Management</h3>
                   <p className="text-sm text-muted-foreground">
                     Implement organization-wide risk management frameworks
@@ -96,7 +95,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Financial and Operational Risk</h3>
                   <p className="text-sm text-muted-foreground">
                     Understand and manage specific risk types in business environments
@@ -113,13 +112,13 @@ export default async function RiskManagementCoursePage() {
         <div className="grid gap-4">
           {chapters.map((chapter, index) => (
             <Card key={index} className="overflow-hidden">
-              
-                Chapter {index + 1}</CardTitle>
-                {chapter.description}</CardDescription>
+              <CardHeader>
+                <CardTitle>Chapter {index + 1}</CardTitle>
+                <CardDescription>{chapter.description}</CardDescription>
               </CardHeader>
-              
+              <CardContent>
                 <div className="flex justify-end">
-                  
+                  <Button asChild>
                     <Link href={`/courses/risk-management/chapters/${index}`}>
                       Start Chapter
                     </Link>
@@ -132,10 +131,10 @@ export default async function RiskManagementCoursePage() {
       </div>
 
       <div className="mb-12">
-        
-          
-            Prerequisites</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Prerequisites</CardTitle>
+            <CardDescription>
               Recommended knowledge before starting this course
             </CardDescription>
           </CardHeader>
@@ -145,7 +144,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Business Knowledge</h3>
                   <p className="text-sm text-muted-foreground">
                     Understanding of business operations and organizational structures
@@ -156,7 +155,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">IT Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Basic understanding of IT systems and infrastructure
@@ -167,7 +166,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Analytical Thinking</h3>
                   <p className="text-sm text-muted-foreground">
                     Ability to analyze problems and think critically
@@ -178,7 +177,7 @@ export default async function RiskManagementCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Project Management</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with project management concepts is helpful but not required
@@ -190,11 +189,11 @@ export default async function RiskManagementCoursePage() {
         </Card>
       </div>
 
-      
-        
-          
-            Who Should Take This Course</CardTitle>
-            
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Who Should Take This Course</CardTitle>
+            <CardDescription>
               This course is ideal for the following roles and career paths
             </CardDescription>
           </CardHeader>

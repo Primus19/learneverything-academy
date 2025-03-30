@@ -13,9 +13,9 @@ export default function Dashboard() {
     joinDate: 'March 2025',
     courses: [
       {
-        id,
+        id: 1,
         title: 'DevOps Engineering Masterclass',
-        progress,
+        progress: 45,
         lastAccessed: '2 days ago'
       }
     ]
@@ -103,8 +103,8 @@ export default function Dashboard() {
                     <div key={course.id} className="bg-gray-700 rounded-lg p-4">
                       <h3 className="text-lg font-medium text-white mb-2">{course.title}</h3>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-gray-300 text-sm">Progress%</span>
-                        <span className="text-gray-400 text-sm">Last accessed</span>
+                        <span className="text-gray-300 text-sm">Progress: {course.progress}%</span>
+                        <span className="text-gray-400 text-sm">Last accessed: {course.lastAccessed}</span>
                       </div>
                       <div className="w-full bg-gray-600 rounded-full h-2.5 mb-4">
                         <div className="bg-blue-500 h-2.5 rounded-full" style={{ width: `${course.progress}%` }}></div>
@@ -162,22 +162,22 @@ export default function Dashboard() {
       <footer className="bg-gray-900 py-12 px-4 sm-6 lg-8 border-t border-gray-800 mt-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md-cols-4 gap-8">
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Tech Academy</h3>
               <p className="text-gray-400">
                 Professional training for DevOps and Cloud Engineering careers.
               </p>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Courses</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/courses/devops" className="text-gray-400 hover-white">
                     DevOps Engineering
                   </a>
                 </li>
-                
+                <li>
                   <a href="/courses/cloud-engineering" className="text-gray-400 hover-white">
                     Cloud Engineering
                   </a>
@@ -185,15 +185,15 @@ export default function Dashboard() {
               </ul>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Resources</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/resume-samples" className="text-gray-400 hover-white">
                     Resume Samples
                   </a>
                 </li>
-                
+                <li>
                   <a href="/about" className="text-gray-400 hover-white">
                     About Us
                   </a>
@@ -201,15 +201,15 @@ export default function Dashboard() {
               </ul>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Legal</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/privacy" className="text-gray-400 hover-white">
                     Privacy Policy
                   </a>
                 </li>
-                
+                <li>
                   <a href="/terms" className="text-gray-400 hover-white">
                     Terms of Service
                   </a>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
@@ -28,10 +27,10 @@ export default async function SOCCoursePage() {
       </div>
 
       <div className="grid gap-8 mb-12">
-        
-          
-            Course Overview</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Course Overview</CardTitle>
+            <CardDescription>
               What you'll learn in this comprehensive SOC course
             </CardDescription>
           </CardHeader>
@@ -41,7 +40,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Security Monitoring Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn the core principles of security monitoring and the role of a SOC
@@ -52,7 +51,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Threat Detection Techniques</h3>
                   <p className="text-sm text-muted-foreground">
                     Master methods for identifying and analyzing security threats
@@ -63,7 +62,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Incident Response Procedures</h3>
                   <p className="text-sm text-muted-foreground">
                     Develop effective incident response plans and procedures
@@ -74,7 +73,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">SOC Tools and Technologies</h3>
                   <p className="text-sm text-muted-foreground">
                     Hands-on experience with SIEM, EDR, and other essential SOC tools
@@ -85,7 +84,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Threat Intelligence Integration</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn to leverage threat intelligence to enhance security operations
@@ -96,7 +95,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">SOC Automation and Orchestration</h3>
                   <p className="text-sm text-muted-foreground">
                     Implement automation to improve SOC efficiency and effectiveness
@@ -113,13 +112,13 @@ export default async function SOCCoursePage() {
         <div className="grid gap-4">
           {chapters.map((chapter, index) => (
             <Card key={index} className="overflow-hidden">
-              
-                Chapter {index + 1}</CardTitle>
-                {chapter.description}</CardDescription>
+              <CardHeader>
+                <CardTitle>Chapter {index + 1}</CardTitle>
+                <CardDescription>{chapter.description}</CardDescription>
               </CardHeader>
-              
+              <CardContent>
                 <div className="flex justify-end">
-                  
+                  <Button asChild>
                     <Link href={`/courses/soc/chapters/${index}`}>
                       Start Chapter
                     </Link>
@@ -132,10 +131,10 @@ export default async function SOCCoursePage() {
       </div>
 
       <div className="mb-12">
-        
-          
-            Prerequisites</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Prerequisites</CardTitle>
+            <CardDescription>
               Recommended knowledge before starting this course
             </CardDescription>
           </CardHeader>
@@ -145,7 +144,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Networking Knowledge</h3>
                   <p className="text-sm text-muted-foreground">
                     Understanding of TCP/IP, network protocols, and basic network architecture
@@ -156,7 +155,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Cybersecurity Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with basic security concepts and terminology
@@ -167,7 +166,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Operating System Basics</h3>
                   <p className="text-sm text-muted-foreground">
                     Working knowledge of Windows and Linux operating systems
@@ -178,7 +177,7 @@ export default async function SOCCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Scripting Skills</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with scripting languages like Python or PowerShell is helpful but not required
@@ -190,11 +189,11 @@ export default async function SOCCoursePage() {
         </Card>
       </div>
 
-      
-        
-          
-            Who Should Take This Course</CardTitle>
-            
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Who Should Take This Course</CardTitle>
+            <CardDescription>
               This course is ideal for the following roles and career paths
             </CardDescription>
           </CardHeader>

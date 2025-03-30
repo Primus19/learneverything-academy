@@ -61,7 +61,7 @@ export default function ResumePage() {
           Get all resume templates at a discounted price. Perfect if you're exploring multiple career paths or want to see different formatting options.
         </p>
         <div className="flex justify-between items-center">
-          
+          <div>
             <p className="text-xl font-bold">$69.99</p>
             <p className="text-sm text-gray-400">Save $19.98 compared to buying individually</p>
           </div>
@@ -72,31 +72,31 @@ export default function ResumePage() {
       </div>
       
       <div className="prose prose-invert max-w-none">
-        Why Our Resume Templates Stand Out</h2>
-        
+        <h2>Why Our Resume Templates Stand Out</h2>
+        <p>
           Our resume templates are crafted by industry professionals with years of experience in tech hiring and recruitment.
           They are specifically designed to highlight the skills, projects, and experiences that employers in the tech industry value most.
         </p>
         
-        Each Resume Pack Includes:</h3>
-        
-          Three complete resume templates for different career stages (entry-level, mid-level, senior)</li>
-          Customizable sections to highlight your specific skills and experiences</li>
-          Professional summaries tailored to each role</li>
-          Technical skills sections organized by relevance</li>
-          Project description examples that showcase practical experience</li>
-          Both Word and PDF formats for easy editing</li>
-          Detailed instructions for customization</li>
+        <h3>Each Resume Pack Includes:</h3>
+        <ul>
+          <li>Three complete resume templates for different career stages (entry-level, mid-level, senior)</li>
+          <li>Customizable sections to highlight your specific skills and experiences</li>
+          <li>Professional summaries tailored to each role</li>
+          <li>Technical skills sections organized by relevance</li>
+          <li>Project description examples that showcase practical experience</li>
+          <li>Both Word and PDF formats for easy editing</li>
+          <li>Detailed instructions for customization</li>
         </ul>
         
-        Resume Writing Tips</h3>
-        
+        <h3>Resume Writing Tips</h3>
+        <p>
           Each template pack also includes a comprehensive guide with tips for customizing your resume, highlighting your strengths,
           and tailoring your application to specific job postings. Our guidance is based on feedback from actual hiring managers in the tech industry.
         </p>
         
-        Satisfaction Guarantee</h3>
-        
+        <h3>Satisfaction Guarantee</h3>
+        <p>
           We're confident that our resume templates will help you present your skills and experience effectively.
           If you're not satisfied with your purchase, contact us within 30 days for a full refund.
         </p>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../../../components/ui/button";
@@ -15,13 +14,13 @@ export const metadata = {
   description: 'Learn about Ethical Hacking concepts and techniques',
 };
 
-export default async function ChapterPage({ params } }) {
+export default async function ChapterPage({ params }) {
   const chapters = await getChapters('ethical_hacking');
   const chapterIndex = parseInt(params.chapterIndex);
   const chapter = chapters[chapterIndex];
 
   if (!chapter) {
-    return Chapter not found</div>;
+    return <div>Chapter not found</div>;
   }
 
   const nextChapterIndex = chapterIndex + 1;
@@ -38,8 +37,8 @@ export default async function ChapterPage({ params } }) {
       </div>
 
       <div className="prose prose-invert max-w-none">
-        {chapter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html.content }} />
+        <h1>{chapter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: chapter.content }} />
       </div>
 
       <div className="mt-12 flex flex-col sm-row gap-4 justify-between">
@@ -50,16 +49,16 @@ export default async function ChapterPage({ params } }) {
             </Link>
           </Button>
         ) : (
-          </div>
+          <div></div>
         )}
         {hasNextChapter ? (
-          
+          <Button asChild>
             <Link href={`/courses/ethical-hacking/chapters/${nextChapterIndex}`}>
               Next Chapter →
             </Link>
           </Button>
         ) : (
-          
+          <Button asChild>
             <Link href="/courses/ethical-hacking">
               Complete Course
             </Link>
