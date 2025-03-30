@@ -1,8 +1,8 @@
-// File: /home/ubuntu/simplified_project/app/courses/risk-management/chapters/[chapterIndex]/page.jsx
-import * as entry from '../../../../../../../app/courses/risk-management/chapters/[chapterIndex]/page.js'
+// File: /home/ubuntu/fixed_project/src/app/courses/risk-management/chapters/[chapterIndex]/page.jsx
+import * as entry from '../../../../../../../src/app/courses/risk-management/chapters/[chapterIndex]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../../../../app/courses/risk-management/chapters/[chapterIndex]/page.js')
+type TEntry = typeof import('../../../../../../../src/app/courses/risk-management/chapters/[chapterIndex]/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

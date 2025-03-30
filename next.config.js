@@ -1,10 +1,11 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable static export to avoid generateStaticParams requirement
-  // output: 'export',
-  // Configure images
+  // Configure for static export to ensure compatibility with Amplify
+  output: 'export',
+  // Disable image optimization for static export
   images: {
+    unoptimized: true,
     domains: ['localhost'],
   }
 }

@@ -1,7 +1,20 @@
+// Update the import paths to use the direct JSX files
 import React from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 import Link from 'next/link';
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/components";
+import Image from "next/image";
+import ProgressTracking from "../../components/features/progress_tracking";
+import CommunityEngagement from "../../components/features/community_engagement";
+import AdvancedSearch from "../../components/features/advanced_search";
+import CareerAdvancement from "../../components/features/career_advancement";
+import Card from "../../components/ui/card-direct/Card";
+import CardContent from "../../components/ui/card-direct/CardContent";
+import CardDescription from "../../components/ui/card-direct/CardDescription";
+import CardHeader from "../../components/ui/card-direct/CardHeader";
+import CardTitle from "../../components/ui/card-direct/CardTitle";
+import { Button } from "../../components/ui/button";
 
+// Use plain JS object for metadata without any type annotations
 export const metadata = {
   title: 'LearnEverything Academy | Courses',
   description: 'Explore our comprehensive courses in DevOps, Cloud Engineering, Security Operations, Risk Management, Data Analytics, Big Data, Data Engineering, and Ethical Hacking.',
@@ -17,11 +30,18 @@ export default function CoursesPage() {
         </p>
       </div>
 
+      <AdvancedSearch />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         <Link href="/courses/devops" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">DevOps</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/devops.jpg"
+                alt="DevOps"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>DevOps</CardTitle>
@@ -42,8 +62,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/cloud-engineering" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">Cloud</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/cloud-engineering.jpg"
+                alt="Cloud Engineering"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Cloud Engineering</CardTitle>
@@ -64,8 +89,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/soc" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-red-600 to-purple-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">SOC</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/soc.jpg"
+                alt="Security Operations Center"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Security Operations Center (SOC)</CardTitle>
@@ -86,8 +116,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/risk-management" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-green-600 to-teal-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">Risk</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/risk-management.jpg"
+                alt="Risk Management"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Risk Management</CardTitle>
@@ -108,8 +143,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/data-analytics" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-yellow-600 to-orange-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">Analytics</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/data-analytics.jpg"
+                alt="Data Analytics"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Data Analytics</CardTitle>
@@ -130,8 +170,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/big-data" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-purple-600 to-pink-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">Big Data</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/big-data.jpg"
+                alt="Big Data"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Big Data</CardTitle>
@@ -152,8 +197,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/data-engineering" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-blue-600 to-cyan-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">Data Eng</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/data-engineering.jpg"
+                alt="Data Engineering"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Data Engineering</CardTitle>
@@ -174,8 +224,13 @@ export default function CoursesPage() {
 
         <Link href="/courses/ethical-hacking" className="group">
           <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg">
-            <div className="aspect-video relative bg-gradient-to-br from-red-600 to-orange-800 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">Ethical Hacking</span>
+            <div className="aspect-video relative">
+              <Image
+                src="/images/courses/ethical-hacking.jpg"
+                alt="Ethical Hacking"
+                fill
+                className="object-cover"
+              />
             </div>
             <CardHeader>
               <CardTitle>Ethical Hacking</CardTitle>
@@ -196,38 +251,7 @@ export default function CoursesPage() {
       </div>
 
       <div className="mt-16 space-y-12">
-        <div className="bg-card rounded-lg p-6 shadow-sm border">
-          <h2 className="text-2xl font-bold mb-4">Your Learning Progress</h2>
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between mb-1">
-                <span className="text-sm font-medium">DevOps Fundamentals</span>
-                <span className="text-sm font-medium">60%</span>
-              </div>
-              <div className="w-full bg-muted rounded-full h-2.5">
-                <div className="bg-primary h-2.5 rounded-full" style={{ width: '60%' }}></div>
-              </div>
-            </div>
-            <div>
-              <div className="flex justify-between mb-1">
-                <span className="text-sm font-medium">Cloud Security</span>
-                <span className="text-sm font-medium">25%</span>
-              </div>
-              <div className="w-full bg-muted rounded-full h-2.5">
-                <div className="bg-primary h-2.5 rounded-full" style={{ width: '25%' }}></div>
-              </div>
-            </div>
-            <div>
-              <div className="flex justify-between mb-1">
-                <span className="text-sm font-medium">Data Analytics Basics</span>
-                <span className="text-sm font-medium">80%</span>
-              </div>
-              <div className="w-full bg-muted rounded-full h-2.5">
-                <div className="bg-primary h-2.5 rounded-full" style={{ width: '80%' }}></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProgressTracking userId="user123" userName="John Doe" />
         
         <Tabs defaultValue="community" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
@@ -235,58 +259,10 @@ export default function CoursesPage() {
             <TabsTrigger value="career">Career Advancement</TabsTrigger>
           </TabsList>
           <TabsContent value="community" className="mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Join Our Learning Community</CardTitle>
-                <CardDescription>Connect with fellow learners and industry experts</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
-                      <span>JS</span>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium">John Smith</p>
-                      <p className="text-sm text-muted-foreground">Just completed the DevOps certification! The CI/CD pipeline section was incredibly helpful.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
-                      <span>AJ</span>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium">Alice Johnson</p>
-                      <p className="text-sm text-muted-foreground">Looking for study partners for the Cloud Engineering course. Anyone interested?</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <CommunityEngagement userId="user123" userName="John Doe" />
           </TabsContent>
           <TabsContent value="career" className="mt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Career Opportunities</CardTitle>
-                <CardDescription>Leverage your skills for professional growth</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="p-4 border rounded-lg">
-                    <h3 className="font-medium">Senior DevOps Engineer</h3>
-                    <p className="text-sm text-muted-foreground mb-2">TechCorp Inc. - Remote</p>
-                    <p className="text-sm mb-3">Looking for experienced DevOps engineers to help scale our cloud infrastructure.</p>
-                    <Button size="sm">View Details</Button>
-                  </div>
-                  <div className="p-4 border rounded-lg">
-                    <h3 className="font-medium">Data Analyst</h3>
-                    <p className="text-sm text-muted-foreground mb-2">Analytics Pro - New York, NY</p>
-                    <p className="text-sm mb-3">Join our team of data professionals to drive business insights through data.</p>
-                    <Button size="sm">View Details</Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <CareerAdvancement userId="user123" userName="John Doe" />
           </TabsContent>
         </Tabs>
       </div>
