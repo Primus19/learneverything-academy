@@ -13,14 +13,6 @@ import { Badge } from "../../components/ui/badge.jsx"
 import { ScrollArea } from "../../components/ui/scroll-area.jsx"
 import { Briefcase, Award, FileText, Download, ExternalLink, CheckCircle, Clock, Calendar, MapPin } from 'lucide-react'
 
-
-
-
-
-
-
-
-
 export default function CareerAdvancement({
   userId,
   userName,
@@ -29,8 +21,8 @@ export default function CareerAdvancement({
 }) {
   const [activeTab, setActiveTab] = useState('certifications')
   
-  // Mock certification data
-  const [certifications, setCertifications] = useState<Certification[]>([
+  // Mock certification data - removed TypeScript generic
+  const [certifications, setCertifications] = useState([
     {
       id: 'cert-1',
       name: 'AWS Certified Solutions Architect',
@@ -46,7 +38,7 @@ export default function CareerAdvancement({
       estimatedTime: '3-6 months',
       cost: '$150',
       relevantCourses: ['Cloud Engineering Fundamentals', 'AWS Cloud Architecture'],
-      popularity,
+      popularity: 95, // Fixed undefined variable
       image: '/images/certifications/aws-solutions-architect.png'
     },
     {
@@ -64,7 +56,7 @@ export default function CareerAdvancement({
       estimatedTime: '2-3 months',
       cost: '$950',
       relevantCourses: ['Introduction to Ethical Hacking', 'Network Penetration Testing'],
-      popularity,
+      popularity: 88, // Fixed undefined variable
       image: '/images/certifications/ceh.png'
     },
     {
@@ -81,7 +73,7 @@ export default function CareerAdvancement({
       estimatedTime: '1-2 months',
       cost: '$150',
       relevantCourses: ['Agile Project Management', 'Scrum Fundamentals'],
-      popularity,
+      popularity: 82, // Fixed undefined variable
       image: '/images/certifications/psm.png'
     },
     {
@@ -99,19 +91,19 @@ export default function CareerAdvancement({
       estimatedTime: '3-6 months',
       cost: '$200',
       relevantCourses: ['Cloud Engineering Fundamentals', 'Google Cloud Platform Essentials'],
-      popularity,
+      popularity: 90, // Fixed undefined variable
       image: '/images/certifications/gcp-architect.png'
     }
   ])
   
-  // Mock job opportunities data
-  const [jobOpportunities, setJobOpportunities] = useState<JobOpportunity[]>([
+  // Mock job opportunities data - removed TypeScript generic
+  const [jobOpportunities, setJobOpportunities] = useState([
     {
       id: 'job-1',
       title: 'Senior DevOps Engineer',
       company: 'TechCorp Solutions',
       location: 'San Francisco, CA',
-      remote,
+      remote: true, // Fixed undefined variable
       salary: '$120,000 - $150,000',
       description: 'Join our team to build and maintain our cloud infrastructure and CI/CD pipelines',
       requirements: [
@@ -130,7 +122,7 @@ export default function CareerAdvancement({
       title: 'Cloud Security Specialist',
       company: 'SecureNet Inc.',
       location: 'Remote',
-      remote,
+      remote: true, // Fixed undefined variable
       salary: '$110,000 - $140,000',
       description: 'Help us secure our cloud infrastructure and implement security best practices',
       requirements: [
@@ -149,7 +141,7 @@ export default function CareerAdvancement({
       title: 'Full Stack Developer',
       company: 'InnovateTech',
       location: 'Austin, TX',
-      remote,
+      remote: false, // Fixed undefined variable
       salary: '$90,000 - $120,000',
       description: 'Develop and maintain our web applications using modern JavaScript frameworks',
       requirements: [
@@ -165,8 +157,8 @@ export default function CareerAdvancement({
     }
   ])
   
-  // Mock career resources data
-  const [careerResources, setCareerResources] = useState<CareerResource[]>([
+  // Mock career resources data - removed TypeScript generic
+  const [careerResources, setCareerResources] = useState([
     {
       id: 'resource-1',
       title: 'Technical Resume Template',
@@ -220,7 +212,7 @@ export default function CareerAdvancement({
   
   return (
     <Card className="w-full bg-gray-800 border-gray-700 text-white">
-      
+      <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Briefcase className="h-5 w-5" />
           Career Advancement
@@ -230,349 +222,151 @@ export default function CareerAdvancement({
         </CardDescription>
       </CardHeader>
       
+      <CardContent>
         <Tabs defaultValue="certifications" onValueChange={setActiveTab}>
           <TabsList className="grid grid-cols-3 mb-4 bg-gray-900">
-            <TabsTrigger value="certifications" className="data-[state=active]-blue-900">
+            <TabsTrigger value="certifications" className="data-[state=active]:bg-blue-900">
               Certifications
             </TabsTrigger>
-            <TabsTrigger value="job-opportunities" className="data-[state=active]-purple-900">
+            <TabsTrigger value="jobs" className="data-[state=active]:bg-blue-900">
               Job Opportunities
             </TabsTrigger>
-            <TabsTrigger value="career-resources" className="data-[state=active]-green-900">
+            <TabsTrigger value="resources" className="data-[state=active]:bg-blue-900">
               Career Resources
             </TabsTrigger>
           </TabsList>
           
-          <TabsContent value="certifications" className="mt-0">
-            <div className="mb-4 bg-gradient-to-r from-blue-900/40 to-indigo-900/40 rounded-lg border border-blue-800 p-6">
-              <div className="flex items-start">
-                <div className="mr-4">
-                  <Award className="h-12 w-12 text-blue-400" />
-                </div>
-                
-                  <h3 className="text-xl font-medium mb-2">Professional Certifications</h3>
-                  <p className="text-gray-300 mb-4">
-                    Boost your career with industry-recognized certifications. We've recommended certifications based on your completed courses and skills.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Button className="bg-blue-600 hover-blue-700">
-                      View All Certifications
-                    </Button>
-                    <Button variant="outline" className="border-blue-700 text-blue-300 hover-blue-900/30">
-                      Take Skills Assessment
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-medium">Recommended for You</h3>
-                <span className="text-sm text-gray-400">Based on your completed courses</span>
-              </div>
-              
-              <div className="grid grid-cols-1 md-cols-2 gap-4">
+          <TabsContent value="certifications">
+            <ScrollArea className="h-[400px] pr-4">
+              <div className="space-y-4">
                 {recommendedCertifications.map(cert => (
-                  <div key={cert.id} className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
-                    <div className="p-6">
-                      <div className="flex items-start">
-                        <div className="h-16 w-16 bg-gray-800 rounded-lg flex items-center justify-center mr-4">
-                          <Award className="h-8 w-8 text-blue-400" />
+                  <div key={cert.id} className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden">
+                    <div className="p-4">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-lg font-medium">{cert.name}</h3>
+                          <p className="text-sm text-gray-400">{cert.provider} • {cert.level}</p>
                         </div>
-                        
-                          <h4 className="text-xl font-medium">{cert.name}</h4>
-                          <div className="text-gray-400 mt-1">{cert.provider}</div>
-                          
-                          <Badge className={`mt-2 ${
-                            cert.level === 'Beginner' ? 'bg-green-900/30 text-green-400 border-green-800' .level === 'Intermediate' ? 'bg-blue-900/30 text-blue-400 border-blue-800' .level === 'Advanced' ? 'bg-purple-900/30 text-purple-400 border-purple-800' :
-                            'bg-yellow-900/30 text-yellow-400 border-yellow-800'
-                          }`}>
-                            {cert.level}
-                          </Badge>
-                          
-                          <p className="text-gray-300 mt-3">{cert.description}</p>
-                          
-                          <div className="mt-4 space-y-3">
-                            <div className="flex items-center">
-                              <Clock className="h-4 w-4 text-gray-400 mr-2" />
-                              <span className="text-sm">Estimated Time</span>
-                            </div>
-                            <div className="flex items-center">
-                              <Badge variant="outline" className="bg-gray-800 border-gray-600">
-                                Cost
-                              </Badge>
-                            </div>
-                          </div>
-                        </div>
+                        <Badge className="bg-blue-900/30 text-blue-400 border-blue-800">
+                          {cert.cost}
+                        </Badge>
+                      </div>
+                      
+                      <p className="mt-2 text-gray-300">{cert.description}</p>
+                      
+                      <div className="mt-3 flex items-center text-sm text-gray-400">
+                        <Clock className="h-4 w-4 mr-1" />
+                        <span>Estimated time: {cert.estimatedTime}</span>
                       </div>
                       
                       <div className="mt-4">
-                        <h5 className="text-sm font-medium text-gray-400 mb-2">Key Requirements</h5>
-                        <ul className="space-y-1">
-                          {cert.requirements.slice(0, 3).map((req, index) => (
-                            <li key={index} className="text-sm flex items-start">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                              {req}</span>
-                            </li>
+                        <h4 className="text-sm font-medium mb-2">Requirements:</h4>
+                        <ul className="text-sm text-gray-400 space-y-1 list-disc pl-5">
+                          {cert.requirements.map((req, index) => (
+                            <li key={index}>{req}</li>
                           ))}
-                          {cert.requirements.length > 3 && (
-                            <li className="text-sm text-gray-400">
-                              + {cert.requirements.length - 3} more requirements
-                            </li>
-                          )}
                         </ul>
                       </div>
-                      
-                      <div className="mt-4">
-                        <h5 className="text-sm font-medium text-gray-400 mb-2">Relevant Courses</h5>
-                        <div className="flex flex-wrap gap-2">
-                          {cert.relevantCourses.map((course, index) => (
-                            <Badge 
-                              key={index} 
-                              className={`${
-                                completedCourses.includes(course)
-                                  ? 'bg-green-900/30 text-green-400 border-green-800'
-                                  : 'bg-gray-800 text-gray-300 border-gray-700'
-                              }`}
-                            >
-                              {completedCourses.includes(course) && '✓ '}
-                              {course}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
                     </div>
-                    <div className="bg-gray-850 border-t border-gray-700 p-4 flex justify-between items-center">
-                      <div className="text-sm text-gray-400">
-                        <span className="font-medium text-white">{cert.popularity}%</span> of professionals in your field have this certification
-                      </div>
-                      <Button className="bg-blue-600 hover-blue-700">
-                        Learn More
+                    
+                    <div className="bg-gray-850 border-t border-gray-700 p-3 flex justify-end">
+                      <Button className="bg-blue-600 hover:bg-blue-700">
+                        Explore Certification
                       </Button>
                     </div>
                   </div>
                 ))}
               </div>
-              
-              <div className="text-center">
-                <Button variant="outline" className="border-gray-700 text-gray-300 hover-gray-700">
-                  View All Certifications
-                </Button>
-              </div>
-            </div>
+            </ScrollArea>
           </TabsContent>
           
-          <TabsContent value="job-opportunities" className="mt-0">
-            <div className="mb-4 bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg border border-purple-800 p-6">
-              <div className="flex items-start">
-                <div className="mr-4">
-                  <Briefcase className="h-12 w-12 text-purple-400" />
-                </div>
-                
-                  <h3 className="text-xl font-medium mb-2">Job Opportunities</h3>
-                  <p className="text-gray-300 mb-4">
-                    Discover job opportunities aligned with your skills and courses. We've curated positions that match your learning journey.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Button className="bg-purple-600 hover-purple-700">
-                      Browse All Jobs
-                    </Button>
-                    <Button variant="outline" className="border-purple-700 text-purple-300 hover-purple-900/30">
-                      Upload Resume
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-medium">Recommended Jobs</h3>
-                <span className="text-sm text-gray-400">Based on your profile and courses</span>
-              </div>
-              
-              {recommendedJobs.length > 0 ? (
-                <div className="space-y-4">
-                  {recommendedJobs.map(job => (
-                    <div key={job.id} className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
-                      <div className="p-6">
-                        <div className="flex justify-between items-start">
-                          
-                            <h4 className="text-xl font-medium">{job.title}</h4>
-                            <div className="text-gray-400 mt-1">{job.company}</div>
-                            
-                            <div className="flex items-center mt-2 space-x-3">
-                              <div className="flex items-center">
-                                <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-                                <span className="text-sm">{job.location}</span>
-                              </div>
-                              {job.remote && (
-                                <Badge className="bg-green-900/30 text-green-400 border-green-800">
-                                  Remote
-                                </Badge>
-                              )}
-                            </div>
-                          </div>
-                          <Badge className="bg-blue-900/30 text-blue-400 border-blue-800">
-                            {job.salary}
+          <TabsContent value="jobs">
+            <ScrollArea className="h-[400px] pr-4">
+              <div className="space-y-4">
+                {recommendedJobs.map(job => (
+                  <div key={job.id} className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden">
+                    <div className="p-4">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-lg font-medium">{job.title}</h3>
+                          <p className="text-sm text-gray-400">{job.company}</p>
+                        </div>
+                        <Badge className="bg-green-900/30 text-green-400 border-green-800">
+                          {job.salary}
+                        </Badge>
+                      </div>
+                      
+                      <div className="mt-2 flex items-center text-sm text-gray-400">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        <span>{job.location}</span>
+                        {job.remote && (
+                          <Badge variant="outline" className="ml-2 bg-gray-800 border-gray-600">
+                            Remote
                           </Badge>
-                        </div>
-                        
-                        <p className="text-gray-300 mt-4">{job.description}</p>
-                        
-                        <div className="mt-4">
-                          <h5 className="text-sm font-medium text-gray-400 mb-2">Key Requirements</h5>
-                          <ul className="space-y-1">
-                            {job.requirements.slice(0, 3).map((req, index) => (
-                              <li key={index} className="text-sm flex items-start">
-                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                                {req}</span>
-                              </li>
-                            ))}
-                            {job.requirements.length > 3 && (
-                              <li className="text-sm text-gray-400">
-                                + {job.requirements.length - 3} more requirements
-                              </li>
-                            )}
-                          </ul>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md-cols-2 gap-4 mt-4">
-                          
-                            <h5 className="text-sm font-medium text-gray-400 mb-2">Relevant Courses</h5>
-                            <div className="flex flex-wrap gap-2">
-                              {job.relevantCourses.map((course, index) => (
-                                <Badge 
-                                  key={index} 
-                                  className={`${
-                                    completedCourses.includes(course)
-                                      ? 'bg-green-900/30 text-green-400 border-green-800'
-                                      : 'bg-gray-800 text-gray-300 border-gray-700'
-                                  }`}
-                                >
-                                  {completedCourses.includes(course) && '✓ '}
-                                  {course}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                          
-                          
-                            <h5 className="text-sm font-medium text-gray-400 mb-2">Desired Certifications</h5>
-                            <div className="flex flex-wrap gap-2">
-                              {job.relevantCertifications.map((cert, index) => (
-                                <Badge 
-                                  key={index}
-                                  variant="outline" 
-                                  className="bg-gray-800 border-gray-600"
-                                >
-                                  {cert}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
+                        )}
                       </div>
-                      <div className="bg-gray-850 border-t border-gray-700 p-4 flex justify-between items-center">
-                        <div className="flex items-center space-x-4">
-                          <div className="flex items-center">
-                            <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                            <span className="text-sm">Posted</span>
-                          </div>
-                          <div className="flex items-center">
-                            <Clock className="h-4 w-4 text-gray-400 mr-1" />
-                            <span className="text-sm">Deadline</span>
-                          </div>
-                        </div>
-                        <div className="flex space-x-2">
-                          <Button variant="outline" className="border-gray-600 text-gray-300 hover-gray-700">
-                            Save
-                          </Button>
-                          <Button className="bg-purple-600 hover-purple-700">
-                            Apply Now
-                          </Button>
-                        </div>
+                      
+                      <p className="mt-2 text-gray-300">{job.description}</p>
+                      
+                      <div className="mt-3 flex items-center text-sm text-gray-400">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        <span>Posted: {new Date(job.postedDate).toLocaleDateString()}</span>
+                        <span className="mx-2">•</span>
+                        <span>Deadline: {new Date(job.applicationDeadline).toLocaleDateString()}</span>
+                      </div>
+                      
+                      <div className="mt-4">
+                        <h4 className="text-sm font-medium mb-2">Requirements:</h4>
+                        <ul className="text-sm text-gray-400 space-y-1 list-disc pl-5">
+                          {job.requirements.map((req, index) => (
+                            <li key={index}>{req}</li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12 bg-gray-900 rounded-lg border border-gray-700">
-                  <div className="text-gray-400 mb-2">No job matches found</div>
-                  <p className="text-sm text-gray-500 mb-4">Complete more courses to unlock job recommendations</p>
-                  <Button className="bg-purple-600 hover-purple-700">
-                    Browse All Jobs
-                  </Button>
-                </div>
-              )}
-            </div>
+                    
+                    <div className="bg-gray-850 border-t border-gray-700 p-3 flex justify-end">
+                      <Button className="bg-blue-600 hover:bg-blue-700">
+                        View Job Details
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
           </TabsContent>
           
-          <TabsContent value="career-resources" className="mt-0">
-            <div className="mb-4 bg-gradient-to-r from-green-900/40 to-teal-900/40 rounded-lg border border-green-800 p-6">
-              <div className="flex items-start">
-                <div className="mr-4">
-                  <FileText className="h-12 w-12 text-green-400" />
-                </div>
-                
-                  <h3 className="text-xl font-medium mb-2">Career Resources</h3>
-                  <p className="text-gray-300 mb-4">
-                    Access tools, templates, and guides to help you in your job search and career advancement.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Button className="bg-green-600 hover-green-700">
-                      Browse All Resources
-                    </Button>
-                    <Button variant="outline" className="border-green-700 text-green-300 hover-green-900/30">
-                      Request Career Coaching
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-lg font-medium">Available Resources</h3>
-              
-              <div className="grid grid-cols-1 md-cols-2 gap-4">
+          <TabsContent value="resources">
+            <ScrollArea className="h-[400px] pr-4">
+              <div className="space-y-4">
                 {careerResources.map(resource => (
-                  <div key={resource.id} className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
-                    <div className="p-6">
-                      <div className="flex items-start">
-                        <div className="h-12 w-12 bg-gray-800 rounded-lg flex items-center justify-center mr-4">
-                          {resource.type === 'Guide' && <FileText className="h-6 w-6 text-blue-400" />}
-                          {resource.type === 'Template' && <FileText className="h-6 w-6 text-purple-400" />}
-                          {resource.type === 'Checklist' && <CheckCircle className="h-6 w-6 text-green-400" />}
-                          {resource.type === 'Video' && <FileText className="h-6 w-6 text-red-400" />}
-                        </div>
-                        
-                          <div className="flex items-center">
-                            <h4 className="text-lg font-medium">{resource.title}</h4>
-                            <Badge className="ml-2 bg-gray-800 text-gray-300 border-gray-700">
-                              {resource.type}
-                            </Badge>
-                          </div>
-                          
-                          <p className="text-gray-300 mt-2">{resource.description}</p>
-                          
-                          {resource.fileType && (
-                            <Badge variant="outline" className="mt-3 bg-gray-800 border-gray-600">
-                              {resource.fileType}
-                            </Badge>
-                          )}
-                        </div>
+                  <div key={resource.id} className="bg-gray-900 border border-gray-700 rounded-lg p-4">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-lg font-medium">{resource.title}</h3>
+                        <Badge variant="outline" className="mt-1 bg-gray-800 border-gray-600">
+                          {resource.type}
+                        </Badge>
                       </div>
+                      {resource.fileType && (
+                        <Badge className="bg-purple-900/30 text-purple-400 border-purple-800">
+                          {resource.fileType}
+                        </Badge>
+                      )}
                     </div>
-                    <div className="bg-gray-850 border-t border-gray-700 p-4 flex justify-end">
+                    
+                    <p className="mt-2 text-gray-300">{resource.description}</p>
+                    
+                    <div className="mt-4 flex justify-end">
                       {resource.downloadUrl && (
-                        <Button className="bg-green-600 hover-green-700">
+                        <Button className="bg-blue-600 hover:bg-blue-700 flex items-center">
                           <Download className="h-4 w-4 mr-2" />
                           Download
                         </Button>
                       )}
+                      
                       {resource.externalUrl && (
-                        <Button className="bg-blue-600 hover-blue-700">
+                        <Button className="bg-gray-700 hover:bg-gray-600 flex items-center">
                           <ExternalLink className="h-4 w-4 mr-2" />
                           View Resource
                         </Button>
@@ -581,18 +375,17 @@ export default function CareerAdvancement({
                   </div>
                 ))}
               </div>
-            </div>
+            </ScrollArea>
           </TabsContent>
         </Tabs>
       </CardContent>
-      <CardFooter className="flex justify-between border-t border-gray-700 pt-4">
+      
+      <CardFooter className="border-t border-gray-700 pt-4 flex justify-between">
         <div className="text-sm text-gray-400">
-          {activeTab === 'certifications' && 'Certification information is updated monthly based on industry trends'}
-          {activeTab === 'job-opportunities' && 'Job listings are refreshed weekly from our partner networks'}
-          {activeTab === 'career-resources' && 'Resources are curated by career development experts'}
+          Recommendations based on your completed courses and skills
         </div>
-        <Button variant="outline" className="border-gray-600 text-gray-300 hover-gray-700">
-          Get Personalized Advice
+        <Button variant="outline" className="border-gray-600 hover:bg-gray-700">
+          View All Resources
         </Button>
       </CardFooter>
     </Card>

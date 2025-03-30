@@ -17,10 +17,6 @@ import { Code, Terminal, Play, Pause, RotateCcw, Download, Check, X } from 'luci
 import { ScrollArea } from "../../components/ui/scroll-area.jsx"
 import { Badge } from "../../components/ui/badge.jsx"
 
-
-
-
-
 export default function InteractiveLearningTools({
   courseId,
   chapterId,
@@ -36,18 +32,18 @@ export default function InteractiveLearningTools({
   const [theme, setTheme] = useState('dark')
   const [fontSize, setFontSize] = useState(14)
   
-  // Terminal state
-  const [terminalHistory, setTerminalHistory] = useState<string[]>([])
+  // Terminal state - removed TypeScript type annotations
+  const [terminalHistory, setTerminalHistory] = useState([])
   const [currentCommand, setCurrentCommand] = useState('')
-  const [terminalOutput, setTerminalOutput] = useState<string[]>([
+  const [terminalOutput, setTerminalOutput] = useState([
     'Welcome to the interactive terminal!',
     'Type commands to practice Linux skills.',
     '-----------------------------------'
   ])
   
-  // Quiz state
+  // Quiz state - removed TypeScript type annotations
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [selectedAnswers, setSelectedAnswers] = useState<number[]>(Array(quizQuestions.length).fill(-1))
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(quizQuestions.length).fill(-1))
   const [showResults, setShowResults] = useState(false)
   const [quizScore, setQuizScore] = useState(0)
   
@@ -98,8 +94,8 @@ export default function InteractiveLearningTools({
     setCurrentCommand('')
   }
   
-  // Handle terminal key press
-  const handleTerminalKeyPress = (e.KeyboardEvent) => {
+  // Handle terminal key press - removed TypeScript type annotation
+  const handleTerminalKeyPress = (e) => {
     if (e.key === 'Enter') {
       executeTerminalCommand()
     }
@@ -135,7 +131,7 @@ export default function InteractiveLearningTools({
   
   return (
     <Card className="w-full bg-gray-800 border-gray-700 text-white">
-      
+      <CardHeader>
         <CardTitle className="flex items-center gap-2">
           {lessonType === 'code' && <Code className="h-5 w-5" />}
           {lessonType === 'terminal' && <Terminal className="h-5 w-5" />}
@@ -152,7 +148,7 @@ export default function InteractiveLearningTools({
         </CardDescription>
       </CardHeader>
       
-      
+      <CardContent>
         {lessonType === 'code' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between mb-2">
@@ -191,7 +187,7 @@ export default function InteractiveLearningTools({
                   variant="outline"
                   size="sm"
                   onClick={() => setCode(initialCode)}
-                  className="border-gray-600 text-gray-300 hover-gray-700"
+                  className="border-gray-600 text-gray-300 hover:bg-gray-700"
                 >
                   <RotateCcw className="h-4 w-4 mr-1" />
                   Reset
@@ -200,7 +196,7 @@ export default function InteractiveLearningTools({
                   size="sm"
                   onClick={runCode}
                   disabled={isRunning}
-                  className="bg-green-600 hover-green-700"
+                  className="bg-green-600 hover:bg-green-700"
                 >
                   {isRunning ? (
                     <>
@@ -217,7 +213,7 @@ export default function InteractiveLearningTools({
               </div>
             </div>
             
-            <div className="grid grid-cols-1 lg-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div className="rounded-md overflow-hidden border border-gray-700">
                 <div className="bg-gray-900 px-4 py-2 text-sm font-medium border-b border-gray-700">
                   Editor
@@ -225,7 +221,7 @@ export default function InteractiveLearningTools({
                 <textarea
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
-                  className="w-full h-80 p-4 bg-gray-900 text-gray-100 font-mono text-sm focus-none resize-none"
+                  className="w-full h-80 p-4 bg-gray-900 text-gray-100 font-mono text-sm focus:none resize-none"
                   style={{ fontSize: `${fontSize}px` }}
                 />
               </div>
@@ -249,52 +245,60 @@ export default function InteractiveLearningTools({
           <div className="space-y-4">
             <div className="rounded-md overflow-hidden border border-gray-700">
               <div className="bg-gray-900 px-4 py-2 text-sm font-medium border-b border-gray-700 flex justify-between items-center">
-                Terminal</span>
+                <span>Terminal</span>
                 <div className="flex space-x-2">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => setTerminalOutput(['Terminal cleared'])}
-                    className="border-gray-600 text-gray-300 hover-gray-700 h-7 px-2"
+                    className="border-gray-600 text-gray-300 hover:bg-gray-700 h-7 px-2"
                   >
                     Clear
                   </Button>
-                  <div className="flex items-center space-x-2">
-                    <Label htmlFor="suggestions" className="text-xs text-gray-400">Suggestions</Label>
-                    <Switch id="suggestions" />
-                  </div>
                 </div>
               </div>
-              
-              <div className="bg-black p-4 h-96 overflow-auto font-mono text-sm">
-                <ScrollArea className="h-full">
-                  {terminalOutput.map((line, index) => (
-                    <div key={index} className={line.startsWith('$') ? 'text-blue-400' : 'text-green-400'}>
-                      {line}
-                    </div>
-                  ))}
-                  <div className="flex items-center text-white mt-2">
-                    <span className="text-blue-400 mr-2">$</span>
-                    <input
-                      type="text"
-                      value={currentCommand}
-                      onChange={(e) => setCurrentCommand(e.target.value)}
-                      onKeyDown={handleTerminalKeyPress}
-                      className="flex-1 bg-transparent border-none outline-none"
-                      placeholder="Type a command..."
-                    />
-                  </div>
-                </ScrollArea>
+              <div className="bg-black p-4 h-80 font-mono text-sm text-green-400 overflow-auto">
+                {terminalOutput.map((line, index) => (
+                  <div key={index} className="whitespace-pre-wrap">{line}</div>
+                ))}
+                <div className="flex items-center mt-2">
+                  <span className="mr-2">$</span>
+                  <input
+                    type="text"
+                    value={currentCommand}
+                    onChange={(e) => setCurrentCommand(e.target.value)}
+                    onKeyDown={handleTerminalKeyPress}
+                    className="flex-1 bg-transparent border-none outline-none text-green-400"
+                    placeholder="Type a command..."
+                  />
+                </div>
               </div>
             </div>
             
-            <div className="bg-gray-900 p-4 rounded-md border border-gray-700">
+            <div className="bg-gray-900 rounded-md p-4 border border-gray-700">
+              <h3 className="text-sm font-medium mb-2">Command History</h3>
+              <div className="text-sm text-gray-400">
+                {terminalHistory.length > 0 ? (
+                  <div className="space-y-1">
+                    {terminalHistory.slice(-5).map((cmd, index) => (
+                      <div key={index} className="cursor-pointer hover:text-white" onClick={() => setCurrentCommand(cmd)}>
+                        {cmd}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div>No commands executed yet</div>
+                )}
+              </div>
+            </div>
+            
+            <div className="bg-gray-900 rounded-md p-4 border border-gray-700">
               <h3 className="text-sm font-medium mb-2">Suggested Commands</h3>
               <div className="flex flex-wrap gap-2">
                 {initialTerminalCommands.map((cmd, index) => (
                   <Badge 
                     key={index}
-                    className="bg-blue-900/30 hover-blue-800 cursor-pointer"
+                    className="cursor-pointer bg-gray-800 hover:bg-gray-700"
                     onClick={() => setCurrentCommand(cmd)}
                   >
                     {cmd}
@@ -310,153 +314,129 @@ export default function InteractiveLearningTools({
             {!showResults ? (
               <>
                 <div className="flex justify-between items-center mb-4">
-                  <div className="text-sm text-gray-400">
+                  <h3 className="text-lg font-medium">
                     Question {currentQuestionIndex + 1} of {quizQuestions.length}
-                  </div>
-                  <div className="flex space-x-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setCurrentQuestionIndex(Math.max(0, currentQuestionIndex - 1))}
-                      disabled={currentQuestionIndex === 0}
-                      className="border-gray-600 text-gray-300 hover-gray-700"
-                    >
-                      Previous
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setCurrentQuestionIndex(Math.min(quizQuestions.length - 1, currentQuestionIndex + 1))}
-                      disabled={currentQuestionIndex === quizQuestions.length - 1}
-                      className="border-gray-600 text-gray-300 hover-gray-700"
-                    >
-                      Next
-                    </Button>
-                  </div>
+                  </h3>
+                  <Badge className="bg-blue-900/30 text-blue-400 border-blue-800">
+                    {quizQuestions[currentQuestionIndex].points} points
+                  </Badge>
                 </div>
                 
-                <div className="bg-gray-900 p-6 rounded-md border border-gray-700">
-                  <h3 className="text-lg font-medium mb-4">{quizQuestions[currentQuestionIndex].question}</h3>
+                <div className="bg-gray-900 rounded-md p-4 border border-gray-700">
+                  <h4 className="text-lg mb-4">{quizQuestions[currentQuestionIndex].question}</h4>
+                  
                   <div className="space-y-3">
-                    {quizQuestions[currentQuestionIndex].options.map((option, index) => (
-                      <div
+                    {quizQuestions[currentQuestionIndex].answers.map((answer, index) => (
+                      <div 
                         key={index}
-                        className={`p-3 rounded-md border cursor-pointer transition-colors ${
+                        className={`p-3 rounded-md border cursor-pointer ${
                           selectedAnswers[currentQuestionIndex] === index
-                            ? 'bg-blue-900/30 border-blue-500'
-                            : 'bg-gray-800 border-gray-700 hover-gray-500'
+                            ? 'bg-blue-900/30 border-blue-600'
+                            : 'bg-gray-800 border-gray-700 hover:border-gray-600'
                         }`}
                         onClick={() => handleAnswerSelect(index)}
                       >
-                        <div className="flex items-center">
-                          <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
-                            selectedAnswers[currentQuestionIndex] === index
-                              ? 'bg-blue-500 text-white'
-                              : 'bg-gray-700 text-gray-400'
-                          }`}>
-                            {String.fromCharCode(65 + index)}
-                          </div>
-                          {option}</span>
-                        </div>
+                        {answer}
                       </div>
                     ))}
                   </div>
                 </div>
                 
-                <div className="flex justify-between">
+                <div className="flex justify-between mt-4">
                   <Button
                     variant="outline"
-                    onClick={resetQuiz}
-                    className="border-gray-600 text-gray-300 hover-gray-700"
+                    onClick={() => setCurrentQuestionIndex(Math.max(0, currentQuestionIndex - 1))}
+                    disabled={currentQuestionIndex === 0}
+                    className="border-gray-600 text-gray-300 hover:bg-gray-700"
                   >
-                    <RotateCcw className="h-4 w-4 mr-1" />
-                    Reset Quiz
+                    Previous
                   </Button>
-                  <Button
-                    onClick={submitQuiz}
-                    disabled={selectedAnswers.includes(-1)}
-                    className="bg-green-600 hover-green-700"
-                  >
-                    Submit Answers
-                  </Button>
+                  
+                  {currentQuestionIndex < quizQuestions.length - 1 ? (
+                    <Button
+                      onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
+                      disabled={selectedAnswers[currentQuestionIndex] === -1}
+                      className="bg-blue-600 hover:bg-blue-700"
+                    >
+                      Next
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={submitQuiz}
+                      disabled={selectedAnswers.some(answer => answer === -1)}
+                      className="bg-green-600 hover:bg-green-700"
+                    >
+                      Submit Quiz
+                    </Button>
+                  )}
                 </div>
               </>
             ) : (
-              <div className="space-y-6">
-                <div className="bg-gray-900 p-6 rounded-md border border-gray-700 text-center">
-                  <h3 className="text-xl font-medium mb-2">Quiz Results</h3>
-                  <div className="text-5xl font-bold my-4">
+              <div className="space-y-4">
+                <div className="bg-gray-900 rounded-md p-6 border border-gray-700 text-center">
+                  <h3 className="text-2xl font-bold mb-2">Quiz Results</h3>
+                  <div className="text-4xl font-bold mb-4">
                     {quizScore} / {quizQuestions.length}
                   </div>
-                  <div className="text-lg mb-4">
+                  <div className="text-lg mb-6">
                     {quizScore === quizQuestions.length ? (
                       <span className="text-green-400">Perfect score! Excellent work!</span>
-                    )  >= quizQuestions.length * 0.7 ? (
-                      <span className="text-blue-400">Good job! You're on the right track.</span>
+                    ) : quizScore >= quizQuestions.length * 0.7 ? (
+                      <span className="text-blue-400">Good job! You've passed the quiz.</span>
                     ) : (
-                      <span className="text-yellow-400">Keep practicing to improve your score.</span>
+                      <span className="text-yellow-400">You might want to review the material and try again.</span>
                     )}
                   </div>
-                  <Button
-                    onClick={resetQuiz}
-                    className="bg-blue-600 hover-blue-700"
-                  >
-                    <RotateCcw className="h-4 w-4 mr-1" />
+                  <Button onClick={resetQuiz} className="bg-blue-600 hover:bg-blue-700">
                     Retake Quiz
                   </Button>
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-medium">Review Your Answers</h3>
+                  <h3 className="text-lg font-medium">Review Answers</h3>
+                  
                   {quizQuestions.map((question, qIndex) => (
-                    <div key={qIndex} className="bg-gray-900 p-4 rounded-md border border-gray-700">
-                      <div className="flex items-start">
-                        <div className={`mt-1 flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
-                          selectedAnswers[qIndex] === question.correctAnswer
-                            ? 'bg-green-500 text-white'
-                            : 'bg-red-500 text-white'
-                        }`}>
-                          {selectedAnswers[qIndex] === question.correctAnswer ? (
-                            <Check className="h-4 w-4" />
-                          ) : (
-                            <X className="h-4 w-4" />
-                          )}
-                        </div>
-                        
-                          <h4 className="font-medium">{question.question}</h4>
-                          <div className="mt-2 space-y-2">
-                            {question.options.map((option, oIndex) => (
-                              <div
-                                key={oIndex}
-                                className={`p-2 rounded-md ${
-                                  oIndex === question.correctAnswer
-                                    ? 'bg-green-900/30 border border-green-700'
-                                     === selectedAnswers[qIndex]
-                                    ? 'bg-red-900/30 border border-red-700'
-                                    : 'bg-gray-800'
-                                }`}
-                              >
-                                <div className="flex items-center">
-                                  <div className={`w-5 h-5 rounded-full flex items-center justify-center mr-2 text-xs ${
-                                    oIndex === question.correctAnswer
-                                      ? 'bg-green-600 text-white'
-                                       === selectedAnswers[qIndex]
-                                      ? 'bg-red-600 text-white'
-                                      : 'bg-gray-700 text-gray-400'
-                                  }`}>
-                                    {String.fromCharCode(65 + oIndex)}
-                                  </div>
-                                  {option}</span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="mt-3 text-sm bg-blue-900/20 border border-blue-800 p-3 rounded-md">
-                            <span className="font-medium text-blue-400">Explanation: </span>
-                            {question.explanation}
-                          </div>
-                        </div>
+                    <div key={qIndex} className="bg-gray-900 rounded-md p-4 border border-gray-700">
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="text-md font-medium">{qIndex + 1}. {question.question}</h4>
+                        {selectedAnswers[qIndex] === question.correctAnswer ? (
+                          <Badge className="bg-green-900/30 text-green-400 border-green-800 flex items-center">
+                            <Check className="h-3 w-3 mr-1" />
+                            Correct
+                          </Badge>
+                        ) : (
+                          <Badge className="bg-red-900/30 text-red-400 border-red-800 flex items-center">
+                            <X className="h-3 w-3 mr-1" />
+                            Incorrect
+                          </Badge>
+                        )}
                       </div>
+                      
+                      <div className="space-y-2 mt-3">
+                        {question.answers.map((answer, aIndex) => (
+                          <div 
+                            key={aIndex}
+                            className={`p-2 rounded-md ${
+                              aIndex === question.correctAnswer
+                                ? 'bg-green-900/30 border border-green-800'
+                                : aIndex === selectedAnswers[qIndex]
+                                  ? 'bg-red-900/30 border border-red-800'
+                                  : 'bg-gray-800 border border-gray-700'
+                            }`}
+                          >
+                            {answer}
+                            {aIndex === question.correctAnswer && (
+                              <span className="ml-2 text-green-400 text-sm">(Correct Answer)</span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {question.explanation && (
+                        <div className="mt-3 text-sm text-gray-300 bg-gray-800 p-3 rounded-md">
+                          <span className="font-medium">Explanation:</span> {question.explanation}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -466,19 +446,19 @@ export default function InteractiveLearningTools({
         )}
       </CardContent>
       
-      <CardFooter className="flex justify-between border-t border-gray-700 pt-4">
+      <CardFooter className="border-t border-gray-700 pt-4 flex justify-between">
         <div className="text-sm text-gray-400">
           {lessonType === 'code' && 'Practice makes perfect. Try modifying the code to see different results.'}
-          {lessonType === 'terminal' && 'Type "help" to see available commands.'}
-          {lessonType === 'quiz' && 'Complete the quiz to test your knowledge.'}
+          {lessonType === 'terminal' && 'Try these commands: ls, pwd, echo hello, help'}
+          {lessonType === 'quiz' && 'Complete the quiz to test your understanding.'}
         </div>
         
-        <Button variant="outline" className="border-gray-600 text-gray-300 hover-gray-700">
-          <Download className="h-4 w-4 mr-1" />
-          {lessonType === 'code' && 'Download Code'}
-          {lessonType === 'terminal' && 'Download History'}
-          {lessonType === 'quiz' && 'Download Results'}
-        </Button>
+        {lessonType === 'code' && (
+          <Button variant="outline" className="border-gray-600 hover:bg-gray-700">
+            <Download className="h-4 w-4 mr-1" />
+            Download Code
+          </Button>
+        )}
       </CardFooter>
     </Card>
   )

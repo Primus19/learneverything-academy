@@ -16,7 +16,7 @@ export default function ChapterPage() {
   
   const [chapterData, setChapterData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState(null) // Removed TypeScript type annotation
 
   useEffect(() => {
     if (!slug || isNaN(chapterIndex)) return
@@ -57,7 +57,7 @@ export default function ChapterPage() {
         <Navbar />
         <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)]">
           <div className="text-white text-xl mb-4">{error || 'Chapter not found'}</div>
-          <a href={`/courses/${slug}`} className="text-blue-400 hover-blue-300">
+          <a href={`/courses/${slug}`} className="text-blue-400 hover:text-blue-300">
             Return to course
           </a>
         </div>
