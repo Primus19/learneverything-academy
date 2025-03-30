@@ -35,16 +35,16 @@ export default function Checkout() {
   // Sample course data for checkout
   const course = {
     title: 'DevOps Engineering Masterclass',
-    price.99,
-    tax.00,
-    total.99
+    price: 199.99,
+    tax: 0.00,
+    total: 199.99
   }
 
-  const handleChange = (e.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({
       ...formData,
-      [name]
+      [name]: value
     })
   }
 
@@ -118,7 +118,7 @@ export default function Checkout() {
     return valid
   }
 
-  const handleSubmit = (e.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (validateForm()) {
       // Process payment
@@ -148,18 +148,18 @@ export default function Checkout() {
               <div className="border-b border-gray-700 pb-4 mb-4">
                 <h3 className="text-lg font-medium text-white mb-2">{course.title}</h3>
                 <div className="flex justify-between text-gray-300 mb-1">
-                  Course Price</span>
-                  ${course.price.toFixed(2)}</span>
+                  <span>Course Price</span>
+                  <span>${course.price.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-300 mb-1">
-                  Tax</span>
-                  ${course.tax.toFixed(2)}</span>
+                  <span>Tax</span>
+                  <span>${course.tax.toFixed(2)}</span>
                 </div>
               </div>
               
               <div className="flex justify-between text-lg font-bold text-white mb-6">
-                Total</span>
-                ${course.total.toFixed(2)}</span>
+                <span>Total</span>
+                <span>${course.total.toFixed(2)}</span>
               </div>
               
               <div className="space-y-3">
@@ -196,7 +196,7 @@ export default function Checkout() {
                   </p>
                 </div>
                 
-                
+                <div>
                   <label htmlFor="cardName" className="block text-sm font-medium text-gray-300 mb-1">
                     Name on card
                   </label>
@@ -212,7 +212,7 @@ export default function Checkout() {
                   {errors.cardName && <p className="mt-1 text-sm text-red-500">{errors.cardName}</p>}
                 </div>
                 
-                
+                <div>
                   <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-300 mb-1">
                     Card number
                   </label>
@@ -247,7 +247,7 @@ export default function Checkout() {
                       className="appearance-none block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus-none focus-blue-500 focus-blue-500 bg-gray-700 text-white sm-sm"
                     >
                       <option value="">Month</option>
-                      {Array.from({ length }, (_, i) => i + 1).map((month) => (
+                      {Array.from({ length: 12 }, (_, i) => i + 1).map((month) => (
                         <option key={month} value={month.toString().padStart(2, '0')}>
                           {month.toString().padStart(2, '0')}
                         </option>
@@ -268,7 +268,7 @@ export default function Checkout() {
                       className="appearance-none block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus-none focus-blue-500 focus-blue-500 bg-gray-700 text-white sm-sm"
                     >
                       <option value="">Year</option>
-                      {Array.from({ length }, (_, i) => new Date().getFullYear() + i).map((year) => (
+                      {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() + i).map((year) => (
                         <option key={year} value={year}>
                           {year}
                         </option>
@@ -297,7 +297,7 @@ export default function Checkout() {
                 
                 <h3 className="text-lg font-medium text-white mt-8 mb-4">Billing Address</h3>
                 
-                
+                <div>
                   <label htmlFor="billingAddress" className="block text-sm font-medium text-gray-300 mb-1">
                     Street address
                   </label>
@@ -314,7 +314,7 @@ export default function Checkout() {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  
+                  <div>
                     <label htmlFor="city" className="block text-sm font-medium text-gray-300 mb-1">
                       City
                     </label>
@@ -330,7 +330,7 @@ export default function Checkout() {
                     {errors.city && <p className="mt-1 text-sm text-red-500">{errors.city}</p>}
                   </div>
                   
-                  
+                  <div>
                     <label htmlFor="state" className="block text-sm font-medium text-gray-300 mb-1">
                       State / Province
                     </label>
@@ -348,7 +348,7 @@ export default function Checkout() {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  
+                  <div>
                     <label htmlFor="zipCode" className="block text-sm font-medium text-gray-300 mb-1">
                       ZIP / Postal code
                     </label>
@@ -364,7 +364,7 @@ export default function Checkout() {
                     {errors.zipCode && <p className="mt-1 text-sm text-red-500">{errors.zipCode}</p>}
                   </div>
                   
-                  
+                  <div>
                     <label htmlFor="country" className="block text-sm font-medium text-gray-300 mb-1">
                       Country
                     </label>

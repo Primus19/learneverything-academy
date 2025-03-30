@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
@@ -28,10 +27,10 @@ export default async function DataAnalyticsCoursePage() {
       </div>
 
       <div className="grid gap-8 mb-12">
-        
-          
-            Course Overview</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Course Overview</CardTitle>
+            <CardDescription>
               What you'll learn in this comprehensive Data Analytics course
             </CardDescription>
           </CardHeader>
@@ -41,7 +40,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Collection and Preparation</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn techniques for gathering, cleaning, and preparing data for analysis
@@ -52,7 +51,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Exploratory Data Analysis</h3>
                   <p className="text-sm text-muted-foreground">
                     Master methods for exploring and understanding data patterns
@@ -63,7 +62,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Statistical Analysis</h3>
                   <p className="text-sm text-muted-foreground">
                     Apply statistical methods to extract insights from data
@@ -74,7 +73,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Visualization</h3>
                   <p className="text-sm text-muted-foreground">
                     Create compelling visualizations to communicate data insights
@@ -85,7 +84,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Predictive Analytics</h3>
                   <p className="text-sm text-muted-foreground">
                     Introduction to predictive modeling and machine learning techniques
@@ -96,7 +95,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Applied Data Analytics Projects</h3>
                   <p className="text-sm text-muted-foreground">
                     Hands-on projects applying analytics to real-world business problems
@@ -113,13 +112,13 @@ export default async function DataAnalyticsCoursePage() {
         <div className="grid gap-4">
           {chapters.map((chapter, index) => (
             <Card key={index} className="overflow-hidden">
-              
-                Chapter {index + 1}</CardTitle>
-                {chapter.description}</CardDescription>
+              <CardHeader>
+                <CardTitle>Chapter {index + 1}</CardTitle>
+                <CardDescription>{chapter.description}</CardDescription>
               </CardHeader>
-              
+              <CardContent>
                 <div className="flex justify-end">
-                  
+                  <Button asChild>
                     <Link href={`/courses/data-analytics/chapters/${index}`}>
                       Start Chapter
                     </Link>
@@ -132,10 +131,10 @@ export default async function DataAnalyticsCoursePage() {
       </div>
 
       <div className="mb-12">
-        
-          
-            Prerequisites</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Prerequisites</CardTitle>
+            <CardDescription>
               Recommended knowledge before starting this course
             </CardDescription>
           </CardHeader>
@@ -145,7 +144,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Mathematics</h3>
                   <p className="text-sm text-muted-foreground">
                     Understanding of basic statistics and algebra
@@ -156,7 +155,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Basic Programming</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with programming concepts (Python preferred)
@@ -167,7 +166,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Spreadsheet Skills</h3>
                   <p className="text-sm text-muted-foreground">
                     Experience with Excel or similar spreadsheet applications
@@ -178,7 +177,7 @@ export default async function DataAnalyticsCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Critical Thinking</h3>
                   <p className="text-sm text-muted-foreground">
                     Ability to think analytically and solve problems
@@ -190,11 +189,11 @@ export default async function DataAnalyticsCoursePage() {
         </Card>
       </div>
 
-      
-        
-          
-            Who Should Take This Course</CardTitle>
-            
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Who Should Take This Course</CardTitle>
+            <CardDescription>
               This course is ideal for the following roles and career paths
             </CardDescription>
           </CardHeader>

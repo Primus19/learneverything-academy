@@ -154,7 +154,7 @@ export default function CloudEngineeringCourse() {
                 <div className="h-12 w-12 rounded-full bg-gray-600 flex items-center justify-center text-white font-bold mr-4">
                   {courseData.instructor.split(' ').map(n => n[0]).join('')}
                 </div>
-                
+                <div>
                   <p className="text-white font-medium">{courseData.instructor}</p>
                   <p className="text-gray-400">{courseData.instructorTitle}</p>
                 </div>
@@ -341,22 +341,22 @@ export default function CloudEngineeringCourse() {
       <footer className="bg-gray-900 py-12 px-4 sm-6 lg-8 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md-cols-4 gap-8">
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Tech Academy</h3>
               <p className="text-gray-400">
                 Professional training for DevOps and Cloud Engineering careers.
               </p>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Courses</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/courses/devops" className="text-gray-400 hover-white">
                     DevOps Engineering
                   </a>
                 </li>
-                
+                <li>
                   <a href="/courses/cloud-engineering" className="text-gray-400 hover-white">
                     Cloud Engineering
                   </a>
@@ -364,15 +364,15 @@ export default function CloudEngineeringCourse() {
               </ul>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Resources</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/resume-samples" className="text-gray-400 hover-white">
                     Resume Samples
                   </a>
                 </li>
-                
+                <li>
                   <a href="/about" className="text-gray-400 hover-white">
                     About Us
                   </a>
@@ -380,15 +380,15 @@ export default function CloudEngineeringCourse() {
               </ul>
             </div>
             
-            
+            <div>
               <h3 className="text-white text-lg font-bold mb-4">Legal</h3>
               <ul className="space-y-2">
-                
+                <li>
                   <a href="/privacy" className="text-gray-400 hover-white">
                     Privacy Policy
                   </a>
                 </li>
-                
+                <li>
                   <a href="/terms" className="text-gray-400 hover-white">
                     Terms of Service
                   </a>

@@ -49,13 +49,15 @@ export async function getAvailableCourses() {
           return aNum - bNum;
         });
       
+      const titleFormatted = title.charAt(0).toUpperCase() + title.slice(1);
+      
       return {
         slug,
-        title.charAt(0).toUpperCase() + title.slice(1),
+        title: titleFormatted,
         description,
         level,
         duration,
-        chaptersCount.length,
+        chaptersCount: chapterFiles.length,
         image: `/images/courses/${slug}.jpg`, // Default image path
       };
     });
@@ -137,16 +139,20 @@ export async function getCourseBySlug(slug) {
         });
       }
       
+      const defaultLessons = ['Introduction', 'Core Concepts', 'Practical Examples'];
+      
       return {
         file,
-        title,
-        lessons.length > 0 ? lessons : ['Introduction', 'Core Concepts', 'Practical Examples'],
+        title: chapterTitle,
+        lessons: lessons.length > 0 ? lessons : defaultLessons,
       };
     });
     
+    const titleFormatted = title.charAt(0).toUpperCase() + title.slice(1);
+    
     return {
       slug,
-      title.charAt(0).toUpperCase() + title.slice(1),
+      title: titleFormatted,
       description,
       level,
       duration,
@@ -203,10 +209,10 @@ export async function getChapterContent(courseSlug, chapterIndex) {
     }
     
     return {
-      title,
+      title: chapterTitle,
       content,
-      nextChapter < chapterFiles.length - 1 ? chapterIndex + 1 ,
-      prevChapter > 0 ? chapterIndex - 1 ,
+      nextChapter: chapterIndex < chapterFiles.length - 1 ? chapterIndex + 1 : null,
+      prevChapter: chapterIndex > 0 ? chapterIndex - 1 : null,
     };
   } catch (error) {
     console.error(`Error getting chapter content for ${courseSlug}, chapter ${chapterIndex}:`, error);

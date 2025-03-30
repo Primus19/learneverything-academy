@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
@@ -28,10 +27,10 @@ export default async function BigDataCoursePage() {
       </div>
 
       <div className="grid gap-8 mb-12">
-        
-          
-            Course Overview</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Course Overview</CardTitle>
+            <CardDescription>
               What you'll learn in this comprehensive Big Data course
             </CardDescription>
           </CardHeader>
@@ -41,7 +40,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Big Data Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Understand the core concepts and challenges of big data
@@ -52,7 +51,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Hadoop Ecosystem</h3>
                   <p className="text-sm text-muted-foreground">
                     Master Hadoop, HDFS, MapReduce, and related technologies
@@ -63,7 +62,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Apache Spark</h3>
                   <p className="text-sm text-muted-foreground">
                     Learn distributed data processing with Spark and its components
@@ -74,7 +73,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">NoSQL Databases</h3>
                   <p className="text-sm text-muted-foreground">
                     Explore non-relational databases for big data storage
@@ -85,7 +84,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Warehousing</h3>
                   <p className="text-sm text-muted-foreground">
                     Implement data warehousing solutions for big data analytics
@@ -96,7 +95,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Machine Learning for Big Data</h3>
                   <p className="text-sm text-muted-foreground">
                     Apply machine learning techniques to large-scale datasets
@@ -113,13 +112,13 @@ export default async function BigDataCoursePage() {
         <div className="grid gap-4">
           {chapters.map((chapter, index) => (
             <Card key={index} className="overflow-hidden">
-              
-                Chapter {index + 1}</CardTitle>
-                {chapter.description}</CardDescription>
+              <CardHeader>
+                <CardTitle>Chapter {index + 1}</CardTitle>
+                <CardDescription>{chapter.description}</CardDescription>
               </CardHeader>
-              
+              <CardContent>
                 <div className="flex justify-end">
-                  
+                  <Button asChild>
                     <Link href={`/courses/big-data/chapters/${index}`}>
                       Start Chapter
                     </Link>
@@ -132,10 +131,10 @@ export default async function BigDataCoursePage() {
       </div>
 
       <div className="mb-12">
-        
-          
-            Prerequisites</CardTitle>
-            
+        <Card>
+          <CardHeader>
+            <CardTitle>Prerequisites</CardTitle>
+            <CardDescription>
               Recommended knowledge before starting this course
             </CardDescription>
           </CardHeader>
@@ -145,7 +144,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Programming Experience</h3>
                   <p className="text-sm text-muted-foreground">
                     Proficiency in Python, Java, or Scala programming
@@ -156,7 +155,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Database Knowledge</h3>
                   <p className="text-sm text-muted-foreground">
                     Understanding of relational databases and SQL
@@ -167,7 +166,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Linux Basics</h3>
                   <p className="text-sm text-muted-foreground">
                     Familiarity with Linux command line and basic operations
@@ -178,7 +177,7 @@ export default async function BigDataCoursePage() {
                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </div>
-                
+                <div>
                   <h3 className="font-medium">Data Analysis Fundamentals</h3>
                   <p className="text-sm text-muted-foreground">
                     Basic understanding of data analysis concepts
@@ -190,11 +189,11 @@ export default async function BigDataCoursePage() {
         </Card>
       </div>
 
-      
-        
-          
-            Who Should Take This Course</CardTitle>
-            
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Who Should Take This Course</CardTitle>
+            <CardDescription>
               This course is ideal for the following roles and career paths
             </CardDescription>
           </CardHeader>

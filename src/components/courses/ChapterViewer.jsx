@@ -59,15 +59,15 @@ const ChapterViewer = ({
           <div className="flex flex-wrap items-center text-gray-400 text-sm mb-6 gap-4">
             <div className="flex items-center">
               <BookOpen className="h-4 w-4 mr-1" />
-              Chapter {chapterIndex + 1}</span>
+              Chapter {chapterIndex + 1}
             </div>
             <div className="flex items-center">
               <Clock className="h-4 w-4 mr-1" />
-              {readingTime} min read</span>
+              {readingTime} min read
             </div>
             <div className="flex items-center">
               <Calendar className="h-4 w-4 mr-1" />
-              Last updated 2025</span>
+              Last updated 2025
             </div>
           </div>
           
@@ -102,7 +102,7 @@ const ChapterViewer = ({
               Previous Chapter
             </Link>
           ) : (
-            </div>
+            <div></div>
           )}
           
           {nextChapter !== null ? (

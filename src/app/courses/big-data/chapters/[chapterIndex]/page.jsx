@@ -1,5 +1,4 @@
 import React from 'react';
-import { Metadata } from 'next';
 import { getChapters } from "../../../../../lib/markdown/loader";
 import Link from 'next/link';
 import { Button } from "../../../../../components/ui/button";
@@ -21,7 +20,7 @@ export default async function ChapterPage({ params }) {
   const chapter = chapters[chapterIndex];
 
   if (!chapter) {
-    return Chapter not found</div>;
+    return <div>Chapter not found</div>;
   }
 
   const nextChapterIndex = chapterIndex + 1;
@@ -38,8 +37,8 @@ export default async function ChapterPage({ params }) {
       </div>
 
       <div className="prose prose-invert max-w-none">
-        {chapter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html.content }} />
+        <h1>{chapter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: chapter.content }} />
       </div>
 
       <div className="mt-12 flex flex-col sm-row gap-4 justify-between">
@@ -50,16 +49,16 @@ export default async function ChapterPage({ params }) {
             </Link>
           </Button>
         ) : (
-          </div>
+          <div></div>
         )}
         {hasNextChapter ? (
-          
+          <Button asChild>
             <Link href={`/courses/big-data/chapters/${nextChapterIndex}`}>
               Next Chapter →
             </Link>
           </Button>
         ) : (
-          
+          <Button asChild>
             <Link href="/courses/big-data">
               Complete Course
             </Link>

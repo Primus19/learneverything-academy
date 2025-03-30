@@ -27,18 +27,18 @@ export default function CheckoutSuccess() {
             <div className="border-b border-gray-700 pb-4 mb-4">
               <h3 className="text-lg font-medium text-white mb-2">DevOps Engineering Masterclass</h3>
               <div className="flex justify-between text-gray-300 mb-1">
-                Course Price</span>
-                $199.99</span>
+                <span>Course Price</span>
+                <span>$199.99</span>
               </div>
               <div className="flex justify-between text-gray-300 mb-1">
-                Tax</span>
-                $20.00</span>
+                <span>Tax</span>
+                <span>$20.00</span>
               </div>
             </div>
             
             <div className="flex justify-between text-lg font-bold text-white">
-              Total</span>
-              $219.99</span>
+              <span>Total</span>
+              <span>$219.99</span>
             </div>
           </div>
           

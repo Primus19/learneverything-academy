@@ -7,9 +7,7 @@ import rehypeHighlight from 'rehype-highlight'
 import Image from "next/image"
 import Link from 'next/link'
 
-
-
-const MarkdownRenderer.FC = ({ content, className = '' }) => {
+const MarkdownRenderer = ({ content, className = '' }) => {
   return (
     <div className={`markdown-content ${className}`}>
       <ReactMarkdown
