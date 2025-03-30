@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { getChapters } from '@/lib/markdown/loader';
+import { getChapters } from "../../../lib/markdown/loader";
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from "../../../components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {

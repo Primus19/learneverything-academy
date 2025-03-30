@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Navbar from '@/components/layout/Navbar'
+import Navbar from "../../components/layout/Navbar"
 import Link from 'next/link'
 import { User, Settings, Book, FileText, CreditCard, LogOut } from 'lucide-react'
 

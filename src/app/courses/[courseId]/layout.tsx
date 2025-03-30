@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import InteractiveLearningTools from '@/components/features/interactive_learning_tools';
-import ProgressTracking from '@/components/features/progress_tracking';
+import { Button } from "../../../components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
+import InteractiveLearningTools from "../../../components/features/interactive_learning_tools";
+import ProgressTracking from "../../../components/features/progress_tracking";
 
 export default function CourseLayout({
   children,
