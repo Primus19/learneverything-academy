@@ -1,9 +1,9 @@
 "use client"
 
-import * from "react"
-import * from "@radix-ui/react-popover.jsx"
+import * as React from "react"
+import * as RadixPopover from "@radix-ui/react-popover"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const Popover = PopoverPrimitive.Root
 

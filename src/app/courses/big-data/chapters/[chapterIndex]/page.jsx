@@ -1,13 +1,13 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { getChapters } from "../../../../../lib/markdown/loader.jsx";
-import Link from "next/link.jsx";
-import { Button } from "../../../../../components/ui/button.jsx";
-import Card from "../../../../../components/ui/card-direct/Card.jsx"
-import CardContent from "../../../../../components/ui/card-direct/CardContent.jsx"
-import CardDescription from "../../../../../components/ui/card-direct/CardDescription.jsx"
-import CardHeader from "../../../../../components/ui/card-direct/CardHeader.jsx"
-import CardTitle from "../../../../../components/ui/card-direct/CardTitle.jsx";
+import { getChapters } from "../../../../../lib/markdown/loader";
+import Link from 'next/link';
+import { Button } from "../../../../../components/ui/button";
+import Card from "../../../../../components/ui/card-direct/Card"
+import CardContent from "../../../../../components/ui/card-direct/CardContent"
+import CardDescription from "../../../../../components/ui/card-direct/CardDescription"
+import CardHeader from "../../../../../components/ui/card-direct/CardHeader"
+import CardTitle from "../../../../../components/ui/card-direct/CardTitle";
 import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
@@ -15,7 +15,7 @@ export const metadata = {
   description: 'Learn about Big Data concepts and technologies',
 };
 
-export default async function ChapterPage({ params } }) {
+export default async function ChapterPage({ params }) {
   const chapters = await getChapters('big_data');
   const chapterIndex = parseInt(params.chapterIndex);
   const chapter = chapters[chapterIndex];

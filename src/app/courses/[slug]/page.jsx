@@ -1,12 +1,12 @@
 'use client'
 
 import React from 'react'
-import { useParams } from "next/navigation.jsx"
+import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import Navbar from "../../../components/layout/Navbar.jsx"
+import Navbar from "../../../components/layout/Navbar"
 import { ArrowLeft, BookOpen, Clock, Award, CheckCircle } from 'lucide-react'
-import Link from "next/link.jsx"
-import { getCourseBySlug } from "../../../lib/markdown/loader.jsx"
+import Link from 'next/link'
+import { getCourseBySlug } from "../../../lib/markdown/loader"
 import "../../../app/markdown.css" // Import markdown styles
 
 export default function CoursePage() {

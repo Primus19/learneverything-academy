@@ -1,10 +1,10 @@
 "use client"
 
-import * from "react"
-import * from "@radix-ui/react-toggle.jsx"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react"
+import * as RadixToggle from "@radix-ui/react-toggle"
+import { cva, } from "class-variance-authority"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const toggleVariants = cva(
   "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors hover-muted hover-muted-foreground focus-visible-none focus-visible-1 focus-visible-ring disabled-events-none disabled-50 data-[state=on]-accent data-[state=on]-accent-foreground [&_svg]-events-none [&_svg]-4 [&_svg]-0",

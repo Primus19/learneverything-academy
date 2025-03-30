@@ -1,8 +1,8 @@
-import * from "react"
-import { Slot } from "@radix-ui/react-slot.jsx"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, } from "class-variance-authority"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible-none focus-visible-1 focus-visible-ring disabled-events-none disabled-50 [&_svg]-events-none [&_svg]-4 [&_svg]-0",
@@ -14,8 +14,7 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes,
+  
     VariantProps {
   asChild?
 }

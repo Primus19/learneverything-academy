@@ -1,10 +1,10 @@
 "use client"
 
-import * from "react"
-import * from "@radix-ui/react-label.jsx"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react"
+import * as RadixLabel from "@radix-ui/react-label"
+import { cva, } from "class-variance-authority"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const labelVariants = cva(
   "text-sm font-medium leading-none peer-disabled-not-allowed peer-disabled-70"

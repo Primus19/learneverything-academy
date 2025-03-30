@@ -1,14 +1,13 @@
+# This file configures the build settings for AWS Amplify
 version: 1
 frontend:
   phases:
     preBuild:
       commands:
-        - npm install --legacy-peer-deps
+        - npm ci
     build:
       commands:
         - npm run build
-        - mkdir -p out
-        - cp -r .next/* out/
   artifacts:
     baseDirectory: out
     files:

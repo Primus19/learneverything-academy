@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react'
-import { useParams } from "next/navigation.jsx"
+import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import Navbar from "../../../../../components/layout/Navbar.jsx"
-import ChapterViewer from "../../../../../components/courses/ChapterViewer.jsx"
-import { getChapterContent } from "../../../../../lib/markdown/loader.jsx"
+import Navbar from "../../../../../components/layout/Navbar"
+import ChapterViewer from "../../../../../components/courses/ChapterViewer"
+import { getChapterContent } from "../../../../../lib/markdown/loader"
 import "../../../../../app/markdown.css" // Import markdown styles
 
 export default function ChapterPage() {

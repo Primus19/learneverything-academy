@@ -1,9 +1,9 @@
 "use client"
 
-import * from "react"
-import * from "@radix-ui/react-scroll-area.jsx"
+import * as React from "react"
+import * as RadixScrollArea from "@radix-ui/react-scroll-area"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,

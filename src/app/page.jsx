@@ -1,13 +1,13 @@
 import React from 'react';
-import Link from "next/link.jsx";
-import { Button } from "../components/ui/button.jsx";
-import Card from "../components/ui/card-direct/Card.jsx"
-import CardContent from "../components/ui/card-direct/CardContent.jsx"
-import CardDescription from "../components/ui/card-direct/CardDescription.jsx"
-import CardHeader from "../components/ui/card-direct/CardHeader.jsx"
-import CardTitle from "../components/ui/card-direct/CardTitle.jsx";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs.jsx";
-import { PersonalizedLearning } from "../components/features/personalized_learning.jsx";
+import Link from 'next/link';
+import { Button } from "../components/ui/button";
+import Card from "../components/ui/card-direct/Card"
+import CardContent from "../components/ui/card-direct/CardContent"
+import CardDescription from "../components/ui/card-direct/CardDescription"
+import CardHeader from "../components/ui/card-direct/CardHeader"
+import CardTitle from "../components/ui/card-direct/CardTitle";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { PersonalizedLearning } from "../components/features/personalized_learning";
 
 export default function HomePage() {
   return (

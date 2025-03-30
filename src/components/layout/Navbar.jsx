@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import Link from "next/link.jsx"
-import { usePathname } from "next/navigation.jsx"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {

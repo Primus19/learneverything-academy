@@ -1,16 +1,16 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Card from "../../components/ui/card-direct/Card.jsx"
-import CardContent from "../../components/ui/card-direct/CardContent.jsx"
-import CardDescription from "../../components/ui/card-direct/CardDescription.jsx"
-import CardFooter from "../../components/ui/card-direct/CardFooter.jsx"
-import CardHeader from "../../components/ui/card-direct/CardHeader.jsx"
-import CardTitle from "../../components/ui/card-direct/CardTitle.jsx"
-import { Button } from "../../components/ui/button.jsx"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs.jsx"
-import { Badge } from "../../components/ui/badge.jsx"
-import { ScrollArea } from "../../components/ui/scroll-area.jsx"
+import Card from "../../components/ui/card-direct/Card"
+import CardContent from "../../components/ui/card-direct/CardContent"
+import CardDescription from "../../components/ui/card-direct/CardDescription"
+import CardFooter from "../../components/ui/card-direct/CardFooter"
+import CardHeader from "../../components/ui/card-direct/CardHeader"
+import CardTitle from "../../components/ui/card-direct/CardTitle"
+import { Button } from "../../components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Badge } from "../../components/ui/badge"
+import { ScrollArea } from "../../components/ui/scroll-area"
 import { Briefcase, Award, FileText, Download, ExternalLink, CheckCircle, Clock, Calendar, MapPin } from 'lucide-react'
 
 export default function CareerAdvancement({

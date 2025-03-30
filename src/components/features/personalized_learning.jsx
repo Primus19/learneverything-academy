@@ -1,20 +1,20 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Card from "../../components/ui/card-direct/Card.jsx"
-import CardContent from "../../components/ui/card-direct/CardContent.jsx"
-import CardDescription from "../../components/ui/card-direct/CardDescription.jsx"
-import CardFooter from "../../components/ui/card-direct/CardFooter.jsx"
-import CardHeader from "../../components/ui/card-direct/CardHeader.jsx"
-import CardTitle from "../../components/ui/card-direct/CardTitle.jsx"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs.jsx"
-import { Button } from "../../components/ui/button.jsx"
-import { Input } from "../../components/ui/input.jsx"
-import { Label } from "../../components/ui/label.jsx"
-import { ScrollArea } from "../../components/ui/scroll-area.jsx"
-import { Badge } from "../../components/ui/badge.jsx"
-import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar.jsx"
-import { Progress } from "../../components/ui/progress.jsx"
+import Card from "../../components/ui/card-direct/Card"
+import CardContent from "../../components/ui/card-direct/CardContent"
+import CardDescription from "../../components/ui/card-direct/CardDescription"
+import CardFooter from "../../components/ui/card-direct/CardFooter"
+import CardHeader from "../../components/ui/card-direct/CardHeader"
+import CardTitle from "../../components/ui/card-direct/CardTitle"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Button } from "../../components/ui/button"
+import { Input } from "../../components/ui/input"
+import { Label } from "../../components/ui/label"
+import { ScrollArea } from "../../components/ui/scroll-area"
+import { Badge } from "../../components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
+import { Progress } from "../../components/ui/progress"
 import { Search, BookOpen, Briefcase, TrendingUp, Award, ChevronRight, Filter, MapPin } from 'lucide-react'
 
 export default function PersonalizedLearning({

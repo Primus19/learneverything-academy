@@ -1,10 +1,10 @@
 "use client"
 
-import * from "react"
-import * from "@radix-ui/react-context-menu.jsx"
+import * as React from "react"
+import * as RadixContextMenu from "@radix-ui/react-context-menu"
 import { Check, ChevronRight, Circle } from "lucide-react"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const ContextMenu = ContextMenuPrimitive.Root
 
