@@ -1,14 +1,18 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card";
-import { Button } from "../../components/ui/button";
 import Link from 'next/link';
 import Image from 'next/image';
 import ProgressTracking from "../../components/features/progress_tracking";
 import CommunityEngagement from "../../components/features/community_engagement";
 import AdvancedSearch from "../../components/features/advanced_search";
 import CareerAdvancement from "../../components/features/career_advancement";
+import Card from "../../components/ui/card-direct/Card";
+import CardContent from "../../components/ui/card-direct/CardContent";
+import CardDescription from "../../components/ui/card-direct/CardDescription";
+import CardHeader from "../../components/ui/card-direct/CardHeader";
+import CardTitle from "../../components/ui/card-direct/CardTitle";
+import { Button } from "../../components/ui/button";
 
 export const metadata: Metadata = {
   title: 'LearnEverything Academy | Courses',

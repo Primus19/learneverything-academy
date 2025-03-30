@@ -1,7 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import Card from "../components/ui/card-direct/Card.jsx"
+import CardContent from "../components/ui/card-direct/CardContent.jsx"
+import CardDescription from "../components/ui/card-direct/CardDescription.jsx"
+import CardHeader from "../components/ui/card-direct/CardHeader.jsx"
+import CardTitle from "../components/ui/card-direct/CardTitle.jsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { PersonalizedLearning } from "../components/features/personalized_learning";
 

@@ -1,5 +1,10 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import Card from "../ui/card-direct/Card.jsx"
+import CardContent from "../ui/card-direct/CardContent.jsx"
+import CardDescription from "../ui/card-direct/CardDescription.jsx"
+import CardFooter from "../ui/card-direct/CardFooter.jsx"
+import CardHeader from "../ui/card-direct/CardHeader.jsx"
+import CardTitle from "../ui/card-direct/CardTitle.jsx";
 import { Button } from "../ui/button";
 
 interface ResumeTemplateCardProps {

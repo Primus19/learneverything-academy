@@ -1,8 +1,13 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-// Change from path aliases to relative imports
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card'
+// Using direct imports instead of destructured imports
+import Card from '../ui/card-direct/Card'
+import CardContent from '../ui/card-direct/CardContent'
+import CardDescription from '../ui/card-direct/CardDescription'
+import CardFooter from '../ui/card-direct/CardFooter'
+import CardHeader from '../ui/card-direct/CardHeader'
+import CardTitle from '../ui/card-direct/CardTitle'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
@@ -10,26 +15,8 @@ import { Badge } from '../ui/badge'
 import { ScrollArea } from '../ui/scroll-area'
 import { Search, Filter, SlidersHorizontal, Clock, BookOpen, Tag, BarChart, Briefcase, ChevronDown, ChevronUp, Check } from 'lucide-react'
 
-interface AdvancedSearchProps {
-  onSearch?: (results: SearchResult[]) => void
-}
-
-interface SearchResult {
-  id: string
-  type: 'course' | 'article' | 'tutorial' | 'resource'
-  title: string
-  description: string
-  author?: string
-  date?: string
-  duration?: string
-  level?: 'Beginner' | 'Intermediate' | 'Advanced'
-  topics: string[]
-  rating?: number
-  image?: string
-}
-
 // Search Results List Component - Moved before the main component to fix build error
-function SearchResultsList({ results }: { results: SearchResult[] }) {
+function SearchResultsList({ results }) {
   if (results.length === 0) {
     return (
       <div className="text-center py-12 bg-gray-900 rounded-lg border border-gray-700">
@@ -123,19 +110,19 @@ function SearchResultsList({ results }: { results: SearchResult[] }) {
   )
 }
 
-export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
+export default function AdvancedSearch({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeTab, setActiveTab] = useState('all')
   const [showFilters, setShowFilters] = useState(false)
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const [searchResults, setSearchResults] = useState([])
   
   // Filter states
-  const [selectedContentTypes, setSelectedContentTypes] = useState<string[]>(['course', 'article', 'tutorial', 'resource'])
-  const [selectedLevels, setSelectedLevels] = useState<string[]>(['Beginner', 'Intermediate', 'Advanced'])
-  const [selectedDurations, setSelectedDurations] = useState<string[]>(['short', 'medium', 'long'])
-  const [selectedTopics, setSelectedTopics] = useState<string[]>([])
-  const [dateRange, setDateRange] = useState<'all' | 'week' | 'month' | 'year'>('all')
-  const [sortBy, setSortBy] = useState<'relevance' | 'date' | 'rating'>('relevance')
+  const [selectedContentTypes, setSelectedContentTypes] = useState(['course', 'article', 'tutorial', 'resource'])
+  const [selectedLevels, setSelectedLevels] = useState(['Beginner', 'Intermediate', 'Advanced'])
+  const [selectedDurations, setSelectedDurations] = useState(['short', 'medium', 'long'])
+  const [selectedTopics, setSelectedTopics] = useState([])
+  const [dateRange, setDateRange] = useState('all')
+  const [sortBy, setSortBy] = useState('relevance')
   
   // Available topics for filtering
   const availableTopics = [
@@ -146,7 +133,7 @@ export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
   ]
   
   // Mock search results data
-  const mockResults: SearchResult[] = [
+  const mockResults = [
     {
       id: 'course-1',
       type: 'course',
@@ -218,7 +205,7 @@ export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
   ]
   
   // Toggle filter selection
-  const toggleFilter = (type: 'contentType' | 'level' | 'duration' | 'topic', value: string) => {
+  const toggleFilter = (type, value) => {
     switch (type) {
       case 'contentType':
         setSelectedContentTypes(prev => 
@@ -508,7 +495,7 @@ export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
                       <select
                         id="date-range"
                         value={dateRange}
-                        onChange={(e) => setDateRange(e.target.value as any)}
+                        onChange={(e) => setDateRange(e.target.value)}
                         className="w-full bg-gray-800 border border-gray-700 rounded-md text-sm p-2"
                       >
                         <option value="all">All Time</option>
@@ -523,7 +510,7 @@ export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
                       <select
                         id="sort-by"
                         value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value as any)}
+                        onChange={(e) => setSortBy(e.target.value)}
                         className="w-full bg-gray-800 border border-gray-700 rounded-md text-sm p-2"
                       >
                         <option value="relevance">Relevance</option>

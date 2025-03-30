@@ -1,7 +1,12 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card"
+import Card from "../../components/ui/card-direct/Card.jsx"
+import CardContent from "../../components/ui/card-direct/CardContent.jsx"
+import CardDescription from "../../components/ui/card-direct/CardDescription.jsx"
+import CardFooter from "../../components/ui/card-direct/CardFooter.jsx"
+import CardHeader from "../../components/ui/card-direct/CardHeader.jsx"
+import CardTitle from "../../components/ui/card-direct/CardTitle.jsx"
 import { Button } from "../../components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 import { Badge } from "../../components/ui/badge"

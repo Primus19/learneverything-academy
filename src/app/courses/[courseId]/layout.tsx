@@ -1,7 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card";
+import Card from "../../../components/ui/card-direct/Card.jsx"
+import CardContent from "../../../components/ui/card-direct/CardContent.jsx"
+import CardDescription from "../../../components/ui/card-direct/CardDescription.jsx"
+import CardFooter from "../../../components/ui/card-direct/CardFooter.jsx"
+import CardHeader from "../../../components/ui/card-direct/CardHeader.jsx"
+import CardTitle from "../../../components/ui/card-direct/CardTitle.jsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
 import InteractiveLearningTools from "../../../components/features/interactive_learning_tools";
 import ProgressTracking from "../../../components/features/progress_tracking";
