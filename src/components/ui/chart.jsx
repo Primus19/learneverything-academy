@@ -8,7 +8,6 @@ import { cn } from "../../lib/utils"
 // Format
 const THEMES = { light: "", dark: ".dark" }
 
-export type ChartConfig = {
   [k in string] & (
     | { color?; theme? }
     | { color?; theme }

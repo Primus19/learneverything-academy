@@ -14,7 +14,7 @@ const buttonVariants = cva(
   }
 )
 
-  extends React.ButtonHTMLAttributes,
+  
     VariantProps {
   asChild?
 }

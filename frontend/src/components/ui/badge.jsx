@@ -23,7 +23,7 @@ const badgeVariants = cva(
   }
 )
 
-  extends React.HTMLAttributes<HTMLDivElement>,
+  
     VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, ...props }: BadgeProps) {

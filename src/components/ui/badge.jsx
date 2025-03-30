@@ -12,7 +12,7 @@ const badgeVariants = cva(
   }
 )
 
-  extends React.HTMLAttributes,
+  
     VariantProps {}
 
 function Badge({ className, variant, ...props }) {
