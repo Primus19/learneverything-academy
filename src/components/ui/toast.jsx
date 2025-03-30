@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import * from "@radix-ui/react-toast"
+import * as RadixToast from "@radix-ui/react-toast"
 import { cva, } from "class-variance-authority"
 import { X } from "lucide-react"
 

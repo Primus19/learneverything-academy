@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import * from "@radix-ui/react-radio-group"
+import * as RadixRadioGroup from "@radix-ui/react-radio-group"
 import { Circle } from "lucide-react"
 
 import { cn } from "../../lib/utils"

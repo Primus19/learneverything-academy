@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import * from "@radix-ui/react-scroll-area"
+import * as RadixScrollArea from "@radix-ui/react-scroll-area"
 
 import { cn } from "../../lib/utils"
 

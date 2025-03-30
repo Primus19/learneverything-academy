@@ -14,7 +14,6 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
   extends React.ButtonHTMLAttributes,
     VariantProps {
   asChild?

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import * from "@radix-ui/react-label"
+import * as RadixLabel from "@radix-ui/react-label"
 import { cva, } from "class-variance-authority"
 
 import { cn } from "../../lib/utils"
