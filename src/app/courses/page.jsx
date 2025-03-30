@@ -1,20 +1,21 @@
+// Update the import paths to use the direct JSX files
 import React from 'react';
-import { Metadata } from 'next';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
-import Link from 'next/link';
-import Image from 'next/image';
-import ProgressTracking from "../../components/features/progress_tracking";
-import CommunityEngagement from "../../components/features/community_engagement";
-import AdvancedSearch from "../../components/features/advanced_search";
-import CareerAdvancement from "../../components/features/career_advancement";
-import Card from "../../components/ui/card-direct/Card";
-import CardContent from "../../components/ui/card-direct/CardContent";
-import CardDescription from "../../components/ui/card-direct/CardDescription";
-import CardHeader from "../../components/ui/card-direct/CardHeader";
-import CardTitle from "../../components/ui/card-direct/CardTitle";
-import { Button } from "../../components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs.jsx";
+import Link from "next/link.jsx";
+import Image from "next/image.jsx";
+import ProgressTracking from "../../components/features/progress_tracking.jsx";
+import CommunityEngagement from "../../components/features/community_engagement.jsx";
+import AdvancedSearch from "../../components/features/advanced_search.jsx";
+import CareerAdvancement from "../../components/features/career_advancement.jsx";
+import Card from "../../components/ui/card-direct/Card.jsx";
+import CardContent from "../../components/ui/card-direct/CardContent.jsx";
+import CardDescription from "../../components/ui/card-direct/CardDescription.jsx";
+import CardHeader from "../../components/ui/card-direct/CardHeader.jsx";
+import CardTitle from "../../components/ui/card-direct/CardTitle.jsx";
+import { Button } from "../../components/ui/button.jsx";
 
-export const metadata: Metadata = {
+// Use plain JS object for metadata without any type annotations
+export const metadata = {
   title: 'LearnEverything Academy | Courses',
   description: 'Explore our comprehensive courses in DevOps, Cloud Engineering, Security Operations, Risk Management, Data Analytics, Big Data, Data Engineering, and Ethical Hacking.',
 };
