@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnEverything Academy - Deployment Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2563eb;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1e40af;
+            margin-top: 30px;
+        }
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .note {
+            background-color: #dbeafe;
+            border-left: 4px solid #2563eb;
+            padding: 10px 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>LearnEverything Academy - Amplify Deployment Instructions</h1>
+    
+    <p>This document provides instructions for deploying the LearnEverything Academy static website to AWS Amplify.</p>
+    
+    <div class="note">
+        <strong>Note:</strong> This is a pure static HTML site with no build dependencies, which ensures it will deploy successfully on Amplify without any build process issues.
+    </div>
+    
+    <h2>Deployment Steps</h2>
+    
+    <ol>
+        <li>
+            <strong>Log in to the AWS Management Console</strong>
+            <p>Navigate to the AWS Amplify service.</p>
+        </li>
+        <li>
+            <strong>Create a new app</strong>
+            <p>Click "Create app" and select "Deploy without Git provider" option.</p>
+        </li>
+        <li>
+            <strong>Upload the zip file</strong>
+            <p>On the "Deploy without Git provider" screen, provide an app name (e.g., "LearnEverythingAcademy") and upload the provided zip file containing the static website.</p>
+        </li>
+        <li>
+            <strong>Save and deploy</strong>
+            <p>Click "Save and deploy" to start the deployment process.</p>
+        </li>
+        <li>
+            <strong>Wait for deployment to complete</strong>
+            <p>Amplify will deploy your static site. This should complete successfully since there is no build process required.</p>
+        </li>
+        <li>
+            <strong>Access your website</strong>
+            <p>Once deployment is complete, Amplify will provide a URL where your site is accessible (typically something like https://main.xxxxxxxxxxxx.amplifyapp.com).</p>
+        </li>
+    </ol>
+    
+    <h2>Why This Approach Works</h2>
+    
+    <p>The previous deployment attempts failed because they were using a Next.js application with TypeScript, which required a complex build process that was encountering errors in the Amplify environment.</p>
+    
+    <p>This solution uses a pure static HTML approach with the following advantages:</p>
+    
+    <ul>
+        <li><strong>No build process required</strong> - The site consists of plain HTML, CSS, and JavaScript files that can be served directly without any compilation or build steps.</li>
+        <li><strong>No dependencies</strong> - The site uses Tailwind CSS via CDN, eliminating the need for npm packages or other dependencies.</li>
+        <li><strong>Simplified deployment</strong> - The included amplify.yml file explicitly tells Amplify that no build process is needed.</li>
+    </ul>
+    
+    <h2>Troubleshooting</h2>
+    
+    <p>If you encounter any issues during deployment:</p>
+    
+    <ol>
+        <li>
+            <strong>Verify the amplify.yml file</strong>
+            <p>Ensure the amplify.yml file is at the root of your zip file and has the correct configuration.</p>
+        </li>
+        <li>
+            <strong>Check file permissions</strong>
+            <p>Make sure all files have appropriate read permissions.</p>
+        </li>
+        <li>
+            <strong>Review Amplify logs</strong>
+            <p>If there are any issues, check the build logs in the Amplify console for specific error messages.</p>
+        </li>
+    </ol>
+    
+    <h2>Future Updates</h2>
+    
+    <p>To update the site in the future:</p>
+    
+    <ol>
+        <li>Modify the HTML, CSS, or JavaScript files as needed</li>
+        <li>Create a new zip file containing all the updated files</li>
+        <li>In the Amplify console, select your app and click "Manual deploy"</li>
+        <li>Upload the new zip file and deploy</li>
+    </ol>
+    
+    <div class="note">
+        <strong>Important:</strong> If you need to add more complex functionality in the future, consider setting up a proper CI/CD pipeline with a Git provider for more streamlined updates.
+    </div>
+</body>
+</html>
