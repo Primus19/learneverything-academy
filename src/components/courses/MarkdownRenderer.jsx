@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
 import Image from "next/image.jsx"
-import Link from "next/link.jsx"
+import Link from 'next/link'
 
 
 

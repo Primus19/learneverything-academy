@@ -1,7 +1,7 @@
 // Update the import paths to use the direct JSX files
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs.jsx";
-import Link from "next/link.jsx";
+import Link from 'next/link';
 import Image from "next/image.jsx";
 import ProgressTracking from "../../components/features/progress_tracking.jsx";
 import CommunityEngagement from "../../components/features/community_engagement.jsx";

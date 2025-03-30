@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { useParams } from "next/navigation.jsx"
+import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import Navbar from "../../../../../components/layout/Navbar.jsx"
 import ChapterViewer from "../../../../../components/courses/ChapterViewer.jsx"

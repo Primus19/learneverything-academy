@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { getChapters } from "../../../lib/markdown/loader.jsx";
-import Link from "next/link.jsx";
+import Link from 'next/link';
 import { Button } from "../../../components/ui/button.jsx";
 import Card from "../../../components/ui/card-direct/Card.jsx"
 import CardContent from "../../../components/ui/card-direct/CardContent.jsx"

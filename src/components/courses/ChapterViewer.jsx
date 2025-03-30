@@ -3,11 +3,11 @@
 import React from 'react'
 import MarkdownRenderer from "../../components/courses/MarkdownRenderer.jsx"
 import { ArrowLeft, ArrowRight, BookOpen, Clock, Calendar } from 'lucide-react'
-import Link from "next/link.jsx"
+import Link from 'next/link'
 
 
 
-const ChapterViewer.FC = ({
+const ChapterViewer = ({
   courseSlug,
   chapterIndex,
   title,
