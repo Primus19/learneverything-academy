@@ -27,6 +27,101 @@ interface SearchResult {
   image?: string
 }
 
+// Search Results List Component - Moved before the main component to fix build error
+function SearchResultsList({ results }: { results: SearchResult[] }) {
+  if (results.length === 0) {
+    return (
+      <div className="text-center py-12 bg-gray-900 rounded-lg border border-gray-700">
+        <div className="text-gray-400 mb-2">No results match your search criteria</div>
+        <p className="text-sm text-gray-500">Try adjusting your filters or search terms</p>
+      </div>
+    )
+  }
+  
+  return (
+    <div className="space-y-4">
+      {results.map(result => (
+        <div key={result.id} className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
+          <div className="p-4">
+            <div className="flex items-start">
+              {result.type === 'course' && (
+                <div className="h-20 w-20 bg-gray-800 rounded-md flex items-center justify-center mr-4 flex-shrink-0">
+                  <BookOpen className="h-8 w-8 text-blue-400" />
+                </div>
+              )}
+              <div className="flex-1">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <Badge className={`mb-2 ${
+                      result.type === 'course' ? 'bg-blue-900/30 text-blue-400 border-blue-800' :
+                      result.type === 'article' ? 'bg-purple-900/30 text-purple-400 border-purple-800' :
+                      result.type === 'tutorial' ? 'bg-green-900/30 text-green-400 border-green-800' :
+                      'bg-yellow-900/30 text-yellow-400 border-yellow-800'
+                    }`}>
+                      {result.type.charAt(0).toUpperCase() + result.type.slice(1)}
+                    </Badge>
+                    <h3 className="text-lg font-medium">{result.title}</h3>
+                  </div>
+                  {result.rating && (
+                    <div className="flex items-center">
+                      <span className="text-yellow-400 mr-1">★</span>
+                      <span>{result.rating}</span>
+                    </div>
+                  )}
+                </div>
+                
+                <p className="text-gray-300 mt-1">{result.description}</p>
+                
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3">
+                  {result.author && (
+                    <div className="text-sm text-gray-400">
+                      By: {result.author}
+                    </div>
+                  )}
+                  
+                  {result.date && (
+                    <div className="text-sm text-gray-400">
+                      {new Date(result.date).toLocaleDateString()}
+                    </div>
+                  )}
+                  
+                  {result.duration && (
+                    <div className="text-sm text-gray-400 flex items-center">
+                      <Clock className="h-3 w-3 mr-1" />
+                      {result.duration}
+                    </div>
+                  )}
+                  
+                  {result.level && (
+                    <Badge variant="outline" className="bg-gray-800 border-gray-600">
+                      {result.level}
+                    </Badge>
+                  )}
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {result.topics.map((topic, index) => (
+                    <Badge key={index} variant="outline" className="bg-gray-800 border-gray-600">
+                      {topic}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-850 border-t border-gray-700 p-3 flex justify-end">
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              {result.type === 'course' ? 'View Course' : 
+               result.type === 'article' ? 'Read Article' : 
+               result.type === 'tutorial' ? 'Start Tutorial' : 'View Resource'}
+            </Button>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeTab, setActiveTab] = useState('all')
@@ -515,100 +610,5 @@ export default function AdvancedSearch({ onSearch }: AdvancedSearchProps) {
         </Button>
       </CardFooter>
     </Card>
-  )
-}
-
-// Search Results List Component
-function SearchResultsList({ results }: { results: SearchResult[] }) {
-  if (results.length === 0) {
-    return (
-      <div className="text-center py-12 bg-gray-900 rounded-lg border border-gray-700">
-        <div className="text-gray-400 mb-2">No results match your search criteria</div>
-        <p className="text-sm text-gray-500">Try adjusting your filters or search terms</p>
-      </div>
-    )
-  }
-  
-  return (
-    <div className="space-y-4">
-      {results.map(result => (
-        <div key={result.id} className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
-          <div className="p-4">
-            <div className="flex items-start">
-              {result.type === 'course' && (
-                <div className="h-20 w-20 bg-gray-800 rounded-md flex items-center justify-center mr-4 flex-shrink-0">
-                  <BookOpen className="h-8 w-8 text-blue-400" />
-                </div>
-              )}
-              <div className="flex-1">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <Badge className={`mb-2 ${
-                      result.type === 'course' ? 'bg-blue-900/30 text-blue-400 border-blue-800' :
-                      result.type === 'article' ? 'bg-purple-900/30 text-purple-400 border-purple-800' :
-                      result.type === 'tutorial' ? 'bg-green-900/30 text-green-400 border-green-800' :
-                      'bg-yellow-900/30 text-yellow-400 border-yellow-800'
-                    }`}>
-                      {result.type.charAt(0).toUpperCase() + result.type.slice(1)}
-                    </Badge>
-                    <h3 className="text-lg font-medium">{result.title}</h3>
-                  </div>
-                  {result.rating && (
-                    <div className="flex items-center">
-                      <span className="text-yellow-400 mr-1">★</span>
-                      <span>{result.rating}</span>
-                    </div>
-                  )}
-                </div>
-                
-                <p className="text-gray-300 mt-1">{result.description}</p>
-                
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3">
-                  {result.author && (
-                    <div className="text-sm text-gray-400">
-                      By: {result.author}
-                    </div>
-                  )}
-                  
-                  {result.date && (
-                    <div className="text-sm text-gray-400">
-                      {new Date(result.date).toLocaleDateString()}
-                    </div>
-                  )}
-                  
-                  {result.duration && (
-                    <div className="text-sm text-gray-400 flex items-center">
-                      <Clock className="h-3 w-3 mr-1" />
-                      {result.duration}
-                    </div>
-                  )}
-                  
-                  {result.level && (
-                    <Badge variant="outline" className="bg-gray-800 border-gray-600">
-                      {result.level}
-                    </Badge>
-                  )}
-                </div>
-                
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {result.topics.map((topic, index) => (
-                    <Badge key={index} variant="outline" className="bg-gray-800 border-gray-600">
-                      {topic}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-850 border-t border-gray-700 p-3 flex justify-end">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              {result.type === 'course' ? 'View Course' : 
-               result.type === 'article' ? 'Read Article' : 
-               result.type === 'tutorial' ? 'Start Tutorial' : 'View Resource'}
-            </Button>
-          </div>
-        </div>
-      ))}
-    </div>
   )
 }
