@@ -1,14 +1,14 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Progress } from "../../components/ui/progress.jsx"
-import { Badge } from "../../components/ui/badge.jsx"
-import Card from "../../components/ui/card-direct/Card.jsx"
-import CardContent from "../../components/ui/card-direct/CardContent.jsx"
-import CardDescription from "../../components/ui/card-direct/CardDescription.jsx"
-import CardFooter from "../../components/ui/card-direct/CardFooter.jsx"
-import CardHeader from "../../components/ui/card-direct/CardHeader.jsx"
-import CardTitle from "../../components/ui/card-direct/CardTitle.jsx"
+import { Progress } from "../../components/ui/progress"
+import { Badge } from "../../components/ui/badge"
+import Card from "../../components/ui/card-direct/Card"
+import CardContent from "../../components/ui/card-direct/CardContent"
+import CardDescription from "../../components/ui/card-direct/CardDescription"
+import CardFooter from "../../components/ui/card-direct/CardFooter"
+import CardHeader from "../../components/ui/card-direct/CardHeader"
+import CardTitle from "../../components/ui/card-direct/CardTitle"
 import { CheckCircle, Clock, Award, BookOpen } from 'lucide-react'
 
 

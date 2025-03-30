@@ -1,11 +1,11 @@
 "use client"
 
-import * from "react"
-import * from "@radix-ui/react-dialog.jsx"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react"
+import * from "@radix-ui/react-dialog"
+import { cva, } from "class-variance-authority"
 import { X } from "lucide-react"
 
-import { cn } from "../../lib/utils.jsx"
+import { cn } from "../../lib/utils"
 
 const Sheet = SheetPrimitive.Root
 

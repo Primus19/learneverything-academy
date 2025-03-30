@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import MarkdownRenderer from "../../components/courses/MarkdownRenderer.jsx"
+import MarkdownRenderer from "../../components/courses/MarkdownRenderer"
 import { ArrowLeft, ArrowRight, BookOpen, Clock, Calendar } from 'lucide-react'
 import Link from 'next/link'
 

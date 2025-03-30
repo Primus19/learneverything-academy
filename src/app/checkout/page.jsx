@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import Navbar from "../../components/layout/Navbar.jsx"
+import Navbar from "../../components/layout/Navbar"
 import { CreditCard, Lock, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 

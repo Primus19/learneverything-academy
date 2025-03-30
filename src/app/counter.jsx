@@ -1,5 +1,5 @@
 'use server'
-import { headers } from "next/headers.jsx"
+import { headers } from "next/headers"
 
 // Increment count and log access (Cloudflare logic explicitly removed for AWS Amplify compatibility)
 export async function incrementAndLog() {

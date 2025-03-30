@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Navbar from "../../../components/layout/Navbar.jsx"
+import Navbar from "../../../components/layout/Navbar"
 import Link from 'next/link'
 import { CheckCircle, ArrowRight } from 'lucide-react'
 

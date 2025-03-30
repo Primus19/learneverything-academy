@@ -1,18 +1,18 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs.jsx"
-import Card from "../../components/ui/card-direct/Card.jsx"
-import CardContent from "../../components/ui/card-direct/CardContent.jsx"
-import CardDescription from "../../components/ui/card-direct/CardDescription.jsx"
-import CardFooter from "../../components/ui/card-direct/CardFooter.jsx"
-import CardHeader from "../../components/ui/card-direct/CardHeader.jsx"
-import CardTitle from "../../components/ui/card-direct/CardTitle.jsx"
-import { Button } from "../../components/ui/button.jsx"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import Card from "../../components/ui/card-direct/Card"
+import CardContent from "../../components/ui/card-direct/CardContent"
+import CardDescription from "../../components/ui/card-direct/CardDescription"
+import CardFooter from "../../components/ui/card-direct/CardFooter"
+import CardHeader from "../../components/ui/card-direct/CardHeader"
+import CardTitle from "../../components/ui/card-direct/CardTitle"
+import { Button } from "../../components/ui/button"
 import { MessageSquare, Users, BookOpen, ThumbsUp, Flag } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar.jsx"
-import { Textarea } from "../../components/ui/textarea.jsx"
-import { ScrollArea } from "../../components/ui/scroll-area.jsx"
+import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
+import { Textarea } from "../../components/ui/textarea"
+import { ScrollArea } from "../../components/ui/scroll-area"
 
 
 
