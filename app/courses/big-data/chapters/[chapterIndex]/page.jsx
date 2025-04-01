@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../../../../../components/ui/components";
-import Navbar from "../../../../../../../components/layout/Navbar";
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../../components/ui/components";
+import Navbar from "../../../../components/layout/Navbar";
 
 export default function BigDataChapterPage({ params }) {
   const { chapterIndex } = params;
