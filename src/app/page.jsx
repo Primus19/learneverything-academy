@@ -1,17 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button } from "../components/ui/button";
-import Card from "../components/ui/card-direct/Card"
-import CardContent from "../components/ui/card-direct/CardContent"
-import CardDescription from "../components/ui/card-direct/CardDescription"
-import CardHeader from "../components/ui/card-direct/CardHeader"
-import CardTitle from "../components/ui/card-direct/CardTitle";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { PersonalizedLearning } from "../components/features/personalized_learning";
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/components";
 
 export default function HomePage() {
   return (
-    <div className="container mx-auto py-8 px-4 md-6">
+    <div className="container mx-auto py-8 px-4 md:px-6">
       <div className="flex flex-col items-center text-center mb-12">
         <h1 className="text-5xl font-bold tracking-tight mb-4">LearnEverything Academy</h1>
         <p className="text-xl text-muted-foreground max-w-3xl">
@@ -28,14 +21,35 @@ export default function HomePage() {
       </div>
 
       <div className="mb-16">
-        <PersonalizedLearning userId="user123" userName="John Doe" />
+        <div className="bg-card rounded-lg p-6 shadow-sm border">
+          <h2 className="text-2xl font-bold mb-4">Personalized Learning</h2>
+          <p className="mb-4">Welcome back! Continue your learning journey with these recommended courses:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 border rounded-lg">
+              <h3 className="font-medium">DevOps Fundamentals</h3>
+              <p className="text-sm text-muted-foreground mb-2">60% Complete</p>
+              <div className="w-full bg-muted rounded-full h-2.5 mb-3">
+                <div className="bg-primary h-2.5 rounded-full" style={{ width: '60%' }}></div>
+              </div>
+              <Button size="sm">Continue</Button>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h3 className="font-medium">Cloud Security</h3>
+              <p className="text-sm text-muted-foreground mb-2">25% Complete</p>
+              <div className="w-full bg-muted rounded-full h-2.5 mb-3">
+                <div className="bg-primary h-2.5 rounded-full" style={{ width: '25%' }}></div>
+              </div>
+              <Button size="sm">Continue</Button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Featured Courses</h2>
-        <div className="grid grid-cols-1 md-cols-2 lg-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link href="/courses/devops" className="group">
-            <Card className="overflow-hidden border-2 border-transparent transition-all hover-primary hover-lg h-full">
+            <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg h-full">
               <div className="aspect-video relative bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center">
                 <span className="text-4xl font-bold text-white">DevOps</span>
               </div>
@@ -46,7 +60,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group-hover-primary group-hover-primary-foreground">
+                <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
                   Start Learning
                 </Button>
               </CardContent>
@@ -54,7 +68,7 @@ export default function HomePage() {
           </Link>
 
           <Link href="/courses/cloud-engineering" className="group">
-            <Card className="overflow-hidden border-2 border-transparent transition-all hover-primary hover-lg h-full">
+            <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg h-full">
               <div className="aspect-video relative bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center">
                 <span className="text-4xl font-bold text-white">Cloud</span>
               </div>
@@ -65,7 +79,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group-hover-primary group-hover-primary-foreground">
+                <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
                   Start Learning
                 </Button>
               </CardContent>
@@ -73,7 +87,7 @@ export default function HomePage() {
           </Link>
 
           <Link href="/courses/soc" className="group">
-            <Card className="overflow-hidden border-2 border-transparent transition-all hover-primary hover-lg h-full">
+            <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg h-full">
               <div className="aspect-video relative bg-gradient-to-br from-red-600 to-purple-800 flex items-center justify-center">
                 <span className="text-4xl font-bold text-white">SOC</span>
               </div>
@@ -84,7 +98,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group-hover-primary group-hover-primary-foreground">
+                <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
                   Start Learning
                 </Button>
               </CardContent>
@@ -92,7 +106,7 @@ export default function HomePage() {
           </Link>
 
           <Link href="/courses/ethical-hacking" className="group">
-            <Card className="overflow-hidden border-2 border-transparent transition-all hover-primary hover-lg h-full">
+            <Card className="overflow-hidden border-2 border-transparent transition-all hover:border-primary hover:shadow-lg h-full">
               <div className="aspect-video relative bg-gradient-to-br from-green-600 to-teal-800 flex items-center justify-center">
                 <span className="text-4xl font-bold text-white">Ethical Hacking</span>
               </div>
@@ -103,7 +117,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group-hover-primary group-hover-primary-foreground">
+                <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
                   Start Learning
                 </Button>
               </CardContent>
@@ -119,7 +133,7 @@ export default function HomePage() {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Why Choose LearnEverything Academy?</h2>
-        <div className="grid grid-cols-1 md-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card>
             <CardHeader>
               <CardTitle>Hands-on Learning</CardTitle>
@@ -236,7 +250,7 @@ export default function HomePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-medium">3. Security Operations Center (SOC)</h3>
-                      <p className="text-sm text-muted-foreground">Secure your cloud and DevOps environments</p>
+                      <p className="text-sm text-muted-foreground">Understand cloud security monitoring and incident response</p>
                     </div>
                     <Button asChild variant="outline">
                       <Link href="/courses/soc">Start</Link>
@@ -259,7 +273,7 @@ export default function HomePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-medium">1. Data Analytics</h3>
-                      <p className="text-sm text-muted-foreground">Learn to analyze and visualize data effectively</p>
+                      <p className="text-sm text-muted-foreground">Learn to analyze and visualize data for insights</p>
                     </div>
                     <Button asChild variant="outline">
                       <Link href="/courses/data-analytics">Start</Link>
@@ -267,20 +281,20 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-medium">2. Big Data</h3>
-                      <p className="text-sm text-muted-foreground">Master big data processing and analytics</p>
-                    </div>
-                    <Button asChild variant="outline">
-                      <Link href="/courses/big-data">Start</Link>
-                    </Button>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-medium">3. Data Engineering</h3>
+                      <h3 className="font-medium">2. Data Engineering</h3>
                       <p className="text-sm text-muted-foreground">Build robust data pipelines and infrastructure</p>
                     </div>
                     <Button asChild variant="outline">
                       <Link href="/courses/data-engineering">Start</Link>
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-medium">3. Big Data</h3>
+                      <p className="text-sm text-muted-foreground">Master distributed computing and big data processing</p>
+                    </div>
+                    <Button asChild variant="outline">
+                      <Link href="/courses/big-data">Start</Link>
                     </Button>
                   </div>
                 </div>
@@ -299,26 +313,26 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-medium">1. Web Development</h3>
-                      <p className="text-sm text-muted-foreground">Learn modern web development technologies</p>
+                      <h3 className="font-medium">1. Web Development Fundamentals</h3>
+                      <p className="text-sm text-muted-foreground">Learn HTML, CSS, and JavaScript basics</p>
                     </div>
-                    <Button asChild variant="outline" disabled>
-                      <Link href="#">Coming Soon</Link>
+                    <Button asChild variant="outline">
+                      <Link href="/courses">Start</Link>
                     </Button>
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-medium">2. Mobile Development</h3>
-                      <p className="text-sm text-muted-foreground">Build cross-platform mobile applications</p>
+                      <h3 className="font-medium">2. Full-Stack Development</h3>
+                      <p className="text-sm text-muted-foreground">Master both frontend and backend technologies</p>
                     </div>
-                    <Button asChild variant="outline" disabled>
-                      <Link href="#">Coming Soon</Link>
+                    <Button asChild variant="outline">
+                      <Link href="/courses">Start</Link>
                     </Button>
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-medium">3. DevOps Engineering</h3>
-                      <p className="text-sm text-muted-foreground">Integrate development and operations</p>
+                      <p className="text-sm text-muted-foreground">Learn to automate software delivery and infrastructure</p>
                     </div>
                     <Button asChild variant="outline">
                       <Link href="/courses/devops">Start</Link>
