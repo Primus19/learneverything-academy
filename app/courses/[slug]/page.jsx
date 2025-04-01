@@ -1,6 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/components";
+import Button from "../../../components/ui/button";
+import Card from "../../../components/ui/card-direct/Card";
+import CardContent from "../../../components/ui/card-direct/CardContent";
+import CardDescription from "../../../components/ui/card-direct/CardDescription";
+import CardHeader from "../../../components/ui/card-direct/CardHeader";
+import CardTitle from "../../../components/ui/card-direct/CardTitle";
 import Navbar from "../../../components/layout/Navbar";
 
 export default function CoursePage({ params }) {
