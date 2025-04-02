@@ -1,12 +1,9 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable static export to avoid generateStaticParams requirement
-  // output: 'export',
-  // Configure images
+  output: 'export',
   images: {
-    domains: ['localhost'],
+    unoptimized: true
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
