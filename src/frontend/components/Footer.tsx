@@ -1,78 +1,114 @@
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin, Twitter, Book } from "lucide-react"
 import Link from "next/link"
+import { Separator } from "@/components/ui/separator"
 
 export function Footer() {
   return (
-    <footer className="border-t">
-      <div className="container py-8">
-        <div className="grid gap-8 lg:grid-cols-4">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">LearnEverything Academy</h3>
+    <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container px-4 md:px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center space-x-2 mb-4">
+              <Book className="h-6 w-6" />
+              <span className="font-bold">LearnEverything</span>
+            </Link>
             <p className="text-sm text-muted-foreground">
               Empowering learners worldwide with comprehensive education in technology and programming.
             </p>
           </div>
-          
+
+          {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/courses" className="text-muted-foreground hover:text-foreground">
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link href="/resume-samples" className="text-muted-foreground hover:text-foreground">
-                  Resume Samples
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground">
-                  About Us
-                </Link>
-              </li>
-            </ul>
+            <h4 className="font-semibold text-base mb-3">Quick Links</h4>
+            <nav className="flex flex-col space-y-2">
+              <Link 
+                href="/courses" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Courses
+              </Link>
+              <Link 
+                href="/resume-samples" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Resume Samples
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                About Us
+              </Link>
+            </nav>
           </div>
 
+          {/* Resources */}
           <div>
-            <h4 className="text-sm font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-foreground">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground">
-                  Contact
-                </Link>
-              </li>
-            </ul>
+            <h4 className="font-semibold text-base mb-3">Resources</h4>
+            <nav className="flex flex-col space-y-2">
+              <Link 
+                href="/blog" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Blog
+              </Link>
+              <Link 
+                href="/faq" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                FAQ
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Contact
+              </Link>
+            </nav>
           </div>
 
+          {/* Social Links */}
           <div>
-            <h4 className="text-sm font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4">
-              <Link href="https://twitter.com" className="text-muted-foreground hover:text-foreground">
+            <h4 className="font-semibold text-base mb-3">Follow Us</h4>
+            <div className="flex items-center space-x-3">
+              <Link 
+                href="https://twitter.com" 
+                className="p-2 rounded-full bg-muted/50 hover:bg-muted transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="https://github.com" className="text-muted-foreground hover:text-foreground">
+              <Link 
+                href="https://github.com" 
+                className="p-2 rounded-full bg-muted/50 hover:bg-muted transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-5 w-5" />
+                <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="https://linkedin.com" className="text-muted-foreground hover:text-foreground">
+              <Link 
+                href="https://linkedin.com" 
+                className="p-2 rounded-full bg-muted/50 hover:bg-muted transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} LearnEverything Academy. All rights reserved.</p>
+        <Separator className="my-8" />
+
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} LearnEverything Academy. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,66 @@
+{
+  "title": "IT Risk Management",
+  "description": "Learn to identify, assess, and mitigate IT risks while ensuring compliance with industry standards and regulations.",
+  "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60",
+  "price": 199.99,
+  "duration": "10 weeks",
+  "level": "Intermediate",
+  "instructor": {
+    "name": "Dr. Sarah Johnson",
+    "bio": "Risk Management Expert with extensive experience in IT governance",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Risk Assessment",
+    "Compliance Frameworks",
+    "Security Controls",
+    "Business Continuity",
+    "Disaster Recovery",
+    "Audit Procedures",
+    "Risk Reporting",
+    "Governance"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "Risk Management Fundamentals",
+        "topics": ["Risk Types", "Assessment Methods", "Mitigation Strategies"],
+        "description": "Understanding core concepts of IT risk management"
+      },
+      {
+        "title": "Compliance and Controls",
+        "topics": ["Regulatory Requirements", "Control Implementation", "Monitoring"],
+        "description": "Learn to implement and maintain compliance controls"
+      }
+    ]
+  },
+  "requirements": [
+    "Basic IT knowledge",
+    "Understanding of business processes",
+    "Analytical thinking skills",
+    "Documentation experience"
+  ],
+  "objectives": [
+    "Assess IT risks effectively",
+    "Implement control frameworks",
+    "Ensure regulatory compliance",
+    "Develop risk management plans"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Lectures",
+      "description": "Comprehensive coverage of risk management concepts"
+    },
+    {
+      "icon": "code",
+      "title": "Case Studies",
+      "description": "Real-world risk management scenarios"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Expert Guidance",
+      "description": "Learn from experienced risk managers"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Big Data Analytics",
+  "description": "Learn to process, analyze, and derive insights from large-scale data sets using modern big data technologies.",
+  "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60",
+  "price": 249.99,
+  "duration": "12 weeks",
+  "level": "Advanced",
+  "instructor": {
+    "name": "Dr. Michael Zhang",
+    "bio": "Big Data Architect with 15+ years of experience in distributed systems and analytics",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Hadoop Ecosystem",
+    "Apache Spark",
+    "NoSQL Databases",
+    "Stream Processing",
+    "Data Lakes",
+    "Machine Learning at Scale",
+    "Data Visualization",
+    "Performance Optimization"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "Introduction to Big Data",
+        "topics": ["Big Data Concepts", "Distributed Systems", "Data Processing Paradigms"],
+        "description": "Understanding the fundamentals of big data and distributed computing"
+      },
+      {
+        "title": "Hadoop Ecosystem",
+        "topics": ["HDFS", "MapReduce", "YARN"],
+        "description": "Deep dive into the Hadoop ecosystem components"
+      }
+    ]
+  },
+  "requirements": [
+    "Programming experience in Java or Python",
+    "Basic understanding of distributed systems",
+    "Knowledge of SQL",
+    "Linux command line proficiency"
+  ],
+  "objectives": [
+    "Master big data processing frameworks",
+    "Build scalable data pipelines",
+    "Implement distributed computing solutions",
+    "Design efficient big data architectures"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "HD Video Content",
+      "description": "High-quality video lectures with practical demonstrations"
+    },
+    {
+      "icon": "code",
+      "title": "Hands-on Labs",
+      "description": "Real-world projects using industry-standard tools"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Expert Support",
+      "description": "Direct access to experienced big data professionals"
+    }
+  ]
+}

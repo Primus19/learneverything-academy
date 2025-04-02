@@ -10,6 +10,7 @@ import { CurriculumAccordion } from "@/src/frontend/components/CurriculumAccordi
 import { CourseFeatures } from "@/src/frontend/components/CourseFeatures"
 import { CourseObjectives } from "@/src/frontend/components/CourseObjectives"
 import { CourseRequirements } from "@/src/frontend/components/CourseRequirements"
+import { CourseResumeSamples } from "@/src/frontend/components/CourseResumeSamples"
 
 interface CourseContentProps {
   course: Course
@@ -65,6 +66,7 @@ export function CourseContent({ course }: CourseContentProps) {
           <CourseObjectives objectives={course.objectives} />
           <CourseRequirements requirements={course.requirements} />
           <CourseFeatures features={course.features} />
+          <CourseResumeSamples course={course} />
           
           <Card>
             <CardHeader>

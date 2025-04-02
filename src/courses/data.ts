@@ -1,3 +1,5 @@
+import { Chapter } from "@/src/lib/course-loader";
+
 export interface Course {
   id: string;
   title: string;
@@ -26,6 +28,7 @@ export interface Course {
     title: string;
     description: string;
   }[];
+  chapters: Chapter[];
 }
 
 export const courses: Course[] = [
@@ -96,6 +99,26 @@ export const courses: Course[] = [
         icon: "message-circle",
         title: "Community Support",
         description: "Get help from peers and instructors"
+      }
+    ],
+    chapters: [
+      {
+        title: "Getting Started with Web Development",
+        content: "",
+        slug: "getting-started",
+        order: 1
+      },
+      {
+        title: "HTML Fundamentals",
+        content: "",
+        slug: "html-fundamentals",
+        order: 2
+      },
+      {
+        title: "CSS Basics",
+        content: "",
+        slug: "css-basics",
+        order: 3
       }
     ]
   },
@@ -168,6 +191,26 @@ export const courses: Course[] = [
         icon: "certificate",
         title: "Certificate",
         description: "Earn a completion certificate"
+      }
+    ],
+    chapters: [
+      {
+        title: "Introduction to React",
+        content: "",
+        slug: "intro-to-react",
+        order: 1
+      },
+      {
+        title: "Components and Props",
+        content: "",
+        slug: "components-and-props",
+        order: 2
+      },
+      {
+        title: "State and Lifecycle",
+        content: "",
+        slug: "state-and-lifecycle",
+        order: 3
       }
     ]
   }

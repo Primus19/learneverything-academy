@@ -1,0 +1,66 @@
+{
+  "title": "Data Analytics and Visualization",
+  "description": "Learn to analyze complex datasets and create compelling visualizations to drive data-informed decisions.",
+  "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+  "price": 199.99,
+  "duration": "10 weeks",
+  "level": "Intermediate",
+  "instructor": {
+    "name": "Emma Thompson",
+    "bio": "Data Analytics Lead with expertise in business intelligence and visualization",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Statistical Analysis",
+    "Data Visualization",
+    "Business Intelligence",
+    "Predictive Analytics",
+    "Dashboard Design",
+    "Data Storytelling",
+    "Excel Advanced Features",
+    "Power BI"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "Foundations of Data Analysis",
+        "topics": ["Statistical Methods", "Data Preparation", "Analysis Techniques"],
+        "description": "Learn fundamental concepts of data analysis"
+      },
+      {
+        "title": "Data Visualization",
+        "topics": ["Chart Types", "Design Principles", "Interactive Dashboards"],
+        "description": "Master the art of creating effective visualizations"
+      }
+    ]
+  },
+  "requirements": [
+    "Basic statistics knowledge",
+    "Familiarity with Excel",
+    "Understanding of business metrics",
+    "Basic math skills"
+  ],
+  "objectives": [
+    "Perform advanced data analysis",
+    "Create compelling visualizations",
+    "Build interactive dashboards",
+    "Drive data-informed decisions"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Tutorials",
+      "description": "Step-by-step guidance through analysis techniques"
+    },
+    {
+      "icon": "code",
+      "title": "Practice Projects",
+      "description": "Real-world datasets and analysis scenarios"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Community Support",
+      "description": "Learn from peers and industry experts"
+    }
+  ]
+}

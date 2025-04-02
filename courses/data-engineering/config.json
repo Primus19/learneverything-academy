@@ -1,0 +1,66 @@
+{
+  "title": "Data Engineering Fundamentals",
+  "description": "Master the fundamentals of data engineering, including data pipelines, ETL processes, and data warehousing.",
+  "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+  "price": 199.99,
+  "duration": "10 weeks",
+  "level": "Intermediate",
+  "instructor": {
+    "name": "Dr. Sarah Chen",
+    "bio": "Data Engineering Lead with 12+ years of experience in building scalable data solutions",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Cloud Computing Fundamentals",
+    "Data Pipeline Design",
+    "ETL Processes",
+    "Data Warehousing",
+    "Big Data Technologies",
+    "Data Quality & Governance",
+    "Real-time Data Processing",
+    "Data Security"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "Introduction to Cloud Computing",
+        "topics": ["Cloud Computing Basics", "AWS Overview", "Cloud Architecture"],
+        "description": "Learn the fundamentals of cloud computing and AWS services"
+      },
+      {
+        "title": "Data Pipeline Fundamentals",
+        "topics": ["Pipeline Design", "Data Flow", "Error Handling"],
+        "description": "Master the basics of building robust data pipelines"
+      }
+    ]
+  },
+  "requirements": [
+    "Basic programming knowledge",
+    "Understanding of databases",
+    "Familiarity with SQL",
+    "Basic command line skills"
+  ],
+  "objectives": [
+    "Design and implement data pipelines",
+    "Build scalable ETL processes",
+    "Implement data quality controls",
+    "Deploy cloud-based data solutions"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Lectures",
+      "description": "Comprehensive video content covering all topics"
+    },
+    {
+      "icon": "code",
+      "title": "Hands-on Projects",
+      "description": "Real-world projects to apply your knowledge"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Expert Support",
+      "description": "Get help from experienced data engineers"
+    }
+  ]
+}

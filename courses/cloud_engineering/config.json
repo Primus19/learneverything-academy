@@ -1,0 +1,66 @@
+{
+  "title": "Cloud Engineering and Architecture",
+  "description": "Master cloud architecture principles and learn to design, deploy, and manage scalable cloud solutions.",
+  "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
+  "price": 299.99,
+  "duration": "14 weeks",
+  "level": "Advanced",
+  "instructor": {
+    "name": "Alex Rivera",
+    "bio": "Senior Cloud Architect with extensive experience in AWS, Azure, and GCP",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Multi-Cloud Architecture",
+    "Infrastructure as Code",
+    "Cloud Security",
+    "Serverless Computing",
+    "Containerization",
+    "DevOps Integration",
+    "High Availability",
+    "Disaster Recovery"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "Cloud Architecture Fundamentals",
+        "topics": ["Cloud Models", "Architecture Patterns", "Best Practices"],
+        "description": "Learn core principles of cloud architecture and design"
+      },
+      {
+        "title": "Infrastructure as Code",
+        "topics": ["Terraform", "CloudFormation", "Automation"],
+        "description": "Master infrastructure automation and management"
+      }
+    ]
+  },
+  "requirements": [
+    "Basic cloud computing knowledge",
+    "Understanding of networking concepts",
+    "Programming experience",
+    "System administration skills"
+  ],
+  "objectives": [
+    "Design scalable cloud architectures",
+    "Implement cloud security best practices",
+    "Master infrastructure automation",
+    "Deploy highly available solutions"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Lectures",
+      "description": "Comprehensive video content with real-world examples"
+    },
+    {
+      "icon": "code",
+      "title": "Architecture Labs",
+      "description": "Hands-on experience with cloud architecture design"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Professional Network",
+      "description": "Connect with cloud architects and experts"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "title": "DevOps Engineering",
+  "description": "Master the principles and practices of DevOps, including continuous integration, delivery, and infrastructure automation.",
+  "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&auto=format&fit=crop&q=60",
+  "price": 249.99,
+  "duration": "12 weeks",
+  "level": "Advanced",
+  "instructor": {
+    "name": "James Wilson",
+    "bio": "DevOps Engineer with extensive experience in CI/CD and cloud platforms",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "CI/CD Pipelines",
+    "Infrastructure as Code",
+    "Container Orchestration",
+    "Configuration Management",
+    "Monitoring and Logging",
+    "Security Integration",
+    "Automation Tools",
+    "Cloud Platforms"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "DevOps Fundamentals",
+        "topics": ["DevOps Culture", "Automation Principles", "Tool Selection"],
+        "description": "Understanding core DevOps concepts and practices"
+      },
+      {
+        "title": "CI/CD Implementation",
+        "topics": ["Pipeline Design", "Testing Automation", "Deployment Strategies"],
+        "description": "Building robust continuous integration and delivery pipelines"
+      }
+    ]
+  },
+  "requirements": [
+    "Programming experience",
+    "System administration knowledge",
+    "Basic cloud platform familiarity",
+    "Version control experience"
+  ],
+  "objectives": [
+    "Implement CI/CD pipelines",
+    "Automate infrastructure deployment",
+    "Manage containerized applications",
+    "Establish monitoring solutions"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Content",
+      "description": "Detailed tutorials on DevOps tools and practices"
+    },
+    {
+      "icon": "code",
+      "title": "Hands-on Labs",
+      "description": "Practice with real-world DevOps scenarios"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Expert Guidance",
+      "description": "Learn from experienced DevOps professionals"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Ethical Hacking and Cybersecurity",
+  "description": "Learn ethical hacking techniques and cybersecurity best practices to protect organizations from cyber threats.",
+  "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60",
+  "price": 299.99,
+  "duration": "14 weeks",
+  "level": "Advanced",
+  "instructor": {
+    "name": "Marcus Chen",
+    "bio": "Certified Ethical Hacker with 10+ years in cybersecurity",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Penetration Testing",
+    "Network Security",
+    "Web Application Security",
+    "Malware Analysis",
+    "Social Engineering",
+    "Cryptography",
+    "Incident Response",
+    "Security Tools"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "Introduction to Ethical Hacking",
+        "topics": ["Security Fundamentals", "Ethical Guidelines", "Testing Methodology"],
+        "description": "Learn the basics of ethical hacking and security testing"
+      },
+      {
+        "title": "Network Security",
+        "topics": ["Network Scanning", "Vulnerability Assessment", "Exploitation"],
+        "description": "Master network security testing techniques"
+      }
+    ]
+  },
+  "requirements": [
+    "Networking fundamentals",
+    "Basic programming knowledge",
+    "Understanding of operating systems",
+    "Problem-solving skills"
+  ],
+  "objectives": [
+    "Conduct security assessments",
+    "Identify system vulnerabilities",
+    "Implement security controls",
+    "Perform ethical hacking"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Training",
+      "description": "Comprehensive security testing demonstrations"
+    },
+    {
+      "icon": "code",
+      "title": "Practice Labs",
+      "description": "Hands-on experience in secure environments"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Expert Support",
+      "description": "Guidance from security professionals"
+    }
+  ]
+}

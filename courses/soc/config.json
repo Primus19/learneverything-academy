@@ -1,0 +1,66 @@
+{
+  "title": "Security Operations Center (SOC) Management",
+  "description": "Learn to build and manage a Security Operations Center, including threat detection, incident response, and security monitoring.",
+  "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
+  "price": 279.99,
+  "duration": "12 weeks",
+  "level": "Advanced",
+  "instructor": {
+    "name": "David Anderson",
+    "bio": "SOC Manager with 12+ years of experience in security operations",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60"
+  },
+  "topics": [
+    "Security Monitoring",
+    "Incident Response",
+    "Threat Intelligence",
+    "SIEM Implementation",
+    "Alert Triage",
+    "Threat Hunting",
+    "SOC Metrics",
+    "Team Management"
+  ],
+  "curriculum": {
+    "weeks": [
+      {
+        "title": "SOC Fundamentals",
+        "topics": ["SOC Operations", "Tool Selection", "Process Development"],
+        "description": "Learn the basics of running a Security Operations Center"
+      },
+      {
+        "title": "Incident Response",
+        "topics": ["Response Procedures", "Investigation Methods", "Documentation"],
+        "description": "Master incident handling and response techniques"
+      }
+    ]
+  },
+  "requirements": [
+    "Security fundamentals",
+    "Network knowledge",
+    "Log analysis experience",
+    "Basic scripting skills"
+  ],
+  "objectives": [
+    "Build effective SOC processes",
+    "Implement security monitoring",
+    "Manage incident response",
+    "Develop SOC metrics"
+  ],
+  "features": [
+    {
+      "icon": "video",
+      "title": "Video Training",
+      "description": "In-depth coverage of SOC operations"
+    },
+    {
+      "icon": "code",
+      "title": "Practical Labs",
+      "description": "Hands-on experience with SOC tools"
+    },
+    {
+      "icon": "message-circle",
+      "title": "Expert Support",
+      "description": "Learn from experienced SOC professionals"
+    }
+  ]
+}

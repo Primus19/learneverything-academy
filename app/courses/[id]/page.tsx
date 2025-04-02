@@ -1,25 +1,26 @@
-import { courses } from "@/src/courses/data"
-import { CourseContent } from "./CourseContent"
+import { getCourseById, getAllCourses } from "@/src/lib/course-loader";
+import { CourseContent } from "./CourseContent";
+import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  return courses.map((course) => ({
-    id: course.id,
-  }))
+interface CoursePageProps {
+  params: {
+    id: string;
+  };
 }
 
-export default function CoursePage({ params }: { params: { id: string } }) {
-  const course = courses.find((c) => c.id === params.id)
+export async function generateStaticParams() {
+  const courses = getAllCourses();
+  return courses.map((course) => ({
+    id: course.id,
+  }));
+}
+
+export default function CoursePage({ params }: CoursePageProps) {
+  const course = getCourseById(params.id);
 
   if (!course) {
-    return (
-      <div className="container py-8">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Course Not Found</h1>
-          <p className="text-muted-foreground">The requested course could not be found.</p>
-        </div>
-      </div>
-    )
+    return notFound();
   }
 
-  return <CourseContent course={course} />
+  return <CourseContent course={course} />;
 }

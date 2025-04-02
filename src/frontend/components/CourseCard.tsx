@@ -11,23 +11,30 @@ interface CourseCardProps {
 export function CourseCard({ course }: CourseCardProps) {
   return (
     <Link href={`/courses/${course.id}`}>
-      <Card className="hover:shadow-lg transition-shadow h-full">
-        <CardHeader>
-          <div className="relative w-full h-48 mb-4">
+      <Card className="group overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 bg-card/50 backdrop-blur-sm border-primary/10">
+        <CardHeader className="p-0">
+          <div className="relative w-full h-48">
             <Image
               src={course.image}
               alt={course.title}
               fill
-              className="object-cover rounded-t-lg"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <CardTitle className="text-xl text-white mb-2">
+                {course.title}
+              </CardTitle>
+              <CardDescription className="text-white/90 line-clamp-2">
+                {course.description}
+              </CardDescription>
+            </div>
           </div>
-          <CardTitle className="line-clamp-2">{course.title}</CardTitle>
-          <CardDescription className="line-clamp-3">{course.description}</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-6">
           <div className="space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-lg font-bold">${course.price}</span>
+              <span className="text-2xl font-bold">${course.price}</span>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4" />
                 <span>{course.duration}</span>
@@ -35,9 +42,9 @@ export function CourseCard({ course }: CourseCardProps) {
             </div>
             
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4" />
-                <span>{course.level}</span>
+              <div className="flex items-center gap-2 text-sm">
+                <GraduationCap className="h-4 w-4 text-primary" />
+                <span className="font-medium">{course.level}</span>
               </div>
               
               <div className="flex items-center gap-2 text-sm text-muted-foreground">

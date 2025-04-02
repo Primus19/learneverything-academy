@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "@/components/mode-toggle"
+import { Book } from "lucide-react"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -16,33 +17,32 @@ export function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="border-b">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 justify-between items-center">
-          <div className="flex">
-            <div className="flex flex-shrink-0 items-center">
-              <Link href="/" className="text-xl font-bold">
-                LearnEverything Academy
-              </Link>
-            </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center">
+        <div className="mr-8">
+          <Link href="/" className="flex items-center space-x-2">
+            <Book className="h-6 w-6" />
+            <span className="font-bold">LearnEverything</span>
+          </Link>
+        </div>
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <div className="flex-1 md:flex-none">
+            <nav className="hidden md:flex items-center space-x-6">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
-                    pathname === item.href
-                      ? "border-primary text-foreground"
-                      : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
+                    "text-sm font-medium transition-colors hover:text-foreground/80",
+                    pathname === item.href ? "text-foreground" : "text-foreground/60"
                   )}
                 >
                   {item.name}
                 </Link>
               ))}
-            </div>
+            </nav>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
             <ModeToggle />
           </div>
         </div>
