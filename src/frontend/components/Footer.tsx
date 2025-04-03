@@ -29,16 +29,16 @@ export function Footer() {
                 Courses
               </Link>
               <Link 
+                href="/resume-builder" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Resume Builder
+              </Link>
+              <Link 
                 href="/resume-samples" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Resume Samples
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                About Us
               </Link>
             </nav>
           </div>
@@ -48,22 +48,10 @@ export function Footer() {
             <h4 className="font-semibold text-base mb-3">Resources</h4>
             <nav className="flex flex-col space-y-2">
               <Link 
-                href="/blog" 
+                href="/about" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Blog
-              </Link>
-              <Link 
-                href="/faq" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Contact
+                About Us
               </Link>
             </nav>
           </div>

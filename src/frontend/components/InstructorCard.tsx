@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
-import { Course } from "@/src/courses/data"
+import { Course } from "@/src/lib/course-loader"
 
 interface InstructorCardProps {
   instructor: Course["instructor"]

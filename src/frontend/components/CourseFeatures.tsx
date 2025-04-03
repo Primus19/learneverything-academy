@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Course } from "@/src/courses/data"
+import { Course } from "@/src/lib/course-loader"
 import { Book, Code, MessageCircle, Video, Beaker, Award } from "lucide-react"
 
 const iconMap = {

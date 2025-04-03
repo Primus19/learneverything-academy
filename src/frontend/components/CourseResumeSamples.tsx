@@ -1,8 +1,10 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Course } from "@/src/courses/data"
+import { Course } from "@/src/lib/course-loader"
 import { resumeSamples, ResumeSample } from "@/src/resume-samples/data"
 import Image from "next/image"
-import { Download, FileType, Users, Calendar } from "lucide-react"
+import { Download, FileType, Users, Calendar, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useToast } from "@/components/ui/use-toast"
@@ -12,22 +14,21 @@ interface CourseResumeSamplesProps {
 }
 
 function getRelevantResumeSamples(course: Course): ResumeSample[] {
-  // Map course IDs to resume sample categories
   const categoryMap: { [key: string]: string } = {
+    'web-development-fundamentals': 'Web Development',
+    'react-masterclass': 'Frontend',
     'devops': 'DevOps',
     'cloud-engineering': 'Cloud',
-    'soc': 'Security',
-    'aws-cloud': 'Cloud'
+    'data-engineering': 'Data Engineering',
+    'data_analytics': 'Data Analytics',
+    'big_data': 'Data Engineering',
+    'ethical_hacking': 'Security',
+    'risk_management': 'Security',
+    'soc': 'Security'
   };
 
-  // Get the category for this course
-  const courseCategory = course.id.split('-')[0];
-  const targetCategory = categoryMap[courseCategory];
-
-  // Filter resume samples by category
-  return targetCategory 
-    ? resumeSamples.filter(sample => sample.category === targetCategory)
-    : [];
+  const courseCategory = categoryMap[course.id];
+  return courseCategory ? resumeSamples.filter(sample => sample.category === courseCategory) : [];
 }
 
 export function CourseResumeSamples({ course }: CourseResumeSamplesProps) {
@@ -38,33 +39,37 @@ export function CourseResumeSamples({ course }: CourseResumeSamplesProps) {
     return null;
   }
 
-  const handleDownload = async (sample: ResumeSample) => {
+  const handleDownload = async (sample: ResumeSample, format: 'pdf' | 'docx') => {
     try {
-      const response = await fetch(sample.downloadUrl);
+      const baseUrl = window.location.origin;
+      const fileUrl = `${baseUrl}/templates/${sample.id}.${format}`;
+      
+      const response = await fetch(fileUrl);
       
       if (!response.ok) {
-        throw new Error('Failed to download template');
+        throw new Error(`Failed to download ${format.toUpperCase()} template`);
       }
 
       const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      const fileName = `${sample.title.toLowerCase().replace(/\s+/g, '-')}.${format}`;
+      
       const link = document.createElement('a');
-      link.href = url;
-      link.download = `${sample.title.toLowerCase().replace(/\s+/g, '-')}.pdf`;
+      link.href = window.URL.createObjectURL(blob);
+      link.download = fileName;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
+      window.URL.revokeObjectURL(link.href);
 
       toast({
         title: "Success",
-        description: "Resume template downloaded successfully",
+        description: `Resume template downloaded successfully as ${format.toUpperCase()}`,
       });
     } catch (error) {
       console.error('Download error:', error);
       toast({
         title: "Error",
-        description: "Failed to download the resume template. Please try again.",
+        description: `Failed to download the ${format.toUpperCase()} template. Please try again.`,
         variant: "destructive",
       });
     }
@@ -134,13 +139,23 @@ export function CourseResumeSamples({ course }: CourseResumeSamplesProps) {
                     </div>
                   </div>
 
-                  <Button 
-                    onClick={() => handleDownload(sample)}
-                    className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-                  >
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Template
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button 
+                      onClick={() => handleDownload(sample, 'pdf')}
+                      className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+                    >
+                      <Download className="mr-2 h-5 w-5" />
+                      Download PDF
+                    </Button>
+                    <Button 
+                      onClick={() => handleDownload(sample, 'docx')}
+                      variant="outline"
+                      className="flex-1"
+                    >
+                      <FileText className="mr-2 h-5 w-5" />
+                      Download Word
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -148,5 +163,5 @@ export function CourseResumeSamples({ course }: CourseResumeSamplesProps) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

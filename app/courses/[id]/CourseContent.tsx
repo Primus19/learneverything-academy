@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Clock, GraduationCap, List } from "lucide-react"
-import { Course } from "@/src/courses/data"
+import { Course } from "@/src/lib/course-loader"
 import { InstructorCard } from "@/src/frontend/components/InstructorCard"
 import { CurriculumAccordion } from "@/src/frontend/components/CurriculumAccordion"
 import { CourseFeatures } from "@/src/frontend/components/CourseFeatures"

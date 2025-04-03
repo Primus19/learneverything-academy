@@ -33,6 +33,10 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
   const chapterContent = await getChapterContent(params.id, params.chapter);
 
+  if (!chapterContent) {
+    notFound();
+  }
+
   return (
     <div className="container py-8">
       <div className="prose prose-lg dark:prose-invert max-w-none">

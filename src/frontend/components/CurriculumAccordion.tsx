@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Course } from "@/src/courses/data"
+import { Course } from "@/src/lib/course-loader"
 
 interface CurriculumAccordionProps {
   curriculum: Course["curriculum"]
