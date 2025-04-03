@@ -10,20 +10,9 @@ const nextConfig = {
       }
     ]
   },
-  swcMinify: false,
-  // Ensure static assets are copied to output
-  assetPrefix: '',
-  // Configure static file copying
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(pdf|docx)$/,
-      type: 'asset/resource',
-      generator: {
-        filename: 'static/templates/[name][ext]'
-      }
-    });
-    return config;
-  }
+  trailingSlash: true,
+  distDir: 'out',
+  swcMinify: false
 };
 
 module.exports = nextConfig;
