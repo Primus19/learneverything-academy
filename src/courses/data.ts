@@ -1,35 +1,8 @@
-import { Chapter } from "@/src/lib/course-loader";
+// Modified to ensure course data is properly loaded in both development and production environments
+import { Course } from '@/src/lib/course-loader';
 
-export interface Course {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  duration: string;
-  level: "Beginner" | "Intermediate" | "Advanced";
-  topics: string[];
-  instructor: {
-    name: string;
-    bio: string;
-    avatar: string;
-  };
-  curriculum: {
-    weeks: {
-      title: string;
-      topics: string[];
-      description: string;
-    }[];
-  };
-  requirements: string[];
-  objectives: string[];
-  features: {
-    icon: string;
-    title: string;
-    description: string;
-  }[];
-  chapters: Chapter[];
-}
+// This file contains static course data that serves as a fallback
+// and as demo content for the application
 
 export const courses: Course[] = [
   {
@@ -376,14 +349,14 @@ Style a webpage with:
         description: "In-depth coverage of React concepts"
       },
       {
-        icon: "lab",
-        title: "Hands-on Labs",
-        description: "Practice with real-world exercises"
+        icon: "code",
+        title: "Hands-on Projects",
+        description: "Build real-world React applications"
       },
       {
-        icon: "certificate",
-        title: "Certificate",
-        description: "Earn a completion certificate"
+        icon: "users",
+        title: "Community Access",
+        description: "Join our React developer community"
       }
     ],
     chapters: [
@@ -392,110 +365,159 @@ Style a webpage with:
         content: `# Introduction to React
 
 ## What is React?
-React is a JavaScript library for building user interfaces, developed by Facebook.
+React is a JavaScript library for building user interfaces, particularly single-page applications. It's used for handling the view layer in web and mobile applications.
 
-## Key Concepts
-- Virtual DOM
-- Component-Based Architecture
-- Unidirectional Data Flow
-- JSX
+## Key Features of React
+- **Component-Based Architecture**: Build encapsulated components that manage their own state
+- **Declarative UI**: Design simple views for each state in your application
+- **Virtual DOM**: Efficiently update and render components
+- **JSX**: JavaScript syntax extension that allows HTML-like code in JavaScript
+- **Unidirectional Data Flow**: Data flows down from parent to child components
 
-## Setting Up React
+## Setting Up Your React Environment
+1. Install Node.js and npm
+2. Create a new React app with Create React App:
 \`\`\`bash
-# Create a new React project
 npx create-react-app my-app
 cd my-app
 npm start
 \`\`\`
 
-## Your First Component
+## Your First React Component
 \`\`\`jsx
-function Welcome() {
-  return <h1>Hello, React!</h1>;
+import React from 'react';
+
+function HelloWorld() {
+  return (
+    <div>
+      <h1>Hello, World!</h1>
+      <p>Welcome to React!</p>
+    </div>
+  );
 }
 
-export default Welcome;
+export default HelloWorld;
 \`\`\`
 
+## React Component Types
+1. **Functional Components**: JavaScript functions that return JSX
+2. **Class Components**: ES6 classes that extend React.Component
+
 ## JSX Basics
+JSX allows you to write HTML-like syntax in JavaScript:
+
+\`\`\`jsx
+const element = <h1>Hello, world!</h1>;
+\`\`\`
+
+JSX expressions can include JavaScript:
+
 \`\`\`jsx
 const name = 'John';
-const element = (
-  <div>
-    <h1>Hello, {name}</h1>
-    <p>Welcome to React</p>
-  </div>
-);
+const element = <h1>Hello, {name}!</h1>;
 \`\`\`
 
 ## Practice Exercise
-Create a simple React app that displays:
-1. A header
-2. A list of items
-3. A button that logs a message
-4. Styled components using CSS`,
-        slug: "intro-to-react",
+Create a simple React component that:
+1. Displays a heading
+2. Shows a list of your favorite programming languages
+3. Includes a button (we'll add functionality later)`,
+        slug: "introduction-to-react",
         order: 1
       },
       {
         title: "Components and Props",
         content: `# Components and Props
 
-## Understanding Components
-Components are the building blocks of React applications.
-
-## Function Components
-\`\`\`jsx
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
-\`\`\`
-
-## Class Components
-\`\`\`jsx
-class Welcome extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.name}</h1>;
-  }
-}
-\`\`\`
-
-## Props
-Props are read-only inputs to components:
-
-\`\`\`jsx
-function UserProfile(props) {
-  return (
-    <div>
-      <h2>{props.name}</h2>
-      <p>Role: {props.role}</p>
-      <p>Experience: {props.experience} years</p>
-    </div>
-  );
-}
-\`\`\`
-
 ## Component Composition
+React applications are built by composing components together. Components can be nested inside other components.
+
 \`\`\`jsx
 function App() {
   return (
     <div>
       <Header />
-      <MainContent>
-        <Sidebar />
-        <Content />
-      </MainContent>
+      <MainContent />
       <Footer />
     </div>
   );
 }
 \`\`\`
 
-## Practice Projects
-1. Create a reusable button component
-2. Build a card component
-3. Implement a navigation menu
-4. Design a form with multiple components`,
+## Props
+Props (short for properties) are how you pass data from parent to child components.
+
+### Passing Props
+\`\`\`jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Alice" />
+      <Welcome name="Bob" />
+      <Welcome name="Charlie" />
+    </div>
+  );
+}
+\`\`\`
+
+### Props are Read-Only
+A component must never modify its own props. React components must act like pure functions with respect to their props.
+
+## Destructuring Props
+You can use destructuring to make your code cleaner:
+
+\`\`\`jsx
+function Welcome({ name, age }) {
+  return (
+    <div>
+      <h1>Hello, {name}</h1>
+      <p>You are {age} years old</p>
+    </div>
+  );
+}
+
+// Usage
+<Welcome name="Alice" age={25} />
+\`\`\`
+
+## Default Props
+You can specify default values for props:
+
+\`\`\`jsx
+function Button({ text = "Click me", onClick }) {
+  return <button onClick={onClick}>{text}</button>;
+}
+\`\`\`
+
+## PropTypes
+For type checking, you can use PropTypes:
+
+\`\`\`jsx
+import PropTypes from 'prop-types';
+
+function User({ name, age }) {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{age} years old</p>
+    </div>
+  );
+}
+
+User.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number
+};
+\`\`\`
+
+## Practice Exercise
+1. Create a Card component that accepts title, description, and imageUrl props
+2. Create a List component that renders multiple Card components
+3. Pass different data to each Card component`,
         slug: "components-and-props",
         order: 2
       },
@@ -503,75 +525,97 @@ function App() {
         title: "State and Lifecycle",
         content: `# State and Lifecycle
 
-## Understanding State
-State allows React components to change their output over time.
+## What is State?
+State is a JavaScript object that stores component data that may change over time. When state changes, the component re-renders.
 
-## useState Hook
+## Using State in Functional Components
+With the useState hook:
+
 \`\`\`jsx
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function Counter() {
   const [count, setCount] = useState(0);
   
   return (
     <div>
-      <p>Count: {count}</p>
+      <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>
-        Increment
+        Click me
       </button>
     </div>
   );
 }
 \`\`\`
 
-## useEffect Hook
+## Multiple State Variables
+You can use useState multiple times in a single component:
+
 \`\`\`jsx
-import { useState, useEffect } from 'react';
+function UserForm() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState(0);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  
+  // ...
+}
+\`\`\`
+
+## Complex State with Objects
+You can use objects with useState:
+
+\`\`\`jsx
+function UserProfile() {
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    age: 0
+  });
+  
+  const updateName = (e) => {
+    setUser({
+      ...user,
+      name: e.target.value
+    });
+  };
+  
+  // ...
+}
+\`\`\`
+
+## Component Lifecycle with useEffect
+The useEffect hook lets you perform side effects in functional components:
+
+\`\`\`jsx
+import React, { useState, useEffect } from 'react';
 
 function Timer() {
-  const [time, setTime] = useState(0);
-
+  const [seconds, setSeconds] = useState(0);
+  
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
+    const interval = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
     }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return <div>Time: {time} seconds</div>;
+    
+    // Cleanup function
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array means this runs once on mount
+  
+  return <div>Seconds: {seconds}</div>;
 }
 \`\`\`
 
-## Custom Hooks
-\`\`\`jsx
-function useWindowSize() {
-  const [size, setSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  });
+## useEffect Dependencies
+The dependency array controls when the effect runs:
 
-  useEffect(() => {
-    const handleResize = () => {
-      setSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-    };
+- Empty array (`[]`): Run once after initial render
+- No dependency array: Run after every render
+- With dependencies (`[dep1, dep2]`): Run when dependencies change
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return size;
-}
-\`\`\`
-
-## Practice Projects
-1. Build a todo list with state
-2. Create a form with validation
-3. Implement a data fetching component
-4. Design an image carousel`,
+## Practice Exercise
+1. Create a toggle component that shows/hides content when clicked
+2. Build a form with multiple input fields using state
+3. Create a component that fetches and displays data from an API using useEffect`,
         slug: "state-and-lifecycle",
         order: 3
       }

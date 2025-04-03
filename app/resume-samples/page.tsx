@@ -1,9 +1,31 @@
-import { resumeSamples } from "@/src/resume-samples/data"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Download, FileType, Users, Calendar, CheckCircle, Star, Shield, Zap } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+// Modified to ensure resume downloads work properly
+import { Button } from "@/components/ui/button";
+import { Download, FileType, Users, Calendar, CheckCircle, Star, Shield, Zap } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { resumeSamples } from "@/src/resume-samples/data";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
+
+// Helper function to handle resume downloads
+const handleDownload = (url: string, filename: string) => {
+  // Create an anchor element
+  const link = document.createElement('a');
+  
+  // Set the href to the download URL
+  link.href = url;
+  
+  // Set the download attribute with the filename
+  link.download = filename;
+  
+  // Append the link to the body
+  document.body.appendChild(link);
+  
+  // Trigger the click event
+  link.click();
+  
+  // Remove the link from the body
+  document.body.removeChild(link);
+};
 
 export default function ResumeSamplesPage() {
   return (
@@ -124,6 +146,7 @@ export default function ResumeSamplesPage() {
                   <Button 
                     size="lg" 
                     className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300"
+                    onClick={() => handleDownload(sample.downloadUrl, `${sample.id}-resume-template.pdf`)}
                   >
                     <Download className="mr-2 h-5 w-5" />
                     Download Template
