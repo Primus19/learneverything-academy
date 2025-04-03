@@ -1,0 +1,261 @@
+%PDF-1.7
+1 0 obj
+<</Type/Catalog/Pages 2 0 R/Metadata 3 0 R>>
+endobj
+2 0 obj
+<</Type/Pages/Count 1/Kids[4 0 R]>>
+endobj
+3 0 obj
+<</Type/Metadata/Subtype/XML/Length 3268>>
+stream
+<?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 5.5.0">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <pdf:Producer>LearnEverything Academy</pdf:Producer>
+         <dc:format>application/pdf</dc:format>
+         <dc:title>Junior Web Developer Resume Template</dc:title>
+         <dc:creator>LearnEverything Academy</dc:creator>
+         <xmp:CreatorTool>LearnEverything Academy Resume Builder</xmp:CreatorTool>
+         <xmp:CreateDate>2024-03-15T10:00:00Z</xmp:CreateDate>
+         <xmp:ModifyDate>2024-03-15T10:00:00Z</xmp:ModifyDate>
+         <xmpMM:DocumentID>uuid:12345678-1234-1234-1234-123456789012</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:12345678-1234-1234-1234-123456789012</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end="w"?>
+endstream
+endobj
+4 0 obj
+<</Type/Page/MediaBox[0 0 612 792]/Resources<</Font<</F1 5 0 R/F2 6 0 R/F3 7 0 R>>>>/Contents 8 0 R/Parent 2 0 R>>
+endobj
+5 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Bold/Encoding/WinAnsiEncoding>>
+endobj
+6 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>
+endobj
+7 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Oblique/Encoding/WinAnsiEncoding>>
+endobj
+8 0 obj
+<</Length 2574>>
+stream
+BT
+/F1 24 Tf
+50 740 Td
+(JANE SMITH) Tj
+ET
+
+BT
+/F2 12 Tf
+50 720 Td
+(456 Web Avenue, Portland, OR 97205 | 555-987-6543 | jane.smith@email.com) Tj
+ET
+
+BT
+/F2 12 Tf
+50 700 Td
+(github.com/janesmith | linkedin.com/in/janesmith | portfolio: janesmith.dev) Tj
+ET
+
+BT
+/F1 14 Tf
+50 670 Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+
+BT
+/F2 11 Tf
+50 650 Td
+(Junior Web Developer with strong foundation in HTML, CSS, and JavaScript. Passionate about creating) Tj
+0 -15 Td
+(responsive, user-friendly websites with clean code. Eager to contribute to a collaborative team) Tj
+0 -15 Td
+(environment where I can continue to grow my skills while delivering high-quality web solutions.) Tj
+ET
+
+BT
+/F1 14 Tf
+50 590 Td
+(TECHNICAL SKILLS) Tj
+ET
+
+BT
+/F2 11 Tf
+50 570 Td
+(• Frontend: HTML5, CSS3, JavaScript, React.js, Bootstrap, Tailwind CSS) Tj
+0 -15 Td
+(• Backend: Node.js, Express.js, RESTful APIs) Tj
+0 -15 Td
+(• Database: MongoDB, MySQL) Tj
+0 -15 Td
+(• Tools: Git, GitHub, VS Code, Figma, Chrome DevTools) Tj
+0 -15 Td
+(• Other: Responsive Design, Web Accessibility, SEO Basics) Tj
+ET
+
+BT
+/F1 14 Tf
+50 470 Td
+(PROJECTS) Tj
+ET
+
+BT
+/F1 12 Tf
+50 450 Td
+(Personal Portfolio Website) Tj
+ET
+
+BT
+/F2 11 Tf
+50 435 Td
+(janesmith.dev | github.com/janesmith/portfolio) Tj
+ET
+
+BT
+/F2 11 Tf
+50 415 Td
+(• Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript) Tj
+0 -15 Td
+(• Implemented smooth scrolling, dark mode toggle, and contact form with validation) Tj
+0 -15 Td
+(• Optimized for performance with lazy loading images and minimal dependencies) Tj
+ET
+
+BT
+/F1 12 Tf
+50 365 Td
+(Weather Dashboard App) Tj
+ET
+
+BT
+/F2 11 Tf
+50 350 Td
+(github.com/janesmith/weather-app) Tj
+ET
+
+BT
+/F2 11 Tf
+50 330 Td
+(• Built a weather dashboard using React.js that fetches data from OpenWeather API) Tj
+0 -15 Td
+(• Implemented geolocation to automatically detect user's location) Tj
+0 -15 Td
+(• Created responsive UI with daily and weekly forecasts, temperature graphs) Tj
+ET
+
+BT
+/F1 14 Tf
+50 270 Td
+(EXPERIENCE) Tj
+ET
+
+BT
+/F1 12 Tf
+50 250 Td
+(Web Development Intern) Tj
+ET
+
+BT
+/F3 11 Tf
+50 235 Td
+(Digital Solutions Agency, Portland, OR | January 2023 - June 2023) Tj
+ET
+
+BT
+/F2 11 Tf
+50 215 Td
+(• Assisted in developing responsive websites for small business clients) Tj
+0 -15 Td
+(• Collaborated with designers to implement UI/UX designs using HTML, CSS, and JavaScript) Tj
+0 -15 Td
+(• Participated in code reviews and implemented feedback to improve code quality) Tj
+0 -15 Td
+(• Helped maintain and update existing client websites) Tj
+ET
+
+BT
+/F1 12 Tf
+50 150 Td
+(Customer Service Representative) Tj
+ET
+
+BT
+/F3 11 Tf
+50 135 Td
+(TechRetail Store, Portland, OR | June 2021 - December 2022) Tj
+ET
+
+BT
+/F2 11 Tf
+50 115 Td
+(• Provided technical support and product recommendations to customers) Tj
+0 -15 Td
+(• Maintained the store's website, updating product information and fixing minor issues) Tj
+0 -15 Td
+(• Recognized for excellent customer service and technical knowledge) Tj
+ET
+
+BT
+/F1 14 Tf
+50 60 Td
+(EDUCATION) Tj
+ET
+
+BT
+/F1 12 Tf
+50 40 Td
+(Associate of Applied Science in Web Development) Tj
+ET
+
+BT
+/F3 11 Tf
+50 25 Td
+(Portland Community College | Graduated: December 2022) Tj
+ET
+
+BT
+/F2 11 Tf
+50 5 Td
+(Relevant Coursework: Web Design, JavaScript Programming, Database Design, UI/UX Fundamentals) Tj
+ET
+
+BT
+/F1 14 Tf
+50 -30 Td
+(CERTIFICATIONS) Tj
+ET
+
+BT
+/F2 11 Tf
+50 -50 Td
+(• Responsive Web Design - freeCodeCamp) Tj
+0 -15 Td
+(• JavaScript Algorithms and Data Structures - freeCodeCamp) Tj
+0 -15 Td
+(• Front End Development Libraries - freeCodeCamp) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f
+0000000015 00000 n
+0000000074 00000 n
+0000000126 00000 n
+0000003477 00000 n
+0000003605 00000 n
+0000003697 00000 n
+0000003784 00000 n
+0000003879 00000 n
+trailer
+<</Size 9/Root 1 0 R/ID[<F7D3CA2F4E2EE047A3EB3796D920E283><F7D3CA2F4E2EE047A3EB3796D920E283>]>>
+startxref
+6504
+%%EOF

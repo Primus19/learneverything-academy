@@ -44,68 +44,97 @@ export interface Course {
 }
 
 export async function getChapterContent(courseId: string, chapterSlug: string): Promise<string> {
-  const fullPath = path.join(process.cwd(), 'courses', courseId, `${chapterSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { content } = matter(fileContents);
-  
-  const processedContent = await remark()
-    .use(html)
-    .process(content);
+  try {
+    const fullPath = path.join(process.cwd(), 'courses', courseId, `${chapterSlug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { content } = matter(fileContents);
     
-  return processedContent.toString();
+    const processedContent = await remark()
+      .use(html)
+      .process(content);
+      
+    return processedContent.toString();
+  } catch (error) {
+    console.error(`Error reading chapter content: ${error}`);
+    return '';
+  }
 }
 
 export function getAllCourses(): Course[] {
-  const coursesDirectory = path.join(process.cwd(), 'courses');
-  const coursesFolders = fs.readdirSync(coursesDirectory)
-    .filter(folder => {
-      // Only include folders that have a config.json file
-      const configPath = path.join(coursesDirectory, folder, 'config.json');
-      return fs.existsSync(configPath);
-    });
+  try {
+    const coursesDirectory = path.join(process.cwd(), 'courses');
+    const coursesFolders = fs.readdirSync(coursesDirectory)
+      .filter(folder => {
+        try {
+          const configPath = path.join(coursesDirectory, folder, 'config.json');
+          return fs.existsSync(configPath);
+        } catch (error) {
+          console.error(`Error checking config for folder ${folder}: ${error}`);
+          return false;
+        }
+      });
 
-  const dynamicCourses = coursesFolders.map(courseFolder => {
-    const configPath = path.join(coursesDirectory, courseFolder, 'config.json');
-    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    const dynamicCourses = coursesFolders.map(courseFolder => {
+      try {
+        const configPath = path.join(coursesDirectory, courseFolder, 'config.json');
+        const configContent = fs.readFileSync(configPath, 'utf8');
+        const config = JSON.parse(configContent);
 
-    // Get all chapter files
-    const chaptersPath = path.join(coursesDirectory, courseFolder);
-    const chapterFiles = fs.readdirSync(chaptersPath)
-      .filter(file => file.endsWith('.md'));
+        const chaptersPath = path.join(coursesDirectory, courseFolder);
+        const chapterFiles = fs.readdirSync(chaptersPath)
+          .filter(file => file.endsWith('.md'));
 
-    const chapters = chapterFiles.map(file => {
-      const fullPath = path.join(chaptersPath, file);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-      
-      return {
-        title: data.title,
-        slug: file.replace('.md', ''),
-        order: data.order,
-        content: '', // Content will be loaded on demand
-      };
-    }).sort((a, b) => a.order - b.order);
+        const chapters = chapterFiles.map(file => {
+          try {
+            const fullPath = path.join(chaptersPath, file);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            const { data, content } = matter(fileContents);
+            
+            return {
+              title: data.title || '',
+              slug: file.replace('.md', ''),
+              order: data.order || 0,
+              content: content || '',
+            };
+          } catch (error) {
+            console.error(`Error processing chapter file ${file}: ${error}`);
+            return null;
+          }
+        })
+        .filter((chapter): chapter is Chapter => chapter !== null)
+        .sort((a, b) => a.order - b.order);
 
-    // Add default values for required properties if not present in config
-    const courseData: Course = {
-      id: courseFolder,
-      ...config,
-      topics: config.topics || [],
-      curriculum: config.curriculum || { weeks: [] },
-      requirements: config.requirements || [],
-      objectives: config.objectives || [],
-      features: config.features || [],
-      chapters,
-    };
+        const courseData: Course = {
+          id: courseFolder,
+          ...config,
+          topics: config.topics || [],
+          curriculum: config.curriculum || { weeks: [] },
+          requirements: config.requirements || [],
+          objectives: config.objectives || [],
+          features: config.features || [],
+          chapters,
+        };
 
-    return courseData;
-  });
+        return courseData;
+      } catch (error) {
+        console.error(`Error loading course ${courseFolder}: ${error}`);
+        return null;
+      }
+    }).filter((course): course is Course => course !== null);
 
-  // Combine static and dynamic courses
-  return [...staticCourses, ...dynamicCourses];
+    return [...staticCourses, ...dynamicCourses];
+  } catch (error) {
+    console.error(`Error loading courses: ${error}`);
+    return staticCourses;
+  }
 }
 
 export function getCourseById(courseId: string): Course | undefined {
-  const courses = getAllCourses();
-  return courses.find(course => course.id === courseId);
+  try {
+    const courses = getAllCourses();
+    return courses.find(course => course.id === courseId);
+  } catch (error) {
+    console.error(`Error getting course by ID ${courseId}: ${error}`);
+    return undefined;
+  }
 }

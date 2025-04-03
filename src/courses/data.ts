@@ -37,7 +37,7 @@ export const courses: Course[] = [
     title: "Web Development Fundamentals",
     description: "Master the core concepts of web development with HTML, CSS, and JavaScript. Build responsive websites from scratch.",
     image: "https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&auto=format&fit=crop&q=60",
-    price: 99.99,
+    price: 4.99,
     duration: "8 weeks",
     level: "Beginner",
     topics: [
@@ -104,19 +104,212 @@ export const courses: Course[] = [
     chapters: [
       {
         title: "Getting Started with Web Development",
-        content: "",
+        content: `# Getting Started with Web Development
+
+## Introduction
+Welcome to web development! In this chapter, you'll learn the fundamentals of how the web works and set up your development environment.
+
+## What is Web Development?
+Web development is the process of building and maintaining websites. It involves:
+- Frontend development (what users see)
+- Backend development (server-side logic)
+- Database management
+- Web security
+
+## Setting Up Your Environment
+1. Install Visual Studio Code
+2. Set up Git for version control
+3. Install Node.js and npm
+4. Configure browser developer tools
+
+## Basic Web Technologies
+- HTML: Structure
+- CSS: Styling
+- JavaScript: Interactivity
+
+## Your First Webpage
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>Welcome to web development!</p>
+</body>
+</html>
+\`\`\`
+
+## Practice Exercise
+Create a simple webpage that includes:
+1. A heading
+2. A paragraph
+3. An image
+4. A list
+5. A link`,
         slug: "getting-started",
         order: 1
       },
       {
         title: "HTML Fundamentals",
-        content: "",
+        content: `# HTML Fundamentals
+
+## Basic HTML Structure
+Every HTML document needs a basic structure:
+
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+<body>
+    <!-- Content goes here -->
+</body>
+</html>
+\`\`\`
+
+## Common HTML Elements
+
+### Text Elements
+- \`<h1>\` to \`<h6>\`: Headings
+- \`<p>\`: Paragraphs
+- \`<span>\`: Inline text
+- \`<strong>\`: Bold text
+- \`<em>\`: Italic text
+
+### Lists
+\`\`\`html
+<ul>
+    <li>Unordered list item</li>
+</ul>
+
+<ol>
+    <li>Ordered list item</li>
+</ol>
+\`\`\`
+
+### Links and Images
+\`\`\`html
+<a href="https://example.com">Click here</a>
+<img src="image.jpg" alt="Description">
+\`\`\`
+
+## Semantic HTML
+Use semantic elements to give meaning to your content:
+- \`<header>\`
+- \`<nav>\`
+- \`<main>\`
+- \`<article>\`
+- \`<section>\`
+- \`<footer>\`
+
+## Forms
+\`\`\`html
+<form action="/submit" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    
+    <button type="submit">Submit</button>
+</form>
+\`\`\`
+
+## Practice Projects
+1. Create a personal profile page
+2. Build a simple blog layout
+3. Design a contact form`,
         slug: "html-fundamentals",
         order: 2
       },
       {
         title: "CSS Basics",
-        content: "",
+        content: `# CSS Basics
+
+## Introduction to CSS
+CSS (Cascading Style Sheets) is used to style and layout web pages.
+
+## CSS Syntax
+\`\`\`css
+selector {
+    property: value;
+}
+\`\`\`
+
+## Selectors
+1. Element Selector
+\`\`\`css
+p {
+    color: blue;
+}
+\`\`\`
+
+2. Class Selector
+\`\`\`css
+.highlight {
+    background-color: yellow;
+}
+\`\`\`
+
+3. ID Selector
+\`\`\`css
+#header {
+    font-size: 24px;
+}
+\`\`\`
+
+## Box Model
+- Content
+- Padding
+- Border
+- Margin
+
+\`\`\`css
+.box {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px;
+}
+\`\`\`
+
+## Flexbox Layout
+\`\`\`css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+\`\`\`
+
+## Grid Layout
+\`\`\`css
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+\`\`\`
+
+## Responsive Design
+\`\`\`css
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+\`\`\`
+
+## Practice Exercise
+Style a webpage with:
+1. Custom colors and typography
+2. Responsive layout
+3. Hover effects
+4. Transitions
+5. Custom buttons`,
         slug: "css-basics",
         order: 3
       }
@@ -127,7 +320,7 @@ export const courses: Course[] = [
     title: "React Masterclass",
     description: "Learn React from the ground up. Build modern web applications with the most popular JavaScript library.",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop&q=60",
-    price: 149.99,
+    price: 7.99,
     duration: "10 weeks",
     level: "Intermediate",
     topics: [
@@ -196,19 +389,189 @@ export const courses: Course[] = [
     chapters: [
       {
         title: "Introduction to React",
-        content: "",
+        content: `# Introduction to React
+
+## What is React?
+React is a JavaScript library for building user interfaces, developed by Facebook.
+
+## Key Concepts
+- Virtual DOM
+- Component-Based Architecture
+- Unidirectional Data Flow
+- JSX
+
+## Setting Up React
+\`\`\`bash
+# Create a new React project
+npx create-react-app my-app
+cd my-app
+npm start
+\`\`\`
+
+## Your First Component
+\`\`\`jsx
+function Welcome() {
+  return <h1>Hello, React!</h1>;
+}
+
+export default Welcome;
+\`\`\`
+
+## JSX Basics
+\`\`\`jsx
+const name = 'John';
+const element = (
+  <div>
+    <h1>Hello, {name}</h1>
+    <p>Welcome to React</p>
+  </div>
+);
+\`\`\`
+
+## Practice Exercise
+Create a simple React app that displays:
+1. A header
+2. A list of items
+3. A button that logs a message
+4. Styled components using CSS`,
         slug: "intro-to-react",
         order: 1
       },
       {
         title: "Components and Props",
-        content: "",
+        content: `# Components and Props
+
+## Understanding Components
+Components are the building blocks of React applications.
+
+## Function Components
+\`\`\`jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+\`\`\`
+
+## Class Components
+\`\`\`jsx
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+\`\`\`
+
+## Props
+Props are read-only inputs to components:
+
+\`\`\`jsx
+function UserProfile(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <p>Role: {props.role}</p>
+      <p>Experience: {props.experience} years</p>
+    </div>
+  );
+}
+\`\`\`
+
+## Component Composition
+\`\`\`jsx
+function App() {
+  return (
+    <div>
+      <Header />
+      <MainContent>
+        <Sidebar />
+        <Content />
+      </MainContent>
+      <Footer />
+    </div>
+  );
+}
+\`\`\`
+
+## Practice Projects
+1. Create a reusable button component
+2. Build a card component
+3. Implement a navigation menu
+4. Design a form with multiple components`,
         slug: "components-and-props",
         order: 2
       },
       {
         title: "State and Lifecycle",
-        content: "",
+        content: `# State and Lifecycle
+
+## Understanding State
+State allows React components to change their output over time.
+
+## useState Hook
+\`\`\`jsx
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </div>
+  );
+}
+\`\`\`
+
+## useEffect Hook
+\`\`\`jsx
+import { useState, useEffect } from 'react';
+
+function Timer() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return <div>Time: {time} seconds</div>;
+}
+\`\`\`
+
+## Custom Hooks
+\`\`\`jsx
+function useWindowSize() {
+  const [size, setSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return size;
+}
+\`\`\`
+
+## Practice Projects
+1. Build a todo list with state
+2. Create a form with validation
+3. Implement a data fetching component
+4. Design an image carousel`,
         slug: "state-and-lifecycle",
         order: 3
       }

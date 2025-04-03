@@ -13,155 +13,265 @@ export interface ResumeSample {
 
 export const resumeSamples: ResumeSample[] = [
   {
-    id: "devops-engineer-entry",
-    title: "Entry-Level DevOps Engineer Resume",
-    description: "Professional resume template tailored for entry-level DevOps engineers who have completed comprehensive DevOps training.",
-    category: "DevOps",
-    downloadUrl: "/templates/devops-engineer-entry.pdf",
-    previewImage: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&auto=format&fit=crop&q=60",
+    id: "junior-web-developer",
+    title: "Junior Web Developer Resume",
+    description: "Professional resume template for entry-level web developers showcasing frontend and backend skills.",
+    category: "Web Development",
+    downloadUrl: "/templates/junior-web-developer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&auto=format&fit=crop&q=60",
     features: [
-      "ATS-friendly format",
-      "Skills section with technology stack",
-      "Project highlights section",
+      "Clean, modern design",
+      "Skills section with tech stack",
+      "Project showcase section",
       "Education and certifications layout"
     ],
     suitableFor: [
       "Recent graduates",
       "Career changers",
-      "DevOps bootcamp graduates",
-      "Junior DevOps engineers"
+      "Bootcamp graduates",
+      "Junior developers"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"
   },
   {
-    id: "devops-engineer-mid",
-    title: "Mid-Level DevOps Engineer Resume",
-    description: "Comprehensive resume template for DevOps engineers with 3+ years of experience in CI/CD, cloud platforms, and infrastructure automation.",
-    category: "DevOps",
-    downloadUrl: "/templates/devops-engineer-mid.pdf",
-    previewImage: "https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?w=800&auto=format&fit=crop&q=60",
+    id: "senior-web-developer",
+    title: "Senior Web Developer Resume",
+    description: "Comprehensive resume template for experienced web developers with full-stack expertise.",
+    category: "Web Development",
+    downloadUrl: "/templates/senior-web-developer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60",
     features: [
-      "Detailed work experience section",
-      "Advanced technical skills layout",
-      "Project achievements",
+      "Advanced skills section",
+      "Project leadership highlights",
+      "Technical achievements",
       "Professional certifications"
     ],
     suitableFor: [
-      "Mid-level DevOps engineers",
-      "Site Reliability Engineers",
-      "Platform Engineers",
-      "Cloud Engineers"
+      "Senior developers",
+      "Team leads",
+      "Full-stack developers",
+      "Technical architects"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"
   },
   {
-    id: "devops-architect",
-    title: "Senior DevOps Architect Resume",
-    description: "Executive-level resume template for DevOps architects and leaders with extensive experience in enterprise DevOps transformation.",
+    id: "junior-react-developer",
+    title: "Junior React Developer Resume",
+    description: "Specialized resume template for React developers highlighting frontend skills and project experience.",
+    category: "Frontend",
+    downloadUrl: "/templates/junior-react-developer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop&q=60",
+    features: [
+      "React project showcase",
+      "Frontend skills section",
+      "UI/UX highlights",
+      "GitHub portfolio"
+    ],
+    suitableFor: [
+      "Junior React developers",
+      "Frontend engineers",
+      "UI developers",
+      "Web developers"
+    ],
+    format: "PDF, DOCX",
+    lastUpdated: "2024-03"
+  },
+  {
+    id: "senior-react-developer",
+    title: "Senior React Developer Resume",
+    description: "Professional resume template for experienced React developers with advanced frontend expertise.",
+    category: "Frontend",
+    downloadUrl: "/templates/senior-react-developer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&auto=format&fit=crop&q=60",
+    features: [
+      "Advanced React patterns",
+      "Architecture experience",
+      "Team leadership",
+      "Performance optimization"
+    ],
+    suitableFor: [
+      "Senior React developers",
+      "Frontend architects",
+      "Technical leads",
+      "UI/UX engineers"
+    ],
+    format: "PDF, DOCX",
+    lastUpdated: "2024-03"
+  },
+  {
+    id: "devops-engineer-entry",
+    title: "Entry-Level DevOps Engineer Resume",
+    description: "Professional resume template tailored for entry-level DevOps engineers.",
     category: "DevOps",
-    downloadUrl: "/templates/devops-architect.pdf",
-    previewImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=60",
+    downloadUrl: "/templates/devops-engineer-entry.pdf",
+    previewImage: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&auto=format&fit=crop&q=60",
     features: [
-      "Leadership experience highlights",
-      "Enterprise architecture skills",
-      "Strategic initiatives section",
-      "Industry recognition"
+      "CI/CD pipeline experience",
+      "Cloud platform skills",
+      "Infrastructure as Code",
+      "Monitoring tools"
     ],
     suitableFor: [
-      "DevOps Architects",
-      "Technical Leaders",
-      "Enterprise Architects",
-      "DevOps Managers"
+      "Junior DevOps engineers",
+      "Cloud engineers",
+      "System administrators",
+      "IT professionals"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"
   },
   {
-    id: "aws-cloud-engineer-entry",
-    title: "Entry-Level AWS Cloud Engineer Resume",
-    description: "Tailored resume template for entry-level AWS cloud engineers showcasing cloud infrastructure and automation skills.",
-    category: "Cloud",
-    downloadUrl: "/templates/aws-cloud-engineer-entry.pdf",
-    previewImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
+    id: "senior-devops-engineer",
+    title: "Senior DevOps Engineer Resume",
+    description: "Comprehensive resume template for experienced DevOps engineers.",
+    category: "DevOps",
+    downloadUrl: "/templates/senior-devops-engineer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?w=800&auto=format&fit=crop&q=60",
     features: [
-      "AWS services expertise",
-      "Cloud projects showcase",
-      "Technical certifications",
-      "Best practices implementation"
+      "Advanced automation",
+      "Multi-cloud expertise",
+      "Team leadership",
+      "Architecture design"
     ],
     suitableFor: [
-      "Cloud Engineering graduates",
-      "Junior Cloud Engineers",
-      "AWS certification holders",
-      "Infrastructure Engineers"
+      "Senior DevOps engineers",
+      "Platform engineers",
+      "Technical leads",
+      "Cloud architects"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"
   },
   {
-    id: "aws-cloud-engineer-mid",
-    title: "Mid-Level AWS Cloud Engineer Resume",
-    description: "Professional resume template for experienced AWS cloud engineers with proven expertise in cloud architecture and operations.",
-    category: "Cloud",
-    downloadUrl: "/templates/aws-cloud-engineer-mid.pdf",
-    previewImage: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?w=800&auto=format&fit=crop&q=60",
+    id: "junior-data-engineer",
+    title: "Junior Data Engineer Resume",
+    description: "Specialized resume template for entry-level data engineers.",
+    category: "Data Engineering",
+    downloadUrl: "/templates/junior-data-engineer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
     features: [
-      "Advanced AWS architecture",
-      "Multi-account management",
-      "Security implementations",
-      "Cost optimization"
+      "Data pipeline experience",
+      "SQL expertise",
+      "ETL processes",
+      "Big data tools"
     ],
     suitableFor: [
-      "Senior Cloud Engineers",
-      "Cloud Architects",
-      "DevOps Engineers",
-      "Solutions Architects"
+      "Junior data engineers",
+      "ETL developers",
+      "Database developers",
+      "Analytics engineers"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"
   },
   {
-    id: "soc-analyst-entry",
-    title: "Entry-Level SOC Analyst Resume",
-    description: "Specialized resume template for entry-level Security Operations Center analysts with cybersecurity training.",
+    id: "senior-data-engineer",
+    title: "Senior Data Engineer Resume",
+    description: "Professional resume template for experienced data engineers.",
+    category: "Data Engineering",
+    downloadUrl: "/templates/senior-data-engineer.pdf",
+    previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+    features: [
+      "Advanced data architecture",
+      "Team leadership",
+      "Data governance",
+      "Performance optimization"
+    ],
+    suitableFor: [
+      "Senior data engineers",
+      "Data architects",
+      "Technical leads",
+      "Big data specialists"
+    ],
+    format: "PDF, DOCX",
+    lastUpdated: "2024-03"
+  },
+  {
+    id: "junior-data-analyst",
+    title: "Junior Data Analyst Resume",
+    description: "Resume template for entry-level data analysts.",
+    category: "Data Analytics",
+    downloadUrl: "/templates/junior-data-analyst.pdf",
+    previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+    features: [
+      "Data visualization",
+      "SQL skills",
+      "Statistical analysis",
+      "BI tools"
+    ],
+    suitableFor: [
+      "Junior data analysts",
+      "Business analysts",
+      "BI analysts",
+      "Analytics specialists"
+    ],
+    format: "PDF, DOCX",
+    lastUpdated: "2024-03"
+  },
+  {
+    id: "senior-data-analyst",
+    title: "Senior Data Analyst Resume",
+    description: "Professional resume template for experienced data analysts.",
+    category: "Data Analytics",
+    downloadUrl: "/templates/senior-data-analyst.pdf",
+    previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+    features: [
+      "Advanced analytics",
+      "Project leadership",
+      "Stakeholder management",
+      "Strategic insights"
+    ],
+    suitableFor: [
+      "Senior data analysts",
+      "Analytics managers",
+      "BI managers",
+      "Data strategists"
+    ],
+    format: "PDF, DOCX",
+    lastUpdated: "2024-03"
+  },
+  {
+    id: "junior-security-analyst",
+    title: "Junior Security Analyst Resume",
+    description: "Resume template for entry-level security analysts.",
     category: "Security",
-    downloadUrl: "/templates/soc-analyst-entry.pdf",
+    downloadUrl: "/templates/junior-security-analyst.pdf",
     previewImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
     features: [
-      "Security tools proficiency",
-      "Incident response skills",
-      "Technical certifications",
-      "Project experience"
+      "Security tools",
+      "Incident response",
+      "Vulnerability assessment",
+      "Security monitoring"
     ],
     suitableFor: [
-      "Junior SOC Analysts",
-      "Security Analysts",
-      "Cybersecurity graduates",
-      "IT Security professionals"
+      "Junior security analysts",
+      "SOC analysts",
+      "Security specialists",
+      "IT security"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"
   },
   {
-    id: "soc-analyst-senior",
-    title: "Senior SOC Analyst Resume",
-    description: "Executive resume template for senior SOC analysts and security operations managers with extensive experience in threat detection and incident response.",
+    id: "senior-security-analyst",
+    title: "Senior Security Analyst Resume",
+    description: "Professional resume template for experienced security analysts.",
     category: "Security",
-    downloadUrl: "/templates/soc-analyst-senior.pdf",
-    previewImage: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=800&auto=format&fit=crop&q=60",
+    downloadUrl: "/templates/senior-security-analyst.pdf",
+    previewImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
     features: [
-      "Leadership experience",
-      "Advanced threat hunting",
-      "Team management",
-      "Security strategy"
+      "Advanced security",
+      "Team leadership",
+      "Threat hunting",
+      "Security architecture"
     ],
     suitableFor: [
-      "Senior SOC Analysts",
-      "Security Operations Managers",
-      "Threat Hunters",
-      "Security Team Leads"
+      "Senior security analysts",
+      "Security managers",
+      "SOC managers",
+      "Security architects"
     ],
     format: "PDF, DOCX",
     lastUpdated: "2024-03"

@@ -1,1 +1,271 @@
-This would be a binary file containing the resume template. Please add the actual PDF file to the public/templates directory.
+%PDF-1.7
+1 0 obj
+<</Type/Catalog/Pages 2 0 R/Metadata 3 0 R>>
+endobj
+2 0 obj
+<</Type/Pages/Count 1/Kids[4 0 R]>>
+endobj
+3 0 obj
+<</Type/Metadata/Subtype/XML/Length 3268>>
+stream
+<?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 5.5.0">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <pdf:Producer>LearnEverything Academy</pdf:Producer>
+         <dc:format>application/pdf</dc:format>
+         <dc:title>Entry-Level DevOps Engineer Resume Template</dc:title>
+         <dc:creator>LearnEverything Academy</dc:creator>
+         <xmp:CreatorTool>LearnEverything Academy Resume Builder</xmp:CreatorTool>
+         <xmp:CreateDate>2024-03-15T10:00:00Z</xmp:CreateDate>
+         <xmp:ModifyDate>2024-03-15T10:00:00Z</xmp:ModifyDate>
+         <xmpMM:DocumentID>uuid:12345678-1234-1234-1234-123456789012</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:12345678-1234-1234-1234-123456789012</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end="w"?>
+endstream
+endobj
+4 0 obj
+<</Type/Page/MediaBox[0 0 612 792]/Resources<</Font<</F1 5 0 R/F2 6 0 R/F3 7 0 R>>>>/Contents 8 0 R/Parent 2 0 R>>
+endobj
+5 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Bold/Encoding/WinAnsiEncoding>>
+endobj
+6 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>
+endobj
+7 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Oblique/Encoding/WinAnsiEncoding>>
+endobj
+8 0 obj
+<</Length 2574>>
+stream
+BT
+/F1 24 Tf
+50 740 Td
+(JOHN DOE) Tj
+ET
+
+BT
+/F2 12 Tf
+50 720 Td
+(123 Tech Street, San Francisco, CA 94105 | 555-123-4567 | john.doe@email.com) Tj
+ET
+
+BT
+/F2 12 Tf
+50 700 Td
+(github.com/johndoe | linkedin.com/in/johndoe) Tj
+ET
+
+BT
+/F1 14 Tf
+50 670 Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+
+BT
+/F2 11 Tf
+50 650 Td
+(Entry-level DevOps Engineer with hands-on experience in CI/CD pipelines, containerization, and) Tj
+0 -15 Td
+(cloud infrastructure. Passionate about automation and implementing DevOps best practices to) Tj
+0 -15 Td
+(improve software delivery processes. Seeking to leverage technical skills and collaborative) Tj
+0 -15 Td
+(approach to contribute to a dynamic engineering team.) Tj
+ET
+
+BT
+/F1 14 Tf
+50 590 Td
+(TECHNICAL SKILLS) Tj
+ET
+
+BT
+/F2 11 Tf
+50 570 Td
+(• CI/CD: Jenkins, GitLab CI, GitHub Actions) Tj
+0 -15 Td
+(• Containerization: Docker, Kubernetes basics) Tj
+0 -15 Td
+(• Cloud Platforms: AWS \(EC2, S3, RDS\), Azure fundamentals) Tj
+0 -15 Td
+(• Infrastructure as Code: Terraform, CloudFormation) Tj
+0 -15 Td
+(• Scripting: Bash, Python) Tj
+0 -15 Td
+(• Monitoring: Prometheus, Grafana, ELK Stack) Tj
+0 -15 Td
+(• Version Control: Git, GitHub) Tj
+ET
+
+BT
+/F1 14 Tf
+50 450 Td
+(EXPERIENCE) Tj
+ET
+
+BT
+/F1 12 Tf
+50 430 Td
+(DevOps Intern) Tj
+ET
+
+BT
+/F3 11 Tf
+50 415 Td
+(TechSolutions Inc., San Francisco, CA | June 2023 - December 2023) Tj
+ET
+
+BT
+/F2 11 Tf
+50 395 Td
+(• Assisted in implementing CI/CD pipelines using Jenkins, reducing deployment time by 30%) Tj
+0 -15 Td
+(• Containerized three legacy applications using Docker, improving deployment consistency) Tj
+0 -15 Td
+(• Collaborated with development teams to automate testing processes) Tj
+0 -15 Td
+(• Created monitoring dashboards with Grafana to track application performance) Tj
+0 -15 Td
+(• Participated in on-call rotations, troubleshooting and resolving production issues) Tj
+ET
+
+BT
+/F1 12 Tf
+50 310 Td
+(IT Support Specialist) Tj
+ET
+
+BT
+/F3 11 Tf
+50 295 Td
+(University Tech Department | January 2022 - May 2023) Tj
+ET
+
+BT
+/F2 11 Tf
+50 275 Td
+(• Managed and maintained university lab environments for 200+ students) Tj
+0 -15 Td
+(• Automated routine maintenance tasks using Python scripts, saving 5 hours weekly) Tj
+0 -15 Td
+(• Implemented version control for configuration files using Git) Tj
+0 -15 Td
+(• Provided technical support for faculty and students) Tj
+ET
+
+BT
+/F1 14 Tf
+50 210 Td
+(PROJECTS) Tj
+ET
+
+BT
+/F1 12 Tf
+50 190 Td
+(Automated Infrastructure Deployment) Tj
+ET
+
+BT
+/F2 11 Tf
+50 175 Td
+(github.com/johndoe/terraform-aws-project) Tj
+ET
+
+BT
+/F2 11 Tf
+50 160 Td
+(• Developed Terraform modules to provision AWS infrastructure including VPC, EC2, and RDS) Tj
+0 -15 Td
+(• Implemented infrastructure testing using Terratest) Tj
+0 -15 Td
+(• Created documentation and diagrams for the infrastructure architecture) Tj
+ET
+
+BT
+/F1 12 Tf
+50 115 Td
+(Kubernetes Learning Cluster) Tj
+ET
+
+BT
+/F2 11 Tf
+50 100 Td
+(github.com/johndoe/k8s-homelab) Tj
+ET
+
+BT
+/F2 11 Tf
+50 85 Td
+(• Built a home Kubernetes cluster using Raspberry Pi devices) Tj
+0 -15 Td
+(• Deployed various applications and services to gain hands-on experience) Tj
+0 -15 Td
+(• Documented the setup process and challenges on a technical blog) Tj
+ET
+
+BT
+/F1 14 Tf
+50 30 Td
+(EDUCATION) Tj
+ET
+
+BT
+/F1 12 Tf
+50 10 Td
+(Bachelor of Science in Computer Science) Tj
+ET
+
+BT
+/F3 11 Tf
+50 -5 Td
+(University of Technology | Graduated: May 2023) Tj
+ET
+
+BT
+/F2 11 Tf
+50 -25 Td
+(Relevant Coursework: Cloud Computing, Network Security, Database Systems, Software Engineering) Tj
+ET
+
+BT
+/F1 14 Tf
+50 -60 Td
+(CERTIFICATIONS) Tj
+ET
+
+BT
+/F2 11 Tf
+50 -80 Td
+(• AWS Certified Cloud Practitioner) Tj
+0 -15 Td
+(• Docker Certified Associate) Tj
+0 -15 Td
+(• Linux Foundation Certified System Administrator) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f
+0000000015 00000 n
+0000000074 00000 n
+0000000126 00000 n
+0000003477 00000 n
+0000003605 00000 n
+0000003697 00000 n
+0000003784 00000 n
+0000003879 00000 n
+trailer
+<</Size 9/Root 1 0 R/ID[<F7D3CA2F4E2EE047A3EB3796D920E283><F7D3CA2F4E2EE047A3EB3796D920E283>]>>
+startxref
+6504
+%%EOF
