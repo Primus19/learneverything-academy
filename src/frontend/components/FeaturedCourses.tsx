@@ -2,7 +2,11 @@
 
 import { motion } from "framer-motion"
 import { CourseCard } from "@/src/frontend/components/CourseCard"
+<<<<<<< HEAD
 import { Course } from "@/src/lib/course-loader"
+=======
+import { Course } from "@/src/courses/data"
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -75,4 +79,8 @@ export function FeaturedCourses({ courses }: FeaturedCoursesProps) {
       </div>
     </section>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5

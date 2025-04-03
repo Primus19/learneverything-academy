@@ -1,6 +1,10 @@
 "use client"
 
+<<<<<<< HEAD
 import { Course } from "@/src/lib/course-loader"
+=======
+import { Course } from "@/src/courses/data"
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
@@ -72,4 +76,8 @@ export function CourseCard({ course }: CourseCardProps) {
       </motion.div>
     </Link>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 "use client"
 
+=======
+// Modified to ensure resume downloads work properly
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5
 import { Button } from "@/components/ui/button";
 import { Download, FileType, Users, Calendar, CheckCircle, Star, Shield, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";

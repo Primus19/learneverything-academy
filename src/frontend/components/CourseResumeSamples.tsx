@@ -42,7 +42,11 @@ export function CourseResumeSamples({ course }: CourseResumeSamplesProps) {
   const handleDownload = async (sample: ResumeSample, format: 'pdf' | 'docx') => {
     try {
       const baseUrl = window.location.origin;
+<<<<<<< HEAD
       const fileUrl = `${baseUrl}/templates/${sample.id}.${format}`;
+=======
+      const fileUrl = `${baseUrl}/static/templates/${sample.id}.${format}`;
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5
       
       const response = await fetch(fileUrl);
       
@@ -164,4 +168,8 @@ export function CourseResumeSamples({ course }: CourseResumeSamplesProps) {
       </CardContent>
     </Card>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5
