@@ -68,10 +68,12 @@ function getCourseDirectories(): string[] {
     return fs.readdirSync(coursesDirectory)
       .filter(folder => {
         try {
-          const configPath = path.join(coursesDirectory, folder, 'config.json');
-          return fs.existsSync(configPath);
+          // Check if the folder contains any markdown files instead of requiring config.json
+          const folderPath = path.join(coursesDirectory, folder);
+          const files = fs.readdirSync(folderPath);
+          return files.some(file => file.endsWith('.md'));
         } catch (error) {
-          console.error(`Error checking config for folder ${folder}: ${error}`);
+          console.error(`Error checking folder ${folder}: ${error}`);
           return false;
         }
       });
@@ -85,14 +87,23 @@ function getCourseDirectories(): string[] {
 function loadCourse(courseFolder: string): Course | null {
   try {
     const coursesDirectory = path.join(process.cwd(), 'courses');
-    const configPath = path.join(coursesDirectory, courseFolder, 'config.json');
-    const configContent = fs.readFileSync(configPath, 'utf8');
-    const config = JSON.parse(configContent);
-
     const chaptersPath = path.join(coursesDirectory, courseFolder);
     const chapterFiles = fs.readdirSync(chaptersPath)
       .filter(file => file.endsWith('.md'));
 
+    if (chapterFiles.length === 0) {
+      console.error(`No markdown files found in ${courseFolder}`);
+      return null;
+    }
+
+    // Extract course title from folder name
+    const courseTitle = courseFolder
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+      .replace(/_/g, ' ');
+
+    // Process all chapter files
     const chapters = chapterFiles.map(file => {
       try {
         const fullPath = path.join(chaptersPath, file);
@@ -113,14 +124,79 @@ function loadCourse(courseFolder: string): Course | null {
     .filter((chapter): chapter is Chapter => chapter !== null)
     .sort((a, b) => a.order - b.order);
 
+    // Generate course description from first chapter content
+    let description = '';
+    if (chapters.length > 0 && chapters[0].content) {
+      // Extract first paragraph after heading
+      const contentLines = chapters[0].content.split('\n');
+      for (let i = 0; i < contentLines.length; i++) {
+        if (contentLines[i].trim() && !contentLines[i].startsWith('#')) {
+          description = contentLines[i].trim();
+          break;
+        }
+      }
+      
+      // Limit description length
+      if (description.length > 150) {
+        description = description.substring(0, 147) + '...';
+      }
+    }
+
+    // Generate topics from chapter titles
+    const topics = chapters.map(chapter => chapter.title);
+
+    // Generate curriculum weeks from chapters
+    const weeks = chapters.map(chapter => ({
+      title: chapter.title,
+      topics: [chapter.title],
+      description: `Learn about ${chapter.title.toLowerCase()}.`
+    }));
+
+    // Create course data with generated metadata
     const courseData: Course = {
       id: courseFolder,
-      ...config,
-      topics: config.topics || [],
-      curriculum: config.curriculum || { weeks: [] },
-      requirements: config.requirements || [],
-      objectives: config.objectives || [],
-      features: config.features || [],
+      title: courseTitle,
+      description: description || `Learn about ${courseTitle}`,
+      image: `https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&auto=format&fit=crop&q=60`,
+      price: 99.99,
+      duration: `${chapters.length * 2} weeks`,
+      level: "Intermediate",
+      topics: topics,
+      instructor: {
+        name: "John Doe",
+        bio: "Expert instructor with years of experience in the field",
+        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60"
+      },
+      curriculum: {
+        weeks: weeks
+      },
+      requirements: [
+        "Basic understanding of computers",
+        "Willingness to learn",
+        "Dedication to practice"
+      ],
+      objectives: [
+        "Master the fundamentals",
+        "Build real-world projects",
+        "Develop professional skills"
+      ],
+      features: [
+        {
+          icon: "video",
+          title: "HD Video Content",
+          description: "Access high-quality video lectures"
+        },
+        {
+          icon: "code",
+          title: "Practical Projects",
+          description: "Build real-world projects"
+        },
+        {
+          icon: "message-circle",
+          title: "Community Support",
+          description: "Get help from peers and instructors"
+        }
+      ],
       chapters,
     };
 
@@ -141,11 +217,11 @@ export function getAllCourses(): Course[] {
       .map(folder => loadCourse(folder))
       .filter((course): course is Course => course !== null);
     
-    // If we have dynamic courses, return them along with static courses
+    // Return only dynamic courses, ignoring static courses
     if (dynamicCourses.length > 0) {
-      return [...staticCourses, ...dynamicCourses];
+      return dynamicCourses;
     } else {
-      // If no dynamic courses were loaded, log the error and return static courses
+      // If no dynamic courses were loaded, log the error and return static courses as fallback
       console.error('No dynamic courses were loaded. Falling back to static courses only.');
       return staticCourses;
     }
@@ -157,15 +233,15 @@ export function getAllCourses(): Course[] {
 
 export function getCourseById(courseId: string): Course | undefined {
   try {
-    // First check if it's a static course
-    const staticCourse = staticCourses.find(course => course.id === courseId);
-    if (staticCourse) {
-      return staticCourse;
+    // Try to load it dynamically first
+    const course = loadCourse(courseId);
+    if (course) {
+      return course;
     }
     
-    // If not found in static courses, try to load it dynamically
-    const course = loadCourse(courseId);
-    return course || undefined;
+    // If not found dynamically, check static courses as fallback
+    const staticCourse = staticCourses.find(course => course.id === courseId);
+    return staticCourse;
   } catch (error) {
     console.error(`Error getting course by ID ${courseId}: ${error}`);
     return undefined;
