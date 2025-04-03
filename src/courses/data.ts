@@ -608,15 +608,9 @@ function Timer() {
 ## useEffect Dependencies
 The dependency array controls when the effect runs:
 
-<<<<<<< HEAD
 - Empty array (\`[]\`): Run once after initial render
 - No dependency array: Run after every render
 - With dependencies (\`[dep1, dep2]\`): Run when dependencies change
-=======
-- Empty array (`[]`): Run once after initial render
-- No dependency array: Run after every render
-- With dependencies (`[dep1, dep2]`): Run when dependencies change
->>>>>>> 8f3f698f5e15749b771a7e9281b080f783f417d5
 
 ## Practice Exercise
 1. Create a toggle component that shows/hides content when clicked
