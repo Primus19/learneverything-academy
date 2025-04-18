@@ -1,15 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
 # Build the project
 echo "Building the project..."
 npm run build
 
-# Deploy to production
-echo "Deploying to production..."
-npm run deploy
-
-# Verify deployment
-echo "Verifying deployment..."
-npm run verify
-
-echo "Deployment complete!"
+echo "This script does not automate deployments by default."
+echo "To deploy to Netlify, install the Netlify CLI:"
+echo "  npm install -g netlify-cli"
+echo "Then run:"
+echo "  netlify deploy --prod"
+echo "Or configure deployment via the Netlify dashboard/CI."

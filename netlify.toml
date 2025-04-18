@@ -1,6 +1,6 @@
 [build]
-  command = "npm run export"  # ⬅️ Runs next build + next export
-  publish = "out"             # ⬅️ Uses the exported static HTML directory
+  command = "npm run build"
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
