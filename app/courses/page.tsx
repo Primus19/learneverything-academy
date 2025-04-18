@@ -2,7 +2,7 @@ import { getAllCourses } from "@/src/lib/course-loader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, GraduationCap } from "lucide-react";
+import { Clock, GraduationCap, List } from "lucide-react";
 
 export default function CoursesPage() {
   const courses = getAllCourses();
@@ -35,19 +35,21 @@ export default function CoursesPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold">${course.price}</span>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4" />
                       <span>{course.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <List className="h-4 w-4 text-primary" />
+                      <span>{course.chapters.length} chapters</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4 text-primary" />
                     <span className="text-sm font-medium">{course.level}</span>
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    {course.chapters.length} chapters
+                </div>
                   </div>
                 </div>
               </CardContent>

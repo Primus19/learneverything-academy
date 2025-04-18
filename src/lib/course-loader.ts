@@ -4,7 +4,6 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { courses as staticCourses } from '../courses/data';
 
 export interface Chapter {
   title: string;
@@ -86,10 +85,19 @@ function getCourseDirectories(): string[] {
 // This function loads a single course by its directory name
 function loadCourse(courseFolder: string): Course | null {
   try {
-    const coursesDirectory = path.join(process.cwd(), 'courses');
-    const chaptersPath = path.join(coursesDirectory, courseFolder);
-    const chapterFiles = fs.readdirSync(chaptersPath)
-      .filter(file => file.endsWith('.md'));
+    const coursesDir = path.join(process.cwd(), 'courses');
+    const courseDir = path.join(coursesDir, courseFolder);
+    // Load optional config.json for metadata overrides
+    let config: Partial<Course> = {};
+    const configPath = path.join(courseDir, 'config.json');
+    if (fs.existsSync(configPath)) {
+      try {
+        config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      } catch (err) {
+        console.error(`Error parsing config.json for ${courseFolder}:`, err);
+      }
+    }
+    const chapterFiles = fs.readdirSync(courseDir).filter(file => file.endsWith('.md'));
 
     if (chapterFiles.length === 0) {
       console.error(`No markdown files found in ${courseFolder}`);
@@ -152,51 +160,21 @@ function loadCourse(courseFolder: string): Course | null {
       description: `Learn about ${chapter.title.toLowerCase()}.`
     }));
 
-    // Create course data with generated metadata
+    // Build course data, applying config overrides
     const courseData: Course = {
       id: courseFolder,
-      title: courseTitle,
-      description: description || `Learn about ${courseTitle}`,
-      image: `https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&auto=format&fit=crop&q=60`,
-      price: 99.99,
-      duration: `${chapters.length * 2} weeks`,
-      level: "Intermediate",
-      topics: topics,
-      instructor: {
-        name: "John Doe",
-        bio: "Expert instructor with years of experience in the field",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60"
-      },
-      curriculum: {
-        weeks: weeks
-      },
-      requirements: [
-        "Basic understanding of computers",
-        "Willingness to learn",
-        "Dedication to practice"
-      ],
-      objectives: [
-        "Master the fundamentals",
-        "Build real-world projects",
-        "Develop professional skills"
-      ],
-      features: [
-        {
-          icon: "video",
-          title: "HD Video Content",
-          description: "Access high-quality video lectures"
-        },
-        {
-          icon: "code",
-          title: "Practical Projects",
-          description: "Build real-world projects"
-        },
-        {
-          icon: "message-circle",
-          title: "Community Support",
-          description: "Get help from peers and instructors"
-        }
-      ],
+      title: config.title || courseTitle,
+      description: config.description || description || `Learn about ${courseTitle}`,
+      image: config.image || `https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&auto=format&fit=crop&q=60`,
+      price: config.price ?? 0,
+      duration: config.duration || `${chapters.length * 2} weeks`,
+      level: config.level || "Intermediate",
+      topics: config.topics || topics,
+      instructor: config.instructor || { name: "", bio: "", avatar: "" },
+      curriculum: config.curriculum || { weeks },
+      requirements: config.requirements || [],
+      objectives: config.objectives || [],
+      features: config.features || [],
       chapters,
     };
 
@@ -217,31 +195,18 @@ export function getAllCourses(): Course[] {
       .map(folder => loadCourse(folder))
       .filter((course): course is Course => course !== null);
     
-    // Return only dynamic courses, ignoring static courses
-    if (dynamicCourses.length > 0) {
-      return dynamicCourses;
-    } else {
-      // If no dynamic courses were loaded, log the error and return static courses as fallback
-      console.error('No dynamic courses were loaded. Falling back to static courses only.');
-      return staticCourses;
-    }
+    // Return only dynamically loaded courses
+    return dynamicCourses;
   } catch (error) {
     console.error(`Error loading courses: ${error}`);
-    return staticCourses;
+    return [];
   }
 }
 
 export function getCourseById(courseId: string): Course | undefined {
   try {
-    // Try to load it dynamically first
-    const course = loadCourse(courseId);
-    if (course) {
-      return course;
-    }
-    
-    // If not found dynamically, check static courses as fallback
-    const staticCourse = staticCourses.find(course => course.id === courseId);
-    return staticCourse;
+    // Load course dynamically
+    return loadCourse(courseId) || undefined;
   } catch (error) {
     console.error(`Error getting course by ID ${courseId}: ${error}`);
     return undefined;
