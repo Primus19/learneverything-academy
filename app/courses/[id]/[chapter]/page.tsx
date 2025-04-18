@@ -1,6 +1,5 @@
-import { getCourseById, getChapterContent } from "@/src/lib/course-loader";
+import { getCourseById, getChapterContent, getAllCourses } from "@/src/lib/course-loader";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Link from "next/link";
 
 interface ChapterPageProps {
