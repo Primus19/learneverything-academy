@@ -1,5 +1,6 @@
 import { getCourseById, getChapterContent, getAllCourses } from "@/src/lib/course-loader";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 interface ChapterPageProps {
   params: {
@@ -39,7 +40,10 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
   return (
     <div className="container py-8">
-      <div className="prose prose-lg dark:prose-invert max-w-none">
+      <Link href={`/courses/${params.id}`} className="text-sm text-primary hover:underline">
+        &larr; Back to Course
+      </Link>
+      <div className="prose prose-lg dark:prose-invert max-w-none mt-4">
         <div dangerouslySetInnerHTML={{ __html: chapterContent }} />
       </div>
     </div>

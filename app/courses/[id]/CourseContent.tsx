@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import Image from "next/image"
 import { Clock, GraduationCap, List } from "lucide-react"
 import { Course } from "@/src/lib/course-loader"
@@ -81,15 +81,18 @@ export function CourseContent({ course }: CourseContentProps) {
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Course Details</CardTitle>
+              <CardTitle>Chapters</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <span className="text-2xl font-bold">${course.price}</span>
-                </div>
-                <Button className="w-full">Enroll Now</Button>
-              </div>
+              <ul className="list-disc list-inside space-y-2">
+                {course.chapters.map((chapter) => (
+                  <li key={chapter.slug}>
+                    <Link href={`/courses/${course.id}/${chapter.slug}`} className="hover:underline">
+                      {chapter.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
 

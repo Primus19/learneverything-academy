@@ -114,7 +114,7 @@ function loadCourse(courseFolder: string): Course | null {
     // Process all chapter files
     const chapters = chapterFiles.map(file => {
       try {
-        const fullPath = path.join(chaptersPath, file);
+        const fullPath = path.join(courseDir, file);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data, content } = matter(fileContents);
         
