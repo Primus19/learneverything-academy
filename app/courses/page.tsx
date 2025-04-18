@@ -50,8 +50,6 @@ export default function CoursesPage() {
                     <span className="text-sm font-medium">{course.level}</span>
                   </div>
                 </div>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </Link>
