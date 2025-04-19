@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'LearnEverything Academy',
   description: 'Learn everything you need to know about programming and technology.',
+  icons: {
+    icon: '/favicon.svg'
+  }
 }
 
 export default function RootLayout({
