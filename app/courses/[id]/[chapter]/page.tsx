@@ -1,6 +1,7 @@
 import { getCourseById, getChapterContent, getAllCourses } from "@/src/lib/course-loader";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Card, CardContent } from '@/components/ui/card'
 
 interface ChapterPageProps {
   params: {
@@ -39,13 +40,17 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   }
 
   return (
-    <div className="container py-8">
+    <div className="container py-8 relative z-10">
       <Link href={`/courses/${params.id}`} className="text-sm text-primary hover:underline">
         &larr; Back to Course
       </Link>
-      <div className="prose prose-lg dark:prose-invert max-w-none mt-4">
-        <div dangerouslySetInnerHTML={{ __html: chapterContent }} />
-      </div>
+      <Card className="mt-4 bg-card/80 backdrop-blur-md border border-primary/20">
+        <CardContent>
+          <article className="prose prose-lg dark:prose-invert max-w-none">
+            <div dangerouslySetInnerHTML={{ __html: chapterContent }} />
+          </article>
+        </CardContent>
+      </Card>
     </div>
   );
 }
