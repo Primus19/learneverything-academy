@@ -95,7 +95,44 @@ module.exports = {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray.800'),
+              padding: theme('spacing.4'),
+              borderRadius: theme('borderRadius.lg'),
+              border: `1px solid ${theme('colors.gray.700')}`,
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: theme('colors.gray.100'),
+            },
+            code: {
+              backgroundColor: theme('colors.gray.800'),
+              padding: `${theme('spacing.1')} ${theme('spacing.2')}`,
+              borderRadius: theme('borderRadius.sm'),
+              color: theme('colors.indigo.300'),
+            },
+          },
+        },
+        dark: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray.900'),
+              border: `1px solid ${theme('colors.gray.700')}`,
+            },
+            code: {
+              backgroundColor: theme('colors.gray.800'),
+              color: theme('colors.indigo.400'),
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 }
