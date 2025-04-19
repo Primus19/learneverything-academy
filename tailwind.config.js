@@ -16,6 +16,40 @@ module.exports = {
       },
     },
     extend: {
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray.800'),
+              padding: theme('spacing.4'),
+              borderRadius: theme('borderRadius.lg'),
+              border: `1px solid ${theme('colors.gray.700')}`,
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: theme('colors.gray.100'),
+            },
+            code: {
+              backgroundColor: theme('colors.gray.800'),
+              padding: `${theme('spacing.1')} ${theme('spacing.2')}`,
+              borderRadius: theme('borderRadius.sm'),
+              color: theme('colors.indigo.300'),
+            },
+          },
+        },
+        dark: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray.900'),
+              border: `1px solid ${theme('colors.gray.700')}`,
+            },
+            code: {
+              backgroundColor: theme('colors.gray.800'),
+              color: theme('colors.indigo.400'),
+            },
+          },
+        },
+      }),
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -93,8 +127,42 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+      mono: ["var(--font-geist-mono)"],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray.800'),
+              padding: theme('spacing.4'),
+              borderRadius: theme('borderRadius.lg'),
+              border: `1px solid ${theme('colors.gray.700')}`,
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: theme('colors.gray.100'),
+            },
+            code: {
+              backgroundColor: theme('colors.gray.800'),
+              padding: `${theme('spacing.1')} ${theme('spacing.2')}`,
+              borderRadius: theme('borderRadius.sm'),
+              color: theme('colors.indigo.300'),
+            },
+          },
+        },
+        dark: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray.900'),
+              border: `1px solid ${theme('colors.gray.700')}`,
+            },
+            code: {
+              backgroundColor: theme('colors.gray.800'),
+              color: theme('colors.indigo.400'),
+            },
+          },
+        },
+      }),
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {

@@ -49,6 +49,33 @@
   }
 }
 
+@layer components {
+  pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg border border-gray-700 overflow-auto;
+  }
+  pre code {
+    @apply bg-transparent p-0;
+  }
+  code {
+    @apply bg-gray-800 text-indigo-300 px-1 rounded;
+  }
+  article h1,
+  article h2,
+  article h3 {
+    @apply text-white font-bold mt-6 mb-4;
+  }
+  article p {
+    @apply text-gray-200 leading-relaxed mb-4;
+  }
+  article ul,
+  article ol {
+    @apply list-disc list-inside mb-4 text-gray-200;
+  }
+  article a {
+    @apply text-indigo-400 underline;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
